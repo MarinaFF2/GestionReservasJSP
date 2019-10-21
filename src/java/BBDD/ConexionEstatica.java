@@ -165,7 +165,7 @@ public class ConexionEstatica {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
         try {
-            String sentencia = "SELECT * FROM franjaHoraria";
+            String sentencia = "SELECT * FROM franja";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 f = new FranjaHoraria(Conj_Registros.getInt("codAula"),Conj_Registros.getInt("codFranja"),Conj_Registros.getDate("fechaDia"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("codProfesor"),Conj_Registros.getInt("clave"),Conj_Registros.getString("reservado"));
@@ -179,7 +179,7 @@ public class ConexionEstatica {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
         try {
-            String sentencia = "SELECT * FROM franjaHoraria WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
+            String sentencia = "SELECT DISTINCT * FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 f = new FranjaHoraria(Conj_Registros.getInt("codAula"),Conj_Registros.getInt("codFranja"),Conj_Registros.getDate("fechaDia"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("codProfesor"),Conj_Registros.getInt("clave"),Conj_Registros.getString("reservado"));

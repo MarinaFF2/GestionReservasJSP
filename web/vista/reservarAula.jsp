@@ -18,8 +18,8 @@
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
         %>
         <form  name="tablaReservarAulas" action="../controlador/conector.jsp" method="POST">
-            <p>Fecha: <%out.print(v.get(0).getFechaDia());%></p>
-            <p>Aula: <%out.print(v.get(0).getAula());%></p>
+            <p>Fecha: <%out.print(v.get(1).getFechaDia());%></p>
+            <p>Aula: <%out.print(v.get(1).getAula());%></p>
             <table name="reservaAula" >
                 <thead>
                     <tr>
