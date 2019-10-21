@@ -114,6 +114,7 @@
     }
     //reservar Aula
     if((request.getParameter("verReservaAula")!=null)){
+        //TODO fecha pasada y con letra y no coincide el dia
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date parsed = format.parse(request.getParameter("fechaDia"));
         java.sql.Date f = new java.sql.Date(parsed.getTime());
