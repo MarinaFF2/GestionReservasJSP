@@ -135,7 +135,7 @@ public class ConexionEstatica {
         return rol;
     }
     //----------------------------------------------------------
-    public static void Borrar_Dato(String tabla, String correo) throws SQLException {
+    public static void Borrar_Dato_Usuario(String tabla, String correo) throws SQLException {
         String Sentencia = "DELETE FROM " + tabla + " WHERE correo = '" + correo + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
