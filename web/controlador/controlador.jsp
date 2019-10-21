@@ -24,7 +24,8 @@
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Rol("usuario", correo, codClave, nombre, apellido,"", edad,1);
+            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,"", edad);
+            ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
         }else{

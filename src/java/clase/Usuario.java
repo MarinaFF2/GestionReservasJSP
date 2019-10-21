@@ -16,16 +16,14 @@ public class Usuario {
     private String apellido;
     private String foto;
     private int edad;
-    private int idAsignarRol; //por decfeto profesor
 
-    public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto,int idAsignarRol) {
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto) {
         this.correo = correo;
         this.clave = clave;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.foto=foto;
-        this.idAsignarRol=idAsignarRol;
     }
 
    
@@ -81,16 +79,4 @@ public class Usuario {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
-    public int getIdAsignarRol() {
-        return idAsignarRol;
-    }
-
-    public void setIdAsignarRol(int idAsignarRol) {
-        this.idAsignarRol = idAsignarRol;
-    }
-
-    
-   
-    
 }

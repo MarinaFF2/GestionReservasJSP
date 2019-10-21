@@ -62,7 +62,7 @@ public class ConexionEstatica {
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
-                existe = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"),Conj_Registros.getInt("idAsignarRol"));
+                existe = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"));
             }
         } catch (SQLException ex) {
             System.out.println("Error en el acceso a la BD.");
@@ -76,7 +76,7 @@ public class ConexionEstatica {
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
-                existe = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"),Conj_Registros.getInt("idAsignarRol"));
+                existe = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"));
             }
         } catch (SQLException ex) {
             System.out.println("Error en el acceso a la BD.");
@@ -91,17 +91,14 @@ public class ConexionEstatica {
             String sentencia = "SELECT * FROM usuario";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                u = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"),Conj_Registros.getInt("idAsignarRol"));
+                u = new Usuario(Conj_Registros.getString("correo"),Conj_Registros.getString("clave"),Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getString("foto"));
                 v.add(u);
             }
         } catch (SQLException ex) {
         }
         return v;
     }
-
     //----------------------------------------------------------
-    
-    
     public static void Modificar_Dato_Foto(String tabla, String correo, String Nuevo_foto) throws SQLException {
         String Sentencia = "UPDATE " + tabla + " SET foto = '" + Nuevo_foto + "' WHERE correo = '" + correo + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
@@ -119,8 +116,8 @@ public class ConexionEstatica {
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------
-    public static void Insertar_Dato_Rol(String tabla, String correo, String clave, String nombre, String apellido, String foto, int edad, int idAsignarRol) throws SQLException {
-        String Sentencia = "INSERT INTO " + tabla + " VALUES ('"+ correo +"','"+clave+"','"+nombre+"','"+apellido+"','"+ edad+"','"+foto+"','"+idAsignarRol+"')";
+    public static void Insertar_Dato_Usuario(String tabla, String correo, String clave, String nombre, String apellido, String foto, int edad) throws SQLException {
+        String Sentencia = "INSERT INTO " + tabla + " VALUES ('"+ correo +"','"+clave+"','"+nombre+"','"+apellido+"','"+ edad+"','"+foto+"')";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------
@@ -144,7 +141,11 @@ public class ConexionEstatica {
     }
 
     
-    
+    //AsignarRol
+    public static void Insertar_Dato_AsignarRol(String tabla, String correo,int idAsignarRol) throws SQLException {
+        String Sentencia = "INSERT INTO " + tabla + " VALUES (0,'"+ correo +"','"+idAsignarRol+"')";
+        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
+    }
     
     //   FRANJA HORARIA
     /*public static LinkedList obtenerFranjasHorariasTodas() {
