@@ -119,8 +119,8 @@ public class ConexionEstatica {
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------
-    public static void Insertar_Dato_Rol(String tabla, String correo, String clave, String nombre, String apellido, String foto, int edad) throws SQLException {
-        String Sentencia = "INSERT INTO " + tabla + " VALUES ('" + correo +"','"+clave+"','" +nombre+"','" +apellido+"','" + edad+"','" +foto+ "')";
+    public static void Insertar_Dato_Rol(String tabla, String correo, String clave, String nombre, String apellido, String foto, int edad, int idAsignarRol) throws SQLException {
+        String Sentencia = "INSERT INTO " + tabla + " VALUES ('"+ correo +"','"+clave+"','"+nombre+"','"+apellido+"','"+ edad+"','"+foto+"','"+idAsignarRol+"')";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------

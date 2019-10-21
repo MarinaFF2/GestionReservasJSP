@@ -16,7 +16,7 @@ public class Usuario {
     private String apellido;
     private String foto;
     private int edad;
-    private int idAsignarRol; //0 hay que asignar rol
+    private int idAsignarRol; //por decfeto profesor
 
     public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto,int idAsignarRol) {
         this.correo = correo;
