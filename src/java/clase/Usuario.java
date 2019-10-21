@@ -18,13 +18,14 @@ public class Usuario {
     private int edad;
     private int idAsignarRol; //0 hay que asignar rol
 
-    public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto) {
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto,int idAsignarRol) {
         this.correo = correo;
         this.clave = clave;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.foto=foto;
+        this.idAsignarRol=idAsignarRol;
     }
 
    

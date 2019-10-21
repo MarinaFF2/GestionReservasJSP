@@ -22,26 +22,53 @@ public class FranjaHoraria {
     private int clave;
 
     /**
-     * Se utiliza cuando se recoge los datos de la base de datos
-     * @param aula
+     * Constructor para gestionar Franjas
      * @param franja
-     * @param fechaDia
      * @param inicioHora
-     * @param finHora
-     * @param codProfesor
-     * @param clave 
+     * @param finHora 
      */
-    public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
-        this.aula = aula;
+    public FranjaHoraria(int franja, String inicioHora, String finHora) {
         this.franja = franja;
-        this.fechaDia = fechaDia;
         this.inicioHora = inicioHora;
         this.finHora = finHora;
-        this.codProfesor = codProfesor;
-        this.reservado = reservado;
-        this.clave = clave;
     }
-
+    
+    /**
+     * Constructor para reservarFranjas
+     * @param franja
+     * @param inicioHora
+     * @param finHora 
+     */
+    public FranjaHoraria(int franja, String inicioHora, String finHora,String reservado) {
+        this.franja = franja;
+        this.inicioHora = inicioHora;
+        this.finHora = finHora;
+        this.reservado = reservado;
+    }
+    
+        /**
+         * Constructor por defecto
+         * @param aula
+         * @param franja
+         * @param fechaDia
+         * @param inicioHora
+         * @param finHora
+         * @param codProfesor
+         * @param clave 
+         **/
+    /*
+        public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
+            this.aula = aula;
+            this.franja = franja;
+            this.fechaDia = fechaDia;
+            this.inicioHora = inicioHora;
+            this.finHora = finHora;
+            this.codProfesor = codProfesor;
+            this.reservado = reservado;
+            this.clave = clave;
+        }
+        */
+    
     @Override
     public String toString() {
         return "FranjaHoraria{" + "aula=" + aula + ", franja=" + franja + ", fechaDia=" + fechaDia + ", inicioHora=" + inicioHora + ", finHora=" + finHora + ", codProfesor=" + codProfesor + ", reservado=" + reservado + ", clave=" + clave + '}';

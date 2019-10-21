@@ -100,7 +100,7 @@
     }
     if(request.getParameter("gestionarFranja")!=null){
         ConexionEstatica.nueva();
-        LinkedList lFt = ConexionEstatica.obtenerFranjasHorariasTodas();
+        LinkedList lFt = ConexionEstatica.obtenerFranjaDeterminada();
         session.setAttribute("lFt", lFt);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/gestionarFranja.jsp");
@@ -119,7 +119,7 @@
         java.sql.Date f = new java.sql.Date(parsed.getTime());
         int n = Integer.parseInt(request.getParameter("eligeAula"));
         ConexionEstatica.nueva();
-        LinkedList lF = ConexionEstatica.obtenerFranjaHorariaDeterminada(f, n);
+        LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
         session.setAttribute("lF", lF);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/reservarAula.jsp");
@@ -134,21 +134,11 @@
             response.sendRedirect("../vista/gestionarUsuario.jsp");
         }
         if(request.getParameter("botUsuario").equals("Editar")){
-            if(request.getParameter("nombre")!=null){
-                String u = request.getParameter("correo");
-                String n = request.getParameter("nombre");
-                ConexionEstatica.Modificar_Dato_Nombre("usuario", u, n);
-            }
-            if(request.getParameter("apellido")!=null){
-                String u = request.getParameter("correo");
-                String n = request.getParameter("apellido");
-                ConexionEstatica.Modificar_Dato_Apellido("usuario", u, n);
-            }
-            if(request.getParameter("edad")!=null){
-                String u = request.getParameter("correo");
-                int n = Integer.parseInt(request.getParameter("edad"));
-                ConexionEstatica.Modificar_Dato_Edad("usuario", u, n);
-            }
+            String u = request.getParameter("correo");
+            String nom = request.getParameter("nombre");
+            String ape = request.getParameter("apellido");
+            int edad = Integer.parseInt(request.getParameter("edad"));
+            ConexionEstatica.Modificar_Dato_Nombre_Apellido_Edad("usuario", u, nom, ape, edad);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestionarUsuario.jsp");
         }
@@ -157,21 +147,11 @@
     if(request.getParameter("botFranja")!=null){
         ConexionEstatica.nueva();
         if(request.getParameter("botFranja").equals("Editar")){
-            if(request.getParameter("nFranja")!=null){
-                int u = Integer.parseInt(request.getParameter("clave"));
-                int n = Integer.parseInt(request.getParameter("nFranja"));
-                ConexionEstatica.Modificar_Dato_Franja("franja", u, n);
-            }
-            if(request.getParameter("iniHora")!=null){
-                int u = Integer.parseInt(request.getParameter("clave"));
-                String n = request.getParameter("iniHora");
-                ConexionEstatica.Modificar_Dato_InicioHora("franja", u, n);
-            }
-            if(request.getParameter("finHora")!=null){
-                int u = Integer.parseInt(request.getParameter("clave"));
-                String n = request.getParameter("finHora");
-                ConexionEstatica.Modificar_Dato_FinHora("franja", u, n);
-            }
+            int u = Integer.parseInt(request.getParameter("clave"));
+            int nF = Integer.parseInt(request.getParameter("nFranja"));
+            String ini = request.getParameter("iniHora");
+            String fin = request.getParameter("finHora");
+            ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora("franja", u, nF, ini, fin);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestionarFranja.jsp");
         }
@@ -180,16 +160,10 @@
     if(request.getParameter("botAula")!=null){
         ConexionEstatica.nueva();
         if(request.getParameter("botAula").equals("Editar")){
-            if(request.getParameter("codAula")!=null){
-                int u = Integer.parseInt(request.getParameter("aula"));
-                int n = Integer.parseInt(request.getParameter("codAula"));
-                ConexionEstatica.Modificar_Dato_Franja("aula", u, n);
-            }
-            if(request.getParameter("descripcionAula")!=null){
-                int u = Integer.parseInt(request.getParameter("aula"));
-                String n = request.getParameter("descripcionAula");
-                ConexionEstatica.Modificar_Dato_InicioHora("aula", u, n);
-            }
+            int u = Integer.parseInt(request.getParameter("aula"));
+            int aula = Integer.parseInt(request.getParameter("codAula"));
+            String des = request.getParameter("descripcionAula");
+            ConexionEstatica.Modificar_Dato_CodAula_DescripcionAula("aula",u,aula,des);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestionarAula.jsp");
         }
