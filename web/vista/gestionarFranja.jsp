@@ -25,7 +25,7 @@
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lFt");
         %>
-        <form  name="tablaGestionarFranja" action="../controlador/conector.jsp" method="POST">
+        <form  name="tablaGestionarFranja" action="../controlador/controlador.jsp" method="POST">
             <table name="gestionarFranja" >
                 <caption>LISTA FRANJAS</caption>
                 <thead>

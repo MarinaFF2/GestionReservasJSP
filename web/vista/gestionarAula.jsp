@@ -25,7 +25,7 @@
         <%
             LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
         %>
-        <form  name="tablaGestionarAula" action="../controlador/conector.jsp" method="POST">
+        <form  name="tablaGestionarAula" action="../controlador/controlador.jsp" method="POST">
             <table name="gestionarAula" >
                 <caption>LISTA AULAS</caption>
                 <thead>

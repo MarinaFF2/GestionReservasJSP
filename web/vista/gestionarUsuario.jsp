@@ -17,7 +17,7 @@
         <%
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
         %>
-        <form  name="tablaGestionarUsuario" action="../controlador/conector.jsp" method="POST">
+        <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
             <table name="gestionarUsuario" >
                 <caption>LISTA USUARIOS</caption>
                 <thead>
