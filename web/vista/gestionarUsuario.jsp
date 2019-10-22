@@ -33,7 +33,7 @@
         %>
                     <tr>
                         <td>
-                            <input type="text" name="codAula" value="<%out.print(v.get(i).getCorreo());%>" readonly="true">
+                            <input type="text" name="correo" value="<%out.print(v.get(i).getCorreo());%>" readonly="true">
                         </td> 
                         <td>
                             <input type="text" name="nombre" value="<%out.print(v.get(i).getNombre());%>">
