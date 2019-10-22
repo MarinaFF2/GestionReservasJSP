@@ -24,7 +24,7 @@
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,null, edad);
+            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,"NULL", edad);
             ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
@@ -123,7 +123,7 @@
         int n = Integer.parseInt(request.getParameter("eligeAula"));
         session.setAttribute("Aula",n);
         ConexionEstatica.nueva();
-        LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+        LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
         session.setAttribute("lF", lF);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/reservarAula.jsp");
@@ -133,13 +133,11 @@
         String f = (String) session.getAttribute("fecD");
         int n = (Integer) session.getAttribute("Aula");
         String usu = (String) session.getAttribute("usu");
-        
-
         String re = request.getParameter("reservadoAula");
         if(re.equals("LIBRE")){
             ConexionEstatica.nueva();
             re="OCUPADO";
-            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor(f, n , usu , re);
+            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
@@ -147,7 +145,8 @@
         }
         if(re.equals("OCUPADO")){
             ConexionEstatica.nueva();
-            ConexionEstatica.Borrar_Dato_Reservar(f, n);
+            re = "LIBRE";
+            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
@@ -185,7 +184,7 @@
             int nF = Integer.parseInt(request.getParameter("nFranja"));
             String ini = request.getParameter("iniHora");
             String fin = request.getParameter("finHora");
-            ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora(u, nF, ini, fin);
+            ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora("franja",u, nF, ini, fin);
             LinkedList lFt = ConexionEstatica.obtenerFranjaDeterminada();
             session.setAttribute("lFt", lFt);
             ConexionEstatica.cerrarBD();
