@@ -143,7 +143,7 @@ public class ConexionEstatica {
     
     //AsignarRol
     public static void Insertar_Dato_AsignarRol(String tabla, String correo,int idAsignarRol) throws SQLException {
-        String Sentencia = "INSERT INTO " + tabla + " VALUES ('0','"+idAsignarRol+"','"+correo+"')";
+        String Sentencia = "INSERT INTO " + tabla + " VALUES (0,'"+ correo +"','"+idAsignarRol+"')";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     
@@ -162,6 +162,20 @@ public class ConexionEstatica {
         }
         return v;
     }*/
+    public static LinkedList obtenerFranjaAulaDeterminada(Date fecha, int aula) {
+        LinkedList v = new LinkedList<>();
+        FranjaHoraria f = null;
+        try {
+            String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora,reserva FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
+            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            while (Conj_Registros.next()) {
+                f = new FranjaHoraria(Conj_Registros.getInt("codFranja"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("reservado"));
+                v.add(f);
+            }
+        } catch (SQLException ex) {
+        }
+        return v;
+    }
     public static LinkedList obtenerFranjaDeterminada() {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
@@ -177,53 +191,29 @@ public class ConexionEstatica {
         return v;
     }
     //----------------------------------------------------------
-    public static void Modificar_Dato_Franja_IniHora_FinHora( int franja, int Nuevo_codFranja , String Nuevo_inicioHora, String Nuevo_finHora) throws SQLException {
-        String Sentencia = "UPDATE franja SET codFranja = '" + Nuevo_codFranja+"', inicioHora = '" + Nuevo_inicioHora + "', finHora = '" + Nuevo_finHora +"' WHERE codFranja = '" + franja + "' ";
+    public static void Modificar_Dato_Aula(String tabla, int clave, String Nuevo_correo) throws SQLException {
+        String Sentencia = "UPDATE " + tabla + " SET correo = '" + Nuevo_correo + "' WHERE clave = '" + clave + "'";
+        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
+    }
+    public static void Modificar_Dato_Franja_IniHora_FinHora(String tabla, int clave, int Nuevo_codFranja , String Nuevo_inicioHora, String Nuevo_finHora) throws SQLException {
+        String Sentencia = "UPDATE " + tabla + " SET codFranja = '" + Nuevo_codFranja+"', inicioHora = '" + Nuevo_inicioHora + "', finHora = '" + Nuevo_finHora +"' WHERE clave = '" + clave + "' ";
+        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
+    }
+    public static void Modificar_Dato_Reservado_CodProfesor(String tabla, int clave, String Nuevo_codProfesor, String Nuevo_reservado) throws SQLException {
+        String Sentencia = "UPDATE " + tabla + " SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "' WHERE clave = '" + clave + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     
     //----------------------------------------------------------
-    public static void Insertar_Dato_Franja(int franja,String inicioHora, String finHora) throws SQLException {
-        String Sentencia = "INSERT INTO franja VALUES ('" +franja+"','"+ inicioHora + "','" +finHora+ "')";
+    public static void Insertar_Dato_Franja(String tabla, int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave, String reservado) throws SQLException {
+        String Sentencia = "INSERT INTO " + tabla + " VALUES ('" + aula + "','" +franja+"','"+fechaDia + "','" + inicioHora + "','" +finHora+ "','" +codProfesor+ "','" +clave+ "','" +reservado+ "')";
        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------
-    public static void Borrar_Dato_Franja(int franja) throws SQLException {
-        String Sentencia = "DELETE FROM franja WHERE nFranja = '" + franja + "'";
+    public static void Borrar_Dato_Franja(String tabla, int clave) throws SQLException {
+        String Sentencia = "DELETE FROM " + tabla + " WHERE clave = '" + clave + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
-    
-    //Reservar
-    public static LinkedList obtenerFranjaReservaAula(String fecha, int aula) {
-        LinkedList v = new LinkedList<>();
-        FranjaHoraria f = null;
-        try {
-            String sentencia = "SELECT reservar.aula,reservar.codFranja,franja.inicioHora,franja.finHora,reservar.reservado,reservar.profesor FROM reservar,franja WHERE franja.nFranja=reservar.nFranja and reservar.codAula= '"+aula+"' AND reservar.fechaDia='"+fecha+"';";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
-            while (Conj_Registros.next()) {
-                f = new FranjaHoraria(Conj_Registros.getInt("aula"), Conj_Registros.getInt("codFranja"), Conj_Registros.getString("fechaDia"), Conj_Registros.getString("codProfesor"), Conj_Registros.getString("inicioHora"), Conj_Registros.getString("finHora"), Conj_Registros.getString("reservado"));
-                v.add(f);
-            }
-        } catch (SQLException ex) {
-        }
-        return v;
-    }
-     //----------------------------------------------------------
-    public static void Modificar_Dato_Reservado_CodProfesor(String fecha, int aula, String Nuevo_codProfesor, String Nuevo_reservado) throws SQLException {
-        String Sentencia = "UPDATE reservar SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "' WHERE  codAula= '"+aula+"' AND fechaDia='"+fecha+"'";
-        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
-    }
-    //----------------------------------------------------------
-    public static void Insertar_Dato_Reservar(int aula, int franja, String fechaDia,String codProfesor, int clave, String reservado) throws SQLException {
-        String Sentencia = "INSERT INTO reservar VALUES ('" + aula + "','" +franja+"','"+fechaDia + "','" +codProfesor+ "','" +clave+ "','" +reservado+ "')";
-       ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
-    }
-    //----------------------------------------------------------
-    public static void Borrar_Dato_Reservar(String fecha, int franja) throws SQLException {
-        String Sentencia = "DELETE FROM reservar WHERE fechaDia = '" + fecha + "' AND nFranja = '" + franja + "'";
-        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
-    }
-    
     
     //   AULAS
     public static LinkedList obtenerAulas() {
