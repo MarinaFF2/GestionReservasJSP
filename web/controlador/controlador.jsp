@@ -139,7 +139,7 @@
         if(re.equals("LIBRE")){
             ConexionEstatica.nueva();
             re="OCUPADO";
-            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
+            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor(f, n , usu , re);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
@@ -147,8 +147,7 @@
         }
         if(re.equals("OCUPADO")){
             ConexionEstatica.nueva();
-            re = "LIBRE";
-            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
+            ConexionEstatica.Borrar_Dato_Reservar(f, n);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
@@ -186,7 +185,7 @@
             int nF = Integer.parseInt(request.getParameter("nFranja"));
             String ini = request.getParameter("iniHora");
             String fin = request.getParameter("finHora");
-            ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora("franja", u, nF, ini, fin);
+            ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora(u, nF, ini, fin);
             LinkedList lFt = ConexionEstatica.obtenerFranjaDeterminada();
             session.setAttribute("lFt", lFt);
             ConexionEstatica.cerrarBD();

@@ -43,7 +43,7 @@
                         </td>   
                         <td>
                             <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>"  readonly="true">
-                        </td>    
+                        </td> 
                         <td>
                             <input type="submit" id="reservadoAula" name="reservadoAula" value="<%out.print(v.get(i).getReservado());%>">
                         </td>
