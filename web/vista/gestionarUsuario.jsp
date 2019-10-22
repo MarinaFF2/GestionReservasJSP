@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <%
@@ -32,7 +33,7 @@
         %>
                     <tr>
                         <td>
-                            <input type="text" name="codAula" value="<%out.print(v.get(i).getCorreo());%>"  readonly="true">
+                            <input type="text" name="codAula" value="<%out.print(v.get(i).getCorreo());%>" readonly="true">
                         </td> 
                         <td>
                             <input type="text" name="nombre" value="<%out.print(v.get(i).getNombre());%>">

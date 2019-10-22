@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             #clave{
                 visibility: hidden;
@@ -39,7 +40,7 @@
         <%
             for (int i = 0; i < v.size(); i++) {
         %>
-                <!--hacer invisible--><input type="text" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
+                <!--hacer invisible--><input type="text" id="clave" name="franja" value="<%out.print(v.get(i).getFranja());%>" >
                     <tr>
                         <td>
                            <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">

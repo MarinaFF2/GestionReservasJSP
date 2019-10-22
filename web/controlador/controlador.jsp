@@ -24,13 +24,17 @@
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,"", edad);
+            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,null, edad);
             ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
         }else{
-            //out.print("Error al introducir usuario");
-            //pantalla emergente en registrarse
+            %>
+            <script>
+                alert("Error al introducir usuario");
+            </script>
+            <%
+            response.sendRedirect("../vista/registrarse.jsp");
         }
         ConexionEstatica.cerrarBD();
     }
@@ -55,15 +59,14 @@
             }
             if(n==3){  //ADMINISTRADOR GENERAL
                 response.sendRedirect("../vista/loginAdminGene.jsp");
-            }else{
-                out.print("<form id='error1' action='controlador.jsp'>");
-                out.print("<p>No puedes acceder por todavia no te han admitido, debes esperar a que lo hagan</p> <br> <input type='submit' id='volverAIndex' name='volverAIndex' value='Volver al login'>");
-                out.print("</form>");
             }
         }else{
-            out.print("<form id='error1' action='controlador.jsp'>");
-            out.print("<p>Error al escribir usuario y/o contraseña</p> <br> <input type='submit' id='volverAIndex' name='volverAIndex' value='Volver al login'>");
-            out.print("</form>");
+            %>
+                <script>
+                    alert("Error al escribir usuario y/o contraseña");
+                </script>
+            <%
+            response.sendRedirect("../index.html");
         }  
         ConexionEstatica.cerrarBD();
     }
@@ -112,18 +115,45 @@
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/gestionarUsuario.jsp");
     }
-    //reservar Aula
+    //para ver reservar Aula
     if((request.getParameter("verReservaAula")!=null)){
         //TODO fecha pasada y con letra y no coincide el dia
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-        Date parsed = format.parse(request.getParameter("fechaDia"));
-        java.sql.Date f = new java.sql.Date(parsed.getTime());
+        String f = (request.getParameter("fechaDia"));
+        session.setAttribute("fecD", f);
         int n = Integer.parseInt(request.getParameter("eligeAula"));
+        session.setAttribute("Aula",n);
         ConexionEstatica.nueva();
-        LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
+        LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
         session.setAttribute("lF", lF);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/reservarAula.jsp");
+    }
+    //reservar Aula
+    if((request.getParameter("reservadoAula")!=null)){
+        String f = (String) session.getAttribute("fecD");
+        int n = (Integer) session.getAttribute("Aula");
+        String usu = (String) session.getAttribute("usu");
+        
+
+        String re = request.getParameter("reservadoAula");
+        if(re.equals("LIBRE")){
+            ConexionEstatica.nueva();
+            re="OCUPADO";
+            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
+            LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+            session.setAttribute("lF", lF);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../vista/reservarAula.jsp");
+        }
+        if(re.equals("OCUPADO")){
+            ConexionEstatica.nueva();
+            re = "LIBRE";
+            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
+            LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+            session.setAttribute("lF", lF);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../vista/reservarAula.jsp");
+        }
     }
     //boton de gestion usuario
     if(request.getParameter("botUsuario")!=null){
@@ -152,7 +182,7 @@
     if(request.getParameter("botFranja")!=null){
         ConexionEstatica.nueva();
         if(request.getParameter("botFranja").equals("Editar")){
-            int u = Integer.parseInt(request.getParameter("clave"));
+            int u = Integer.parseInt(request.getParameter("franja"));
             int nF = Integer.parseInt(request.getParameter("nFranja"));
             String ini = request.getParameter("iniHora");
             String fin = request.getParameter("finHora");

@@ -12,14 +12,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+            #fecD, #aula, #iniHora, #finHora{
+                border:none;
+            }
+        </style>
     </head>
     <body>
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
         %>
         <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
-            <p>Fecha: <%out.print(v.get(1).getFechaDia());%></p>
-            <p>Aula: <%out.print(v.get(1).getAula());%></p>
+            <p>Fecha: <%out.print((String)session.getAttribute("fecD"));%></p>
+            <p>Aula: <%out.print((Integer)session.getAttribute("Aula"));%></p>
             <table name="reservaAula" >
                 <thead>
                     <tr>
@@ -34,13 +39,13 @@
         %>
                     <tr>
                         <td>
-                            <p><%out.print(v.get(i).getInicioHora());%></p>
+                            <input type="text" id="iniHora" name="iniHora" value="<%out.print(v.get(i).getInicioHora());%>"  readonly="true">
                         </td>   
                         <td>
-                            <p><%out.print(v.get(i).getFinHora());%></p>
+                            <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>"  readonly="true">
                         </td>    
                         <td>
-                            <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
+                            <input type="submit" id="reservadoAula" name="reservadoAula" value="<%out.print(v.get(i).getReservado());%>">
                         </td>
                     </tr>
         <%
@@ -48,8 +53,7 @@
         %>
                 </tbody>
             </table>
-            <input type="submit" name="cerrarSesion" value="CerrarSesion">
-            <input type="submit" name="volverAProf" value="Volver">
+            <input type="submit" name="volverVerAula" value="Volver">
         </form>
     </body>
 </html>
