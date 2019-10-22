@@ -40,7 +40,7 @@
         <%
             for (int i = 0; i < v.size(); i++) {
         %>
-                <!--hacer invisible--><input type="text" id="clave" name="franja" value="<%out.print(v.get(i).getFranja());%>" >
+                <!--hacer invisible--><input type="text" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
                     <tr>
                         <td>
                            <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">

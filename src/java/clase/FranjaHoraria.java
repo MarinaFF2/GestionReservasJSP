@@ -10,13 +10,14 @@ package clase;
  * @author Marina flores fernandez
  */
 public class FranjaHoraria {
+    private int aula;
     private int franja;
+    private Date fechaDia;
     private String inicioHora;
     private String finHora;
-    private int aula;
-    private String fechaDia;
-    private String reservado;
     private String codProfesor;
+    private String reservado;
+    private int clave;
 
     /**
      * Constructor para gestionar Franjas
@@ -29,52 +30,88 @@ public class FranjaHoraria {
         this.inicioHora = inicioHora;
         this.finHora = finHora;
     }
-
     
     /**
      * Constructor para reservarFranjas
      * @param franja
-     * @param reservado 
-     */
-    public FranjaHoraria(int aula,int franja, String fechaDia,String codProfesor,String inicioHora, String finHora,String reservado) {    
-        this.franja = franja;
-        this.inicioHora = inicioHora;
-        this.finHora = finHora;
-        this.aula = aula;
-        this.fechaDia = fechaDia;
-        this.codProfesor = codProfesor;
-        this.reservado = reservado;
-    }
-
-    /**
-     * Constructor por defecto
-     * @param franja
      * @param inicioHora
-     * @param finHora
-     * @param aula
-     * @param fechaDia
-     * @param reservado
-     * @param codProfesor 
+     * @param finHora 
      */
-    public FranjaHoraria(int franja, String inicioHora, String finHora, int aula, String fechaDia, String reservado, String codProfesor) {
+    public FranjaHoraria(int franja, String inicioHora, String finHora,String reservado) {
         this.franja = franja;
         this.inicioHora = inicioHora;
         this.finHora = finHora;
-        this.aula = aula;
-        this.fechaDia = fechaDia;
         this.reservado = reservado;
-        this.codProfesor = codProfesor;
+    }
+    
+        /**
+         * Constructor por defecto
+         * @param aula
+         * @param franja
+         * @param fechaDia
+         * @param inicioHora
+         * @param finHora
+         * @param codProfesor
+         * @param clave 
+         **/
+    /*
+        public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
+            this.aula = aula;
+            this.franja = franja;
+            this.fechaDia = fechaDia;
+            this.inicioHora = inicioHora;
+            this.finHora = finHora;
+            this.codProfesor = codProfesor;
+            this.reservado = reservado;
+            this.clave = clave;
+        }
+        */
+    
+    @Override
+    public String toString() {
+        return "FranjaHoraria{" + "aula=" + aula + ", franja=" + franja + ", fechaDia=" + fechaDia + ", inicioHora=" + inicioHora + ", finHora=" + finHora + ", codProfesor=" + codProfesor + ", reservado=" + reservado + ", clave=" + clave + '}';
     }
 
     
+    public String getReservado() {
+        return reservado;
+    }
+
+    public void setReservado(String reservado) {
+        this.reservado = reservado;
+    }
+
+    public int getClave() {
+        return clave;
+    }
+
+    public void setClave(int clave) {
+        this.clave = clave;
+    }
     
     
+    public int getAula() {
+        return aula;
+    }
+
+    public void setAula(int aula) {
+        this.aula = aula;
+    }
+
     public int getFranja() {
         return franja;
     }
 
     public void setFranja(int franja) {
         this.franja = franja;
+    }
+
+    public Date getFechaDia() {
+        return fechaDia;
+    }
+
+    public void setFechaDia(Date fechaDia) {
+        this.fechaDia = fechaDia;
     }
 
     public String getInicioHora() {
@@ -91,30 +128,6 @@ public class FranjaHoraria {
 
     public void setFinHora(String finHora) {
         this.finHora = finHora;
-    }
-
-    public int getAula() {
-        return aula;
-    }
-
-    public void setAula(int aula) {
-        this.aula = aula;
-    }
-
-    public String getFechaDia() {
-        return fechaDia;
-    }
-
-    public void setFechaDia(String fechaDia) {
-        this.fechaDia = fechaDia;
-    }
-
-    public String getReservado() {
-        return reservado;
-    }
-
-    public void setReservado(String reservado) {
-        this.reservado = reservado;
     }
 
     public String getCodProfesor() {
