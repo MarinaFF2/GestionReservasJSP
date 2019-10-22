@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
+
 public class ConexionEstatica {
 
    //********************* Atributos *************************
