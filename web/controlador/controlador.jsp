@@ -24,7 +24,7 @@
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,null, edad);
+            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,"NULL", edad);
             ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
@@ -123,7 +123,7 @@
         int n = Integer.parseInt(request.getParameter("eligeAula"));
         session.setAttribute("Aula",n);
         ConexionEstatica.nueva();
-        LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+        //LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
         session.setAttribute("lF", lF);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/reservarAula.jsp");
@@ -139,7 +139,7 @@
         if(re.equals("LIBRE")){
             ConexionEstatica.nueva();
             re="OCUPADO";
-            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
+            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
@@ -148,7 +148,7 @@
         if(re.equals("OCUPADO")){
             ConexionEstatica.nueva();
             re = "LIBRE";
-            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
+            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
             LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();

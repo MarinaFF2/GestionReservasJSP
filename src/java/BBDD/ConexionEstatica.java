@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class ConexionEstatica {
 
-    //********************* Atributos *************************
+   //********************* Atributos *************************
     private static java.sql.Connection Conex;
     //Atributo a través del cual hacemos la conexión física.
     private static java.sql.Statement Sentencia_SQL;
@@ -143,7 +143,7 @@ public class ConexionEstatica {
     
     //AsignarRol
     public static void Insertar_Dato_AsignarRol(String tabla, String correo,int idAsignarRol) throws SQLException {
-        String Sentencia = "INSERT INTO " + tabla + " VALUES ('0','"+idAsignarRol+"','"+correo+"')";
+       String Sentencia = "INSERT INTO " + tabla + " VALUES (0,'"+idAsignarRol+"','"+ correo +"')";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     
@@ -176,6 +176,20 @@ public class ConexionEstatica {
         }
         return v;
     }
+    public static LinkedList obtenerFranjaAulaDeterminada(Date fecha, int aula) {
+        LinkedList v = new LinkedList<>();
+        FranjaHoraria f = null;
+        try {
+            String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora,reserva FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
+            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            while (Conj_Registros.next()) {
+                f = new FranjaHoraria(Conj_Registros.getInt("codFranja"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("reservado"));
+                v.add(f);
+            }
+        } catch (SQLException ex) {
+        }
+        return v;
+    }
     public static LinkedList obtenerFranjaDeterminada() {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
@@ -199,8 +213,8 @@ public class ConexionEstatica {
         String Sentencia = "UPDATE " + tabla + " SET codFranja = '" + Nuevo_codFranja+"', inicioHora = '" + Nuevo_inicioHora + "', finHora = '" + Nuevo_finHora +"' WHERE clave = '" + clave + "' ";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
-    public static void Modificar_Dato_Reservado_CodProfesor(String tabla, int clave, String Nuevo_codProfesor, String Nuevo_reservado) throws SQLException {
-        String Sentencia = "UPDATE " + tabla + " SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "' WHERE clave = '" + clave + " AND fechaDia='"+fecha+"'";
+    public static void Modificar_Dato_Reservado_CodProfesor(String tabla,int aula, int fecha, String Nuevo_codProfesor, String Nuevo_reservado) throws SQLException {
+        String Sentencia = "UPDATE " + tabla + " SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "' WHERE codAula = '" + aula + " AND fechaDia='"+fecha+"'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     

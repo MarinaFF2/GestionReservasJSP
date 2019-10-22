@@ -5,6 +5,8 @@
  */
 package clase;
 
+import java.sql.Date;
+
 /**
  *
  * @author Marina flores fernandez
