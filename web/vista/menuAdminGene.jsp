@@ -16,10 +16,6 @@
     </head>
     <body>
         <form id="menuAdminGene" action="../controlador/controlador.jsp" method="POST">
-        <%
-            int n = (Integer)session.getAttribute("rol");
-            if(n==3){
-        %>
             <nav id="menuLoginAdminGene">
                 <ul>
                     <li><a href="menuAdminGene.jsp">Administrador General</a></li>
@@ -30,35 +26,8 @@
                     </li>
                 </ul>
             </nav>
-        <%  
-            }else if(n==2){
-        %>
-            <nav id="menuLoginAdminAula">
-                <ul>
-                    <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
-        <% 
-            }else{
-        %>
-            <nav id="prof">
-                <ul>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
-        <% 
-            }
-        %>
-            <input type="submit" id="gestionarRol" name="gestionarAula" value="Gestionar Aula"><br> 
+            <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br> 
+            <input type="submit" id="gestionarRol" name="gestionarRol" value="Gestionar Rol"><br> 
             <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
             <input type="submit" id="gestionarUsuario" name="gestionarUsuario" value="Gestionar Usuarios"><br>
         </form>
