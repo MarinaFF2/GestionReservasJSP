@@ -58,11 +58,9 @@
         <% 
             }
         %>
-            <input type="submit" id="gestionarRol" name="gestionarAula" value="Gestionar Aula"><br>    
-            <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br>
+            <input type="submit" id="gestionarRol" name="gestionarAula" value="Gestionar Aula"><br> 
             <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
             <input type="submit" id="gestionarUsuario" name="gestionarUsuario" value="Gestionar Usuarios"><br>
-            <input type="submit" id="volverALoginGene" name="volverALoginGene" value="Volver"><br>
         </form>
     </body>
 </html>

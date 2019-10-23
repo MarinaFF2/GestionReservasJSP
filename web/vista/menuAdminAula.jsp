@@ -61,7 +61,6 @@
         <br>
             <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br>
             <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
-            <input type="submit" id="volverALoginAula" name="volverALoginAula" value="Volver"><br>
         </form>
     </body>
 </html>

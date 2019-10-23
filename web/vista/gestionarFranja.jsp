@@ -103,8 +103,6 @@
         %>
                 </tbody>
             </table>
-            <input type="submit" name="cerrarSesion" value="CerrarSesion">
-            <input type="submit" name="volverAProf" value="volver">
         </form>
     </body>
 </html>
