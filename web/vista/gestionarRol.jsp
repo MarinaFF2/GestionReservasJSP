@@ -23,8 +23,8 @@
             <nav id="menuLoginAdminGene">
                 <ul>
                     <li><a href="menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href=prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario">Editar Usuario</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -36,8 +36,8 @@
             <nav id="menuLoginAdminAula">
                 <ul>
                     <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
-                    <li><a href=prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario">Editar Usuario</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -48,8 +48,8 @@
         %>
             <nav id="prof">
                 <ul>
-                    <li><a href=prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario">Editar Usuario</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
