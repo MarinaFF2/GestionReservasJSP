@@ -18,8 +18,8 @@
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
         %>
         <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
-            <p>Fecha: <%out.print(v.get(1).getFechaDia());%></p>
-            <p>Aula: <%out.print(v.get(1).getAula());%></p>
+            <p>Fecha: <%out.print((String)session.getAttribute("fecD"));%></p>
+            <p>Aula: <%out.print((Integer)session.getAttribute("Aula"));%></p>
             <table name="reservaAula" >
                 <thead>
                     <tr>
@@ -32,17 +32,19 @@
         <%
             for (int i = 0; i < v.size(); i++) {
         %>
+                <form  name="tablaReservarAulas1" action="../controlador/controlador.jsp" method="POST">
                     <tr>
                         <td>
-                            <p><%out.print(v.get(i).getInicioHora());%></p>
+                            <input type="text" id="iniHora" name="finHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
                         </td>   
                         <td>
-                            <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>"  readonly="true">
+                            <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>" readonly="true">
                         </td> 
                         <td>
                             <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
                         </td>
                     </tr>
+                </form>
         <%
             }
         %>
