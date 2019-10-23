@@ -1,9 +1,11 @@
+<%-- 
+    Document   : index1
+    Created on : 23-oct-2019, 12:57:18
+    Author     : daw207
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -27,7 +29,7 @@ and open the template in the editor.
             <label>Usuario</label><input type="text" id="usuario" name="usuario" value=""><br>
             <label>Contraseña</label><input type="password" id="pwd" name="pwd" value=""><br>
             <a href="vista/registrarse.jsp">Registrarse</a>
-            <a href="vista/olvidoPwd.jsp">He olvidado la contraseña</a>
+            <a href="vista/olvidoPwd.jsp">He olvidado la contraseña</a></br>
             <input type="submit" id="aceptarIndex" name="aceptarIndex" value="Aceptar">
         </form>
     </body>
