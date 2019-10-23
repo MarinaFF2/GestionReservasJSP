@@ -20,6 +20,9 @@ and open the template in the editor.
         </script>-->
     </head>
     <body>
+        <%
+            out.println(session.getId() + " " + session.getMaxInactiveInterval() + "<br>"); 
+        %>
         <form id="inicioSesion" action="controlador/controlador.jsp" method="POST">
             <label>Usuario</label><input type="text" id="usuario" name="usuario" value=""><br>
             <label>Contraseña</label><input type="password" id="pwd" name="pwd" value=""><br>
