@@ -10,8 +10,8 @@ package BBDD;
  * @author fernando
  */
 public class Constantes {
-    public static String BBDD="desafio1jsp";
+    public static String BBDD="desafio1";
     public static String usuario="marina";
     public static String password="Chubaca2019";
-    public static String ficheroBitacoras="dsf1jsp.txt";
+    public static String ficheroBitacoras="dsf1.txt";
 }

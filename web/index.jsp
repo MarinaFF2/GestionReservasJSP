@@ -32,6 +32,8 @@
             <a href="vista/registrarse.jsp">Registrarse</a>
             <a href="vista/olvidoPwd.jsp">He olvidado la contraseña</a></br>
             <input type="submit" id="aceptarIndex" name="aceptarIndex" value="Aceptar">
+            
+            <input type="submit" id="insertarFranjas" name="insertarFranjas" value="Insertar">
         </form>
     </body>
 </html>

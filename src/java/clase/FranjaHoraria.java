@@ -46,29 +46,26 @@ public class FranjaHoraria {
         this.reservado = reservado;
     }
     
-        /**
-         * Constructor por defecto
-         * @param aula
-         * @param franja
-         * @param fechaDia
-         * @param inicioHora
-         * @param finHora
-         * @param codProfesor
-         * @param clave 
-         **/
-    /*
-        public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
-            this.aula = aula;
-            this.franja = franja;
-            this.fechaDia = fechaDia;
-            this.inicioHora = inicioHora;
-            this.finHora = finHora;
-            this.codProfesor = codProfesor;
-            this.reservado = reservado;
-            this.clave = clave;
-        }
-        */
-    
+    /**
+     * Constructor por defecto
+     * @param aula
+     * @param franja
+     * @param fechaDia
+     * @param inicioHora
+     * @param finHora
+     * @param codProfesor
+     * @param clave 
+     **/
+    public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
+        this.aula = aula;
+        this.franja = franja;
+        this.fechaDia = fechaDia;
+        this.inicioHora = inicioHora;
+        this.finHora = finHora;
+        this.codProfesor = codProfesor;
+        this.reservado = reservado;
+        this.clave = clave;
+    }
     @Override
     public String toString() {
         return "FranjaHoraria{" + "aula=" + aula + ", franja=" + franja + ", fechaDia=" + fechaDia + ", inicioHora=" + inicioHora + ", finHora=" + finHora + ", codProfesor=" + codProfesor + ", reservado=" + reservado + ", clave=" + clave + '}';
