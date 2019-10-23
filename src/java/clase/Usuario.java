@@ -22,8 +22,8 @@ public class Usuario {
         this.clave = clave;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.foto = foto;
         this.edad = edad;
-        this.foto=foto;
     }
 
    
@@ -32,6 +32,7 @@ public class Usuario {
         return "Usuario{" + "correo=" + correo + ", clave=" + clave + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", edad=" + edad + '}';
     }
 
+    
     public String getApellido() {
         return apellido;
     }

@@ -13,7 +13,8 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="jquery-3.4.1.min.js"></script>
         <script>
-            $(document).ready(function () {
+            alert("Las claves no coinciden");
+           /* $(document).ready(function () {
                 limpiar();
                 $("#sendRegistrar").click(function () {
                     var correo = $("#correo").val();
@@ -41,7 +42,7 @@
                     $("#apellido").val("");
                     $("#edad").val("");
                 }
-            });
+            });*/
         </script>
     </head>
     <body>

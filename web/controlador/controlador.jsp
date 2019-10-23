@@ -24,8 +24,8 @@
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Usuario("usuario", correo, codClave, nombre, apellido,"NULL", edad);
-            ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
+            ConexionEstatica.Insertar_Dato_Usuario(correo, codClave, nombre, apellido,"NULL", edad);
+            ConexionEstatica.Insertar_Dato_AsignarRol(correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
         }
@@ -42,8 +42,6 @@
             session.setAttribute("usu", usu);
             BitacorasFichero.escribirBitacoras("El usuario " + u.getCorreo() + " ha inicado session en el sistema");
             int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
-            ConexionEstatica.cerrarBD();
-            
             if(n==1){  //PROFESOR
                 response.sendRedirect("../vista/prof.jsp");
             }
