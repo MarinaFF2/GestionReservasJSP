@@ -58,28 +58,6 @@
         }
     }
     
-    //Logins
-    if(request.getParameter("entrarLoginAdminAula")!=null){
-        if (request.getParameter("comoAccederLoginAula") != null) {
-            if (request.getParameter("comoAccederLoginAula").equals("adminAula")) {
-                response.sendRedirect("../vista/menuAdminAul.jsp");
-            }
-            if (request.getParameter("comoAccederLoginAula").equals("prof")) {
-                response.sendRedirect("../vista/prof.jsp");
-            }
-        }
-    }
-    if(request.getParameter("entrarLoginAdminGene")!=null){
-        if (request.getParameter("comoAccederLoginGene") != null) {
-            if (request.getParameter("comoAccederLoginGene").equals("adminGene")) {
-                response.sendRedirect("../vista/menuAdminGene.jsp");
-            }
-            if (request.getParameter("comoAccederLoginGene").equals("prof")) {
-                response.sendRedirect("../vista/prof.jsp");
-            }
-        }
-    }
-    
     //Menus de gestionar
     if(request.getParameter("gestionarAula")!=null){
         ConexionEstatica.nueva();
@@ -102,6 +80,7 @@
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/gestionarUsuario.jsp");
     }
+    
     //para ver reservar Aula
     if((request.getParameter("verReservaAula")!=null)){
         //TODO fecha pasada y con letra y no coincide el dia
