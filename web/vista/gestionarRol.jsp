@@ -1,6 +1,6 @@
 <%-- 
-    Document   : menuAdminAula
-    Created on : 17-oct-2019, 9:06:11
+    Document   : gestionarRol
+    Created on : 23-oct-2019, 13:03:36
     Author     : daw207
 --%>
 
@@ -12,10 +12,10 @@
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./css/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="./css/css_menuAdminAula.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./css/css_gestionarRol.css" media="screen" />
     </head>
     <body>
-        <form id="menuAdminAula" action="../controlador/controlador.jsp" method="POST">
+        <form  name="tablaGestionarFranja" action="../controlador/controlador.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -58,10 +58,6 @@
         <% 
             }
         %>
-        <br>
-            <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br>
-            <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
-            <input type="submit" id="volverALoginAula" name="volverALoginAula" value="Volver"><br>
         </form>
     </body>
 </html>

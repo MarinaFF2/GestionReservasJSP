@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./css/css_prof.css" media="screen" />
         <!--<script src="jquery-3.4.1.min.js"></script>
         <script>
             $(document).ready(function () {
@@ -30,6 +32,7 @@
                 <ul>
                     <li><a href="menuAdminGene.jsp">Administrador General</a></li>
                     <li><a href=prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -42,6 +45,7 @@
                 <ul>
                     <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
                     <li><a href=prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -53,6 +57,7 @@
             <nav id="prof">
                 <ul>
                     <li><a href=prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
