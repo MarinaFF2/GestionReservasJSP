@@ -13,13 +13,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../css/css_gestionarUsu.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./css/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./css/css_gestionarUsu.css" media="screen" />
     </head>
     <body>
         <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
         <%
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
+            int n = (Integer)session.getAttribute("rol");
+            if(n==3){
         %>
             <nav id="menuLoginAdminGene">
                 <ul>
@@ -31,6 +33,35 @@
                     </li>
                 </ul>
             </nav>
+        <%  
+            }else if(n==2){
+        %>
+            <nav id="menuLoginAdminAula">
+                <ul>
+                    <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li>
+                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                    </li>
+                </ul>
+            </nav>
+        <% 
+            }else{
+        %>
+            <nav id="prof">
+                <ul>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li>
+                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                    </li>
+                </ul>
+            </nav>
+        <% 
+            }
+        %>
+        
             <table name="gestionarUsuario" >
                 <caption>LISTA USUARIOS</caption>
                 <thead>

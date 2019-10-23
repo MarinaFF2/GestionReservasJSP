@@ -16,28 +16,7 @@ public class Usuario {
     private String apellido;
     private String foto;
     private int edad;
-    private int rol;
 
-    /**
-     * Constructor para gestion de rol
-     * @param correo
-     * @param rol 
-     */
-    public Usuario(String correo,int rol) {
-        this.correo = correo;
-        this.rol = rol;
-    }
-
-    
-    /**
-     * Constructor para comprobar y gestionar usuarios
-     * @param correo
-     * @param clave
-     * @param nombre
-     * @param apellido
-     * @param edad
-     * @param foto 
-     */
     public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto) {
         this.correo = correo;
         this.clave = clave;
@@ -53,17 +32,6 @@ public class Usuario {
         return "Usuario{" + "correo=" + correo + ", clave=" + clave + ", nombre=" + nombre + ", apellido=" + apellido + ", foto=" + foto + ", edad=" + edad + '}';
     }
 
-    
-    
-    public int getRol() {
-        return rol;
-    }
-
-    public void setRol(int rol) {
-        this.rol = rol;
-    }
-
-    
     
     public String getApellido() {
         return apellido;
