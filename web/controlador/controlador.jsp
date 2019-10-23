@@ -4,6 +4,7 @@
     Author     : Marina Flores Fernandez
 --%>
 
+<%@page import="clase.Email"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.LinkedList"%>
@@ -191,13 +192,28 @@
     if(request.getParameter("volverAIndex")!=null){
         response.sendRedirect("../index.html");
     }
-    if(request.getParameter("volverALoginGene")!=null){
-        response.sendRedirect("../vista/loginAdminGene.jsp");
-    }
-    if(request.getParameter("volverALoginAula")!=null){
-        response.sendRedirect("../vista/loginAdminAula.jsp");
-    }
-    if(request.getParameter("volverAProf")!=null){
-        response.sendRedirect("../vista/prof.jsp");
+    
+    // he olvidado la contraseña
+    if (request.getParameter("botOlvidoPwd") != null) {
+        String emil = (String) session.getAttribute("email");
+        String clve = (String) session.getAttribute("pwd");
+        ConexionEstatica.nueva();
+        Usuario n = ConexionEstatica.existeUsuario(emil, clve);
+
+        Email email = new Email();
+
+        String de = "auxiliardaw2@gmail.com";
+        String clave = "Chubaca20";
+        String para = request.getParameter("email");
+        String mensaje = "Cuerpo del mensaje";
+        String asunto = "Contraseña olvidada";
+
+        email.enviarCorreo(de, clave, para, mensaje, asunto);
+        out.println("Correo enviado");
+
+        BitacorasFichero.escribirBitacoras("El usuario " + n.getCorreo() + " ha dado a enviar nueva contraseña.");
+        ConexionEstatica.cerrarBD();
+
+        response.sendRedirect("../index.html");
     }
 %>
