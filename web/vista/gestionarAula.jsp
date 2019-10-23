@@ -39,6 +39,7 @@
         <%
             for (int i = 0; i < v.size(); i++) {
         %>
+            <form  name="tablaGestionarAula1" action="../controlador/controlador.jsp" method="POST">
             <!--hacer invisible--><input type="text" id="clave" name="aula" value="<%out.print(v.get(i).getCodAula());%>">
                     <tr>
                         <td>
@@ -54,13 +55,12 @@
                             <input type="submit" name="botAula" value="Editar">
                         </td>
                     </tr>
+            </form>
         <%
             }
         %>
                 </tbody>
             </table>
-            <input type="submit" name="cerrarSesion" value="CerrarSesion">
-            <input type="submit" name="volverAProf" value="volver">
         </form>
     </body>
 </html>

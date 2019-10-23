@@ -28,13 +28,6 @@
             ConexionEstatica.Insertar_Dato_AsignarRol("asignarRol", correo, 1);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/registrarse.jsp");
-        }else{
-            %>
-            <script>
-                alert("Error al introducir usuario");
-            </script>
-            <%
-            response.sendRedirect("../vista/registrarse.jsp");
         }
         ConexionEstatica.cerrarBD();
     }
@@ -61,14 +54,9 @@
                 response.sendRedirect("../vista/loginAdminGene.jsp");
             }
         }else{
-            %>
-                <script>
-                    alert("Error al escribir usuario y/o contraseña");
-                </script>
-            <%
+            ConexionEstatica.cerrarBD();
             response.sendRedirect("../index.html");
-        }  
-        ConexionEstatica.cerrarBD();
+        }
     }
     
     //Logins

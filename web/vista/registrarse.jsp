@@ -16,7 +16,6 @@
             $(document).ready(function () {
                 limpiar();
                 $("#sendRegistrar").click(function () {
-                $("#send").click(function () {
                     var correo = $("#correo").val();
                     var clave = $("#clave").val();
                     var reclave = $("#reclave").val();
@@ -24,14 +23,14 @@
                     var nombre = $("#nombre").val();
                     var apellido = $("#apellido").val();
                     var edad = $("#edad").val();
-                    if(correo===null || clave===null || reclave===null || nombre===null || apellido===null || edad===0){ 
+                    if(correo!==null && clave!==null && reclave!==null && nombre!==null && apellido!==null && edad!==0){ 
                         if(clave!==reclave){
                             $("#sendRegistrar").attr("disabled", true);
                             alert("Las claves no coinciden");
                         }
                     }else{
                         $("#sendRegistrar").attr("disabled", true);
-                        alert("Algún campo está a vacio");
+                        alert("Algún campo está vacío");
                     }
                 });
                 function limpiar(){

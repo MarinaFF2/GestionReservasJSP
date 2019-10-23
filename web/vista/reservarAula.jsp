@@ -18,8 +18,8 @@
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
         %>
         <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
-            <p>Fecha: <%out.print((String)session.getAttribute("fecD"));%></p>
-            <p>Aula: <%out.print((Integer)session.getAttribute("Aula"));%></p>
+            <p>Fecha: <input type="text" id="fecha" name="fecha" value="<%out.print((String)session.getAttribute("fecD"));%>" readonly="true">
+            <p>Aula: <input type="text" id="aula" name="fecha" value="<%out.print((Integer)session.getAttribute("Aula"));%>" readonly="true">
             <table name="reservaAula" >
                 <thead>
                     <tr>
@@ -50,8 +50,6 @@
         %>
                 </tbody>
             </table>
-            <input type="submit" name="cerrarSesion" value="CerrarSesion">
-            <input type="submit" name="volverAProf" value="Volver">
         </form>
     </body>
 </html>
