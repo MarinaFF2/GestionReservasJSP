@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
         <%
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
             int n = (Integer)session.getAttribute("rol");
@@ -54,7 +55,7 @@
         <% 
             }
         %>
-        <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
+        
             <table name="gestionarUsuario" >
                 <caption>LISTA USUARIOS</caption>
                 <thead>

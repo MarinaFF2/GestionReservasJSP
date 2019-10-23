@@ -21,6 +21,7 @@
         </script>-->
     </head>
     <body>
+        <form id="menuProf" action="../controlador/controlador.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -60,7 +61,6 @@
         <% 
             }
         %>
-        <form id="menuProf" action="../controlador/controlador.jsp" method="POST">
             <label>Elige la fecha</label><input type="date" id="fechaDia" name="fechaDia" value=""><br>
             <label>Elige el aula</label><select id="eligeAula" name="eligeAula">
                 <option value="" selected> </option>

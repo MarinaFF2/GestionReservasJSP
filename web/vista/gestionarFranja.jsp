@@ -22,6 +22,7 @@
         </style>
     </head>
     <body>
+        <form  name="tablaGestionarFranja" action="../controlador/controlador.jsp" method="POST">
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lFt");
                 int n = (Integer)session.getAttribute("rol");
@@ -62,7 +63,7 @@
         <% 
             }
         %>
-        <form  name="tablaGestionarFranja" action="../controlador/controlador.jsp" method="POST">
+        
             <table name="gestionarFranja" >
                 <caption>LISTA FRANJAS</caption>
                 <thead>

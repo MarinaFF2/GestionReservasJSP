@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form id="menuAdminGene" action="../controlador/controlador.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -51,7 +52,6 @@
         <% 
             }
         %>
-        <form id="menuAdminGene" action="../controlador/controlador.jsp" method="POST">
             <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br>
             <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
             <input type="submit" id="gestionarUsuario" name="gestionarUsuario" value="Gestionar Usuarios"><br>

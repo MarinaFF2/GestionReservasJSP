@@ -23,6 +23,7 @@
         </style>
     </head>
     <body>
+        <form  name="tablaGestionarAula" action="../controlador/controlador.jsp" method="POST">
         <%
             LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
             int n = (Integer)session.getAttribute("rol");
@@ -63,7 +64,6 @@
         <% 
             }
         %>
-        <form  name="tablaGestionarAula" action="../controlador/controlador.jsp" method="POST">
             <table name="gestionarAula" >
                 <caption>LISTA AULAS</caption>
                 <thead>

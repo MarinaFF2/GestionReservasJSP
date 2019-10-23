@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
             int n = (Integer)session.getAttribute("rol");
@@ -54,7 +55,7 @@
         <% 
             }
         %>
-        <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
+        
             <p>Fecha: <input type="text" id="fecha" name="fecha" value="<%out.print((String)session.getAttribute("fecD"));%>" readonly="true">
             <p>Aula: <input type="text" id="aula" name="fecha" value="<%out.print((Integer)session.getAttribute("Aula"));%>" readonly="true">
             <table name="reservaAula" >

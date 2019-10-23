@@ -47,10 +47,10 @@
                 response.sendRedirect("../vista/prof.jsp");
             }
             if(n==2){  //ADMINISTRADOR DE AULA
-                response.sendRedirect("../vista/MenuAdminAul.jsp");
+                response.sendRedirect("../vista/menuAdminAula.jsp");
             }
             if(n==3){  //ADMINISTRADOR GENERAL
-                response.sendRedirect("../vista/MenuAdminGene.jsp");
+                response.sendRedirect("../vista/menuAdminGene.jsp");
             }
         }else{
             ConexionEstatica.cerrarBD();
