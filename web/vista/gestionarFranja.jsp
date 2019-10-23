@@ -24,13 +24,13 @@
     <body>
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lFt");
-            int n = (Integer)session.getAttribute("rol");
+                int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
             <nav id="menuLoginAdminGene">
                 <ul>
-                    <li>Administrador General</li>
-                    <li>Profesor</li>
+                    <li><a href="menuAdminGene.jsp">Administrador General</a></li>
+                    <li><a href=prof.jsp">Profesor</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -41,8 +41,8 @@
         %>
             <nav id="menuLoginAdminAula">
                 <ul>
-                    <li>Administrador Aula</li>
-                    <li>Profesor</li>
+                    <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
+                    <li><a href=prof.jsp">Profesor</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -53,7 +53,7 @@
         %>
             <nav id="prof">
                 <ul>
-                    <li>Profesor</li>
+                    <li><a href=prof.jsp">Profesor</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
