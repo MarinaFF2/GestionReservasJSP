@@ -16,6 +16,43 @@
     <body>
         <%
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
+            int n = (Integer)session.getAttribute("rol");
+            if(n==3){
+        %>
+            <nav id="menuLoginAdminGene">
+                <ul>
+                    <li>Administrador General</li>
+                    <li>Profesor</li>
+                    <li>
+                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                    </li>
+                </ul>
+            </nav>
+        <%  
+            }else if(n==2){
+        %>
+            <nav id="menuLoginAdminAula">
+                <ul>
+                    <li>Administrador Aula</li>
+                    <li>Profesor</li>
+                    <li>
+                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                    </li>
+                </ul>
+            </nav>
+        <% 
+            }else{
+        %>
+            <nav id="prof">
+                <ul>
+                    <li>Profesor</li>
+                    <li>
+                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                    </li>
+                </ul>
+            </nav>
+        <% 
+            }
         %>
         <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
             <table name="gestionarUsuario" >

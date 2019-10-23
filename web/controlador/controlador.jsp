@@ -42,6 +42,7 @@
             session.setAttribute("usu", usu);
             BitacorasFichero.escribirBitacoras("El usuario " + u.getCorreo() + " ha inicado session en el sistema");
             int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
+            session.setAttribute("rol", n);
             if(n==1){  //PROFESOR
                 response.sendRedirect("../vista/prof.jsp");
             }
