@@ -11,23 +11,21 @@
         <title>I.E.S.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/usuario/css_index.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/usuario/css_index.css" media="screen" />
         <script src="jquery-3.4.1.min.js"></script>
     </head>
     <body>
         <%
             //out.println(session.getId() + " " + session.getMaxInactiveInterval() + "<br>"); 
-        %>
-        <header>
-            <h1>Iniciar Sesión</h1>
-        </header>
+        %>    
         <main>
+            <h1 id="cabe">Iniciar Sesión</h1>
             <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
-                <label>Usuario</label><input type="text" id="usuario" name="usuario" value=""><br>
-                <label>Contraseña</label><input type="password" id="pwd" name="pwd" value=""><br>
-                <a href="vista/usuario/registrarse.jsp">Registrarse</a>
-                <a href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
-                <input type="submit" id="aceptarIndex" name="aceptarIndex" value="Aceptar">
+                <p id="usu">Usuario</p><input type="text" id="usuario" name="usuario" value="" placeholder="usuario@x.x"><br>
+                <p id="con">Contraseña</p><input type="password" id="pwd" name="pwd" value="" placeholder="Contraseña"cer><br>
+                <a id="regis"href="vista/usuario/registrarse.jsp">Registrarse</a>
+                <a id="olvidar" href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
+                <input type="submit" id="aceptar" name="aceptarIndex" value="Aceptar">
             </form>
             <!--<form id="insertarFranjas" action="controlador/controladorInsertarFranjas.jsp" method="POST">
                 <input type="submit" id="insertarFranja" name="insertarFranja" value="Insertar">

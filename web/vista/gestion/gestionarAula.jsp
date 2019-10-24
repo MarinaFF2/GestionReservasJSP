@@ -24,6 +24,7 @@
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
+        <header>
             <nav id="menuLoginAdminGene">
                 <ul>
                     <li><a href="../menu/menuAdminAula.jsp">Administrador General</a></li>
@@ -34,31 +35,36 @@
                     </li>
                 </ul>
             </nav>
+        </header>
         <%  
             }else if(n==2){
         %>
-            <nav id="menuLoginAdminAula">
-                <ul>
-                    <li><a href="../menu/menuAdminGene.jsp">Administrador Aula</a></li>
-                    <li><a href="../menu/prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
+            <header>
+                <nav id="menuLoginAdminAula">
+                    <ul>
+                        <li><a href="../menu/menuAdminGene.jsp">Administrador Aula</a></li>
+                        <li><a href="../menu/prof.jsp">Profesor</a></li>
+                        <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         <% 
             }else{
         %>
-            <nav id="prof">
-                <ul>
-                    <li><a href="../menu/prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
+            <header>
+                <nav id="prof">
+                    <ul>
+                        <li><a href="../menu/prof.jsp">Profesor</a></li>
+                        <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         <% 
             }
         %>

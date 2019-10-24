@@ -16,20 +16,24 @@
     </head>
     <body>
         <form id="menuAdminGene" action="../../controlador/controladorGeneral.jsp" method="POST">
-            <nav id="menuLoginAdminGene">
-                <ul>
-                    <li><a href="menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
-            <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br> 
-            <input type="submit" id="gestionarRol" name="gestionarRol" value="Gestionar Rol"><br> 
-            <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
-            <input type="submit" id="gestionarUsuario" name="gestionarUsuario" value="Gestionar Usuarios"><br>
+            <header>
+                <nav id="menuLoginAdminGene">
+                    <ul>
+                        <li><a href="menuAdminGene.jsp">Administrador General</a></li>
+                        <li><a href="prof.jsp">Profesor</a></li>
+                        <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <input type="submit" id="gestionarAula" name="gestionarAula" value="Gestionar Aula"><br> 
+                <input type="submit" id="gestionarRol" name="gestionarRol" value="Gestionar Rol"><br> 
+                <input type="submit" id="gestionarFranja" name="gestionarFranja" value="Gestionar Franja Horaria"><br>
+                <input type="submit" id="gestionarUsuario" name="gestionarUsuario" value="Gestionar Usuarios"><br>
+            </main>
         </form>
     </body>
 </html>

@@ -11,6 +11,7 @@
 /*Movil site vertical 480x320*/
 @media (min-width:320px) and (orientation:portrait){
     
+   
 }
 
 /*Tablet Apps horizontal 768x1024*/
@@ -25,5 +26,62 @@
 
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
-    
+    main{
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4"
+            "h5"
+            "h6";
+        margin-top: 100px;
+        margin-left:300px;
+    }
+    p, h1{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    a{
+        margin: 10px 0px 10px 40px;
+    }
+    main{
+        border: 1px black solid;
+        max-width:450px; 
+        padding: 10px;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 350px;
+        text-align: center;
+    }
+    #cabe{
+        grid-areas:h0;
+    }
+    #usu{
+        grid-areas:h1;
+    }
+    #usuario{
+        grid-areas:h2;
+    }
+    #con{
+        grid-areas:h3;
+    }
+    #pwd{
+        grid-areas:h4;
+    }
+    #regis{
+        grid-areas:h5;
+    }
+    #olvidar{
+        grid-areas:h5;
+    }
+    #aceptar{
+        grid-areas:h6;
+        margin:10px 0px 10px 200px;
+    }
 }

@@ -10,14 +10,10 @@ nav#menuLoginAdminAula  li {
 nav#menuLoginAdminAula li a{
     background-color: dimgrey;
     color:white;
-
     text-decoration: none;
     list-style-type: none;
-
     display: block;
-
     margin: 0px;
-
     height: 1.5em;
     box-sizing: border-box;
 }
@@ -31,23 +27,6 @@ nav#menuLoginAdminAula ul li a:hover{
 }
 
 
-/* 1 nivel*/
-nav#menuLoginAdminAula {
-    padding-left: 110px;
-    height: 150px;
-}
-nav#menuLoginAdminAula  li a{
-    text-align: center;
-    list-style-type: none;
-}
-nav#menuLoginAdminAula > ul{
-    /**margin-left: 10px;**/
-}
-nav#menuLoginAdminAula  > ul > li{
-    display: inline-block;
-    /*margin: 5px 2px 0px;*/
-}
-
 
 nav#prof  li {
     position: relative;
@@ -56,14 +35,10 @@ nav#prof  li {
 nav#prof li a{
     background-color: dimgrey;
     color:white;
-
     text-decoration: none;
     list-style-type: none;
-
     display: block;
-
     margin: 0px;
-
     height: 1.5em;
     box-sizing: border-box;
 }
@@ -77,24 +52,6 @@ nav#prof ul li a:hover{
 }
 
 
-/* 1 nivel*/
-nav#prof {
-    padding-left: 110px;
-    height: 150px;
-}
-nav#prof  li a{
-    text-align: center;
-    list-style-type: none;
-}
-nav#prof > ul{
-    /**margin-left: 10px;**/
-}
-nav#prof  > ul > li{
-    display: inline-block;
-    /*margin: 5px 2px 0px;*/
-}
-
-
 nav#menuLoginAdminGene  li {
     position: relative;
     width: 200px;
@@ -102,14 +59,10 @@ nav#menuLoginAdminGene  li {
 nav#menuLoginAdminGene li a{
     background-color: dimgrey;
     color:white;
-
     text-decoration: none;
     list-style-type: none;
-
     display: block;
-
     margin: 0px;
-
     height: 1.5em;
     box-sizing: border-box;
 }
@@ -123,18 +76,7 @@ nav#menuLoginAdminGene ul li a:hover{
 }
 
 
-/* 1 nivel*/
-nav#menuLoginAdminGene {
-    padding-left: 110px;
-    height: 150px;
-}
-nav#menuLoginAdminGene  li a{
-    text-align: center;
-    list-style-type: none;
-}
-nav#menuLoginAdminGene > ul{
-    /**margin-left: 10px;**/
-}
+
 nav#menuLoginAdminGene  > ul > li{
     display: inline-block;
     /*margin: 5px 2px 0px;*/
@@ -148,7 +90,6 @@ nav#menuLoginAdminGene  > ul > li{
 @media (min-width:320px) and (orientation:portrait){
 
 }
-
 /*Tablet Apps horizontal 768x1024*/
 @media (min-width:1024px) and (orientation:landscape){
 
@@ -157,9 +98,52 @@ nav#menuLoginAdminGene  > ul > li{
 @media (min-width:768px) and (orientation:portrait){
 
 }
-
-
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
+    /* 1 nivel*/
+    nav#menuLoginAdminGene {
+        padding-left: 110px;
+        height: 150px;
+    }
+    nav#menuLoginAdminGene  li a{
+        text-align: center;
+        list-style-type: none;
+    }
+    nav#menuLoginAdminGene > ul{
+        /**margin-left: 10px;**/
+    }
 
+    /* 1 nivel*/
+    nav#prof {
+        padding-left: 110px;
+        height: 150px;
+    }
+    nav#prof  li a{
+        text-align: center;
+        list-style-type: none;
+    }
+    nav#prof > ul{
+        /**margin-left: 10px;**/
+    }
+    nav#prof  > ul > li{
+        display: inline-block;
+        /*margin: 5px 2px 0px;*/
+    }
+
+    /* 1 nivel*/
+    nav#menuLoginAdminAula {
+        padding-left: 110px;
+        height: 150px;
+    }
+    nav#menuLoginAdminAula  li a{
+        text-align: center;
+        list-style-type: none;
+    }
+    nav#menuLoginAdminAula > ul{
+        /**margin-left: 10px;**/
+    }
+    nav#menuLoginAdminAula  > ul > li{
+        display: inline-block;
+        /*margin: 5px 2px 0px;*/
+    }
 }
