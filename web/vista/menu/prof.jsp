@@ -72,9 +72,6 @@
                 <option value="302">302</option>
                 <option value="303">303</option>
             </select><br>
-            <!--<div id="destino">
-                
-            </div>-->
             <input type="submit" id="verReservaAula" name="verReservaAula" value="verCuadrante"><br>
         </form>
     </body>

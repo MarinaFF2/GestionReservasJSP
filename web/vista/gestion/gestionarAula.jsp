@@ -16,14 +16,6 @@
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/css_gestionarAula.css" media="screen" />
         
-        <style>
-            #clave{
-                visibility: hidden;
-                width: 0px;
-                margin: 0px;
-                padding: 0px;
-            }
-        </style>
     </head>
     <body>
         <form  name="tablaGestionarAula" action="../controlador/controladorGestion.jsp" method="POST">

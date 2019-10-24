@@ -84,18 +84,11 @@
     }
     
     
-    
-    //cerrar sesion
-    if(request.getParameter("cerrarSesion")!=null){
-        String n = (String) session.getAttribute("usu");
-        BitacorasFichero.escribirBitacoras("El usuario " + n + " ha acerrado sesion y se le redirige al index.");
-        session.invalidate();
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../index.jsp");
+    if(request.getParameter("gestionarContrasenia")!=null){
+        
     }
-    //botones de volver
-    if(request.getParameter("volverAIndex")!=null){
-        response.sendRedirect("../index.jsp");
+    if(request.getParameter("gestionarFoto")!=null){
+        
     }
     
     // he olvidado la contraseña
@@ -120,5 +113,17 @@
         ConexionEstatica.cerrarBD();
 
         response.sendRedirect("../index.html");
+    }
+    //cerrar sesion
+    if(request.getParameter("cerrarSesion")!=null){
+        String n = (String) session.getAttribute("usu");
+        BitacorasFichero.escribirBitacoras("El usuario " + n + " ha acerrado sesion y se le redirige al index.");
+        session.invalidate();
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../index.jsp");
+    }
+    //botones de volver
+    if(request.getParameter("volverAIndex")!=null){
+        response.sendRedirect("../index.jsp");
     }
 %>
