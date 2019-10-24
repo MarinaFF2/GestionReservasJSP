@@ -15,7 +15,7 @@
         <script src="../../jquery-3.4.1.min.js"></script>
     </head>
     <body>
-       <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
             Correo:*<br>
             <input type="email" id="correo" name="correo" placeholder="Correo" value=""><br>
             Contraseña:*<br>
@@ -28,7 +28,9 @@
             <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="" pattern="[A-Za-z]{1,50}"><br>
             Edad:*<br>
             <input type="number" id="edad" name="edad" placeholder="Edad" value=""><br>
+            Foto: <input type="file" name="fichero"/></br> 
             <input type="submit" id="sendRegistrar" name="sendRegistrar" value="Enviar"><br>
+            <input type="button" id="limpiar" value="Limpiar"><br>
             <input type="submit" id="volverAIndex" name="volverAIndex" value="Volver al login"><br>
         </form>
     </body>

@@ -108,6 +108,10 @@ public class ConexionEstatica {
         String Sentencia = "UPDATE " + tabla + " SET nombre = '" + Nuevo_nombre + "', apellido = '" + Nuevo_apellido + "', edad = '" + Nuevo_edad + "' WHERE correo = '" + correo + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
+    public static void Modificar_Dato_Usuario( String correo, String Nuevo_correo, String Nuevo_clave, String Nuevo_nombre, String Nuevo_apellido, String Nuevo_foto,int Nuevo_edad) throws SQLException {
+        String Sentencia = "UPDATE usuario SET  foto = '" + Nuevo_foto + "', clave = '" + Nuevo_clave + "', nombre = '" + Nuevo_nombre + "', apellido = '" + Nuevo_apellido + "', edad = '" + Nuevo_edad + "',correo = '" + Nuevo_correo + "' WHERE correo = '" + correo + "'";
+        ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
+    }
     public static void Modificar_Dato_Clave(String tabla, String correo, String Nuevo_clave) throws SQLException {
         String Sentencia = "UPDATE " + tabla + " SET clave = '" + Nuevo_clave + "' WHERE correo = '" + correo + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);

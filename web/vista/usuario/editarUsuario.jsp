@@ -18,7 +18,7 @@
     <body>
         <form action="../../controlador/controladorGeneral.jsp">
         <%
-            //Usuario u = (Usuario) session.getAttribute("usu");
+            
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
@@ -59,15 +59,26 @@
             </nav>
         <% 
             }
+            Usuario u = (Usuario) session.getAttribute("usu");
         %>
-        
+        <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
+            <div id="imgPerfil">
+                <img id="fotoPerfil" src="<%u.getFoto();%>"/>
+            </div>
             <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
+            Correo:*<br>
+            <input type="email" id="correo" name="correo" placeholder="Correo" value="<%u.getCorreo();%>"><br>
             Contraseña:*<br>
-            <input type="password" id="clave" name="clave" placeholder="Contaseña" value=""><br>
-            Confirmar contraseña:*<br>
-            <input type="password" id="clave" name="clave" placeholder="Confirmar contaseña" value=""><br>
-            <input type="submit" id="gestionarContrasenia" name="gestionarContrasenia" value="Cambiar Contrasenia"><br> 
-            
+            <input type="password" id="clave" name="clave" placeholder="Contaseña" value="<%u.getClave();%>"><br>
+            Nombre:*<br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%u.getNombre();%>" pattern="[A-Za-z]{1,50}"><br>
+            Apellidos:*<br>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%u.getApellido();%>" pattern="[A-Za-z]{1,50}"><br>
+            Edad:*<br>
+            <input type="number" id="edad" name="edad" placeholder="Edad" value="<%u.getEdad();%>"><br>
+        
+            <input type="submit" id="editarUsuario" name="editarUsuario" value="Guardar"><br> 
+        </form>
         </form>
     </body>
 </html>

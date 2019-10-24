@@ -21,7 +21,7 @@
         <form  name="tablaGestionarAula" action="../controlador/controladorGestion.jsp" method="POST">
         <%
             LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
-                int n = (Integer)session.getAttribute("rol");
+            int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
             <nav id="menuLoginAdminGene">

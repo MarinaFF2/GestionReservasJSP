@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>I.E.S.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/usuario/css_index.css" media="screen" />
@@ -18,15 +18,20 @@
         <%
             //out.println(session.getId() + " " + session.getMaxInactiveInterval() + "<br>"); 
         %>
-        <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
-            <label>Usuario</label><input type="text" id="usuario" name="usuario" value=""><br>
-            <label>Contraseña</label><input type="password" id="pwd" name="pwd" value=""><br>
-            <a href="vista/usuario/registrarse.jsp">Registrarse</a>
-            <a href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
-            <input type="submit" id="aceptarIndex" name="aceptarIndex" value="Aceptar">
-        </form>
-        <!--<form id="insertarFranjas" action="controlador/controladorInsertarFranjas.jsp" method="POST">
-            <input type="submit" id="insertarFranja" name="insertarFranja" value="Insertar">
-        </form>-->
+        <header>
+            <h1>Iniciar Sesión</h1>
+        </header>
+        <main>
+            <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
+                <label>Usuario</label><input type="text" id="usuario" name="usuario" value=""><br>
+                <label>Contraseña</label><input type="password" id="pwd" name="pwd" value=""><br>
+                <a href="vista/usuario/registrarse.jsp">Registrarse</a>
+                <a href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
+                <input type="submit" id="aceptarIndex" name="aceptarIndex" value="Aceptar">
+            </form>
+            <!--<form id="insertarFranjas" action="controlador/controladorInsertarFranjas.jsp" method="POST">
+                <input type="submit" id="insertarFranja" name="insertarFranja" value="Insertar">
+            </form>-->
+        </main>
     </body>
 </html>
