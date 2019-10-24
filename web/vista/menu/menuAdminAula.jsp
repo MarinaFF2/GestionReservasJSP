@@ -35,9 +35,9 @@
         %>
             <nav id="menuLoginAdminAula">
                 <ul>
-                    <li><a href=".../../vista/menu/menuAdminGene.jsp">Administrador Aula</a></li>
-                    <li><a href=".../../vista/menu/prof.jsp">Profesor</a></li>
-                    <li><a href=".../../vista/menu/editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="menuAdminGene.jsp">Administrador Aula</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -48,8 +48,8 @@
         %>
             <nav id="prof">
                 <ul>
-                    <li><a href=".../../vista/menu/prof.jsp">Profesor</a></li>
-                    <li><a href=".../../vista/menu/editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
