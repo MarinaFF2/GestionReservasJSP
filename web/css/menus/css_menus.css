@@ -21,13 +21,6 @@ nav#menuLoginAdminAula li a{
     height: 1.5em;
     box-sizing: border-box;
 }
-nav#menuLoginAdminAula li span.flecha{
-    color: white;
-
-    position: absolute;
-    right: 10px;
-    top: 0px;
-}
 nav#menuLoginAdminAula li a:hover{
     color: black;
     background-color:red;
@@ -35,9 +28,6 @@ nav#menuLoginAdminAula li a:hover{
 nav#menuLoginAdminAula ul li a:hover{
     color: black;
     background-color:red;
-}
-nav#menuLoginAdminAula li a,nav#menuLoginAdminAula li a:hover{
-    transition: all 500ms 100ms ease-in;
 }
 
 
@@ -77,13 +67,6 @@ nav#prof li a{
     height: 1.5em;
     box-sizing: border-box;
 }
-nav#prof li span.flecha{
-    color: white;
-
-    position: absolute;
-    right: 10px;
-    top: 0px;
-}
 nav#prof li a:hover{
     color: black;
     background-color:red;
@@ -91,9 +74,6 @@ nav#prof li a:hover{
 nav#prof ul li a:hover{
     color: black;
     background-color:red;
-}
-nav#prof li a,nav#prof li a:hover{
-    transition: all 500ms 100ms ease-in;
 }
 
 
@@ -133,13 +113,6 @@ nav#menuLoginAdminGene li a{
     height: 1.5em;
     box-sizing: border-box;
 }
-nav#menuLoginAdminGene li span.flecha{
-    color: white;
-
-    position: absolute;
-    right: 10px;
-    top: 0px;
-}
 nav#menuLoginAdminGene li a:hover{
     color: black;
     background-color:red;
@@ -147,9 +120,6 @@ nav#menuLoginAdminGene li a:hover{
 nav#menuLoginAdminGene ul li a:hover{
     color: black;
     background-color:red;
-}
-nav#menuLoginAdminGene li a,nav#menuLoginAdminGene li a:hover{
-    transition: all 500ms 100ms ease-in;
 }
 
 

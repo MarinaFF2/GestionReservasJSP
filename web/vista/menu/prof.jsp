@@ -11,19 +11,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../css/css_prof.css" media="screen" />
-        <!--<script src="jquery-3.4.1.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#eligeAula").click(function () {
-                    $("#destino").append("<h3>Fecha</h3>");
-                });
-            });
-        </script>-->
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_prof.css" media="screen" />
+        
     </head>
     <body>
-        <form id="menuProf" action="../controlador/controlador.jsp" method="POST">
+        <form id="menuProf" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -32,7 +25,7 @@
                 <ul>
                     <li><a href="menuAdminGene.jsp">Administrador General</a></li>
                     <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -45,7 +38,7 @@
                 <ul>
                     <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
                     <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -57,7 +50,7 @@
             <nav id="prof">
                 <ul>
                     <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>

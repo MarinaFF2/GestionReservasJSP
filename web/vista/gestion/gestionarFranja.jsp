@@ -1,11 +1,11 @@
 <%-- 
-    Document   : gestionarAula
-    Created on : 18-oct-2019, 12:42:31
+    Document   : gestionarFranja
+    Created on : 18-oct-2019, 12:43:11
     Author     : daw207
 --%>
 
 <%@page import="java.util.LinkedList"%>
-<%@page import="clase.Aula"%>
+<%@page import="clase.FranjaHoraria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,9 +13,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../css/css_gestionarAula.css" media="screen" />
-        
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/css_gestionarFranja.css" media="screen" />
         <style>
             #clave{
                 visibility: hidden;
@@ -26,17 +25,17 @@
         </style>
     </head>
     <body>
-        <form  name="tablaGestionarAula" action="../controlador/controlador.jsp" method="POST">
+        <form  name="tablaGestionarFranja" action="../controlador/controladorGestion.jsp" method="POST">
         <%
-            LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
-                int n = (Integer)session.getAttribute("rol");
+            LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lFt");
+            int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
             <nav id="menuLoginAdminGene">
                 <ul>
-                    <li><a href="menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/menuAdminGene.jsp">Administrador General</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -47,9 +46,9 @@
         %>
             <nav id="menuLoginAdminAula">
                 <ul>
-                    <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/menuAdminAula.jsp">Administrador Aula</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -60,8 +59,8 @@
         %>
             <nav id="prof">
                 <ul>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -70,35 +69,35 @@
         <% 
             }
         %>
-            <table name="gestionarAula" >
-                <caption>LISTA AULAS</caption>
+        
+            <table name="gestionarFranja" >
+                <caption>LISTA FRANJAS</caption>
                 <thead>
                     <tr>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
+                        <th>NUMERO</th>
+                        <th>EMPIEZA</th>
+                        <th>TERMINA</th>
                     </tr>
                 </thead>
                 <tbody>
         <%
             for (int i = 0; i < v.size(); i++) {
         %>
-            <form  name="tablaGestionarAula1" action="../controlador/controlador.jsp" method="POST">
-            <!--hacer invisible--><input type="text" id="clave" name="aula" value="<%out.print(v.get(i).getCodAula());%>">
+                <!--hacer invisible--><input type="text" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
                     <tr>
                         <td>
-                            <input type="text" name="codAula" value="<%out.print(v.get(i).getCodAula());%>">
+                           <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">
                         </td>   
                         <td>
-                            <input type="text" name="descripcionAula" value="<%out.print(v.get(i).getDescripcion());%>">
-                        </td>    
-                        <td>
-                            <input type="submit" name="botAula" value="X">
+                           <input type="text" name="iniHora" value="<%out.print(v.get(i).getInicioHora());%>">
                         </td>
                         <td>
-                            <input type="submit" name="botAula" value="Editar">
+                            <input type="text" name="finHora" value="<%out.print(v.get(i).getFinHora());%>">
+                        </td>
+                        <td>
+                            <input type="submit" name="botFranja" value="Editar">
                         </td>
                     </tr>
-            </form>
         <%
             }
         %>

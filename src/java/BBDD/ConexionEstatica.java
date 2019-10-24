@@ -131,7 +131,7 @@ public class ConexionEstatica {
         LinkedList v = new LinkedList<>();
         Usuario u = null;
         try {
-            String Sentencia = "SELECT usuario.correo, rol.codRol FROM rol,asignarRol,usuario WHERE rol.codRol = asignarRol.codRol and asignarRol.codProfesor = "+tabla+".correo and "+tabla+".correo = '" + correo + "'";
+            String Sentencia = "SELECT usuario.correo, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = "+tabla+".correo and "+tabla+".correo = '" + correo + "'";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(Sentencia);
             while (Conj_Registros.next()) {
                 u = new Usuario(Conj_Registros.getString("usuario.correo"),Conj_Registros.getInt("rol.codRol"));
@@ -143,18 +143,18 @@ public class ConexionEstatica {
     }
     //----------------------------------------------------------
     public static void Modificar_Dato_IdAsignarRol(String tabla, String correo, int Nuevo_idAsignarRol) throws SQLException {
-        String Sentencia = "UPDATE " + tabla + ",asignarRol SET asignarRol.codRol = '" + Nuevo_idAsignarRol + "' WHERE correo = '" + correo + "'";
+        String Sentencia = "UPDATE " + tabla + ",asignarrol SET asignarrol.codRol = '" + Nuevo_idAsignarRol + "' WHERE correo = '" + correo + "'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     //----------------------------------------------------------
     public static void Insertar_Dato_AsignarRol(String correo,int idAsignarRol) throws SQLException {
-       String Sentencia = "INSERT INTO asignarRol VALUES (0,'"+idAsignarRol+"','"+ correo +"')";
+       String Sentencia = "INSERT INTO asignarrol VALUES (0,'"+idAsignarRol+"','"+ correo +"')";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     public static int Conseguir_Rol(String tabla, String correo) throws SQLException {
         int rol=1;
         try {
-            String Sentencia = "SELECT rol.codRol FROM rol,asignarRol,usuario WHERE rol.codRol = asignarRol.codRol and asignarRol.codProfesor = "+tabla+".correo and "+tabla+".correo = '" + correo + "'";
+            String Sentencia = "SELECT rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = "+tabla+".correo and "+tabla+".correo = '" + correo + "'";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(Sentencia);
             while (Conj_Registros.next()) {
                 rol= Conj_Registros.getInt("rol.codRol");

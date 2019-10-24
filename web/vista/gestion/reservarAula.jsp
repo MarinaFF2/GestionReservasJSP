@@ -13,10 +13,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/css_reservarAula.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/gestion/css_reservarAula.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaReservarAulas" action="../controlador/controlador.jsp" method="POST">
+        <form  name="tablaReservarAulas" action="../../controlador/controladorGestion.jsp" method="POST">
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
             int n = (Integer)session.getAttribute("rol");
@@ -24,9 +25,9 @@
         %>
             <nav id="menuLoginAdminGene">
                 <ul>
-                    <li><a href="menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/menuAdminGene.jsp">Administrador General</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -37,9 +38,9 @@
         %>
             <nav id="menuLoginAdminAula">
                 <ul>
-                    <li><a href="menuAdminAula.jsp">Administrador Aula</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/menuAdminAula.jsp">Administrador Aula</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
@@ -50,8 +51,8 @@
         %>
             <nav id="prof">
                 <ul>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>

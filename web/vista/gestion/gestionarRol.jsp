@@ -1,6 +1,6 @@
 <%-- 
-    Document   : gestionarUsuario
-    Created on : 18-oct-2019, 12:43:56
+    Document   : gestionarRol
+    Created on : 23-oct-2019, 13:03:36
     Author     : daw207
 --%>
 
@@ -12,31 +12,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../css/css_gestionarUsu.css" media="screen" />
+        <meta name="viewport" content"="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href=../../css/css_gestionarRol.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaGestionarUsuario" action="../controlador/controlador.jsp" method="POST">
         <%
-            LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
+            LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lR");
         %>
+        <form  name="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
             <nav id="menuLoginAdminGene">
                 <ul>
-                    <li><a href="menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="prof.jsp">Profesor</a></li>
-                    <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                    <li><a href="../menu/menuAdminGene.jsp">Administrador General</a></li>
+                    <li><a href="../menu/prof.jsp">Profesor</a></li>
+                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
                     <li>
                         <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                     </li>
                 </ul>
             </nav>
-            <table name="gestionarUsuario" >
+            <table name="gestionarRol" >
                 <caption>LISTA USUARIOS</caption>
                 <thead>
                     <tr>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,15 +50,7 @@
                         <td>
                             <input type="text" name="nombre" value="<%out.print(v.get(i).getNombre());%>">
                         </td>   
-                        <td>
-                            <input type="text" name="apellido" value="<%out.print(v.get(i).getApellido());%>">
-                        </td>
-                        <td>
-                            <input type="number" name="edad" value="<%out.print(v.get(i).getEdad());%>">
-                        </td>
-                        <td>
-                            <input type="submit" name="botUsuario" value="X">
-                        </td>
+                        
                         <td>
                             <input type="submit" name="botUsuario" value="Editar">
                         </td>
