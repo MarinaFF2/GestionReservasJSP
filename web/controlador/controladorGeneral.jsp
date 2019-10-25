@@ -47,26 +47,14 @@
             int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
             session.setAttribute("rol", n);
             if(n==1){  //PROFESOR
-                if(ConexionEstatica.obtenerAulasReservadas(usu)!=null){
-                    LinkedList lr = ConexionEstatica.obtenerAulasReservadas(usu);
-                    session.setAttribute("lr", lr);
-                }
                 ConexionEstatica.cerrarBD();
                 response.sendRedirect("../vista/menu/prof.jsp");
             }
             if(n==2){  //ADMINISTRADOR DE AULA
-                if(ConexionEstatica.obtenerAulasReservadas(usu)!=null){
-                    LinkedList lr = ConexionEstatica.obtenerAulasReservadas(usu);
-                    session.setAttribute("lr", lr);
-                }
                 ConexionEstatica.cerrarBD();
                 response.sendRedirect("../vista/menu/menuAdminAula.jsp");
             }
             if(n==3){  //ADMINISTRADOR GENERAL
-                if(ConexionEstatica.obtenerAulasReservadas(usu)!=null){
-                    LinkedList lr = ConexionEstatica.obtenerAulasReservadas(usu);
-                    session.setAttribute("lr", lr);
-                }
                 ConexionEstatica.cerrarBD();
                 response.sendRedirect("../vista/menu/menuAdminGene.jsp");
             }
@@ -75,51 +63,6 @@
             response.sendRedirect("../index.jsp");
         }
     }
-    
-    //Menus de gestionar
-    if(request.getParameter("gestionarAula")!=null){
-        ConexionEstatica.nueva();
-        LinkedList lA = ConexionEstatica.obtenerAulas();
-        session.setAttribute("lA", lA);
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../vista/gestion/gestionarAula.jsp");
-    }
-    if(request.getParameter("gestionarFranja")!=null){
-        ConexionEstatica.nueva();
-        LinkedList lFt = ConexionEstatica.obtenerFranjaDeterminada();
-        session.setAttribute("lFt", lFt);
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../vista/gestion/gestionarFranja.jsp");
-    }
-    if(request.getParameter("gestionarUsuario")!=null){
-        ConexionEstatica.nueva();
-        LinkedList lU = ConexionEstatica.obtenerUsuarios();
-        session.setAttribute("lU", lU);
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../vista/gestion/gestionarUsuario.jsp");
-    }
-    
-    /* para el menu de cabecera
-    if(){
-        String usu = (String) session.getAttribute("usu");
-        int n = (Integer)session.getAttribute("rol");
-        if(n==1){  //PROFESOR
-            if(ConexionEstatica.obtenerAulasReservadas(usu)!=null){
-                LinkedList lr = ConexionEstatica.obtenerAulasReservadas(usu);
-                session.setAttribute("lr", lr);
-            }
-            ConexionEstatica.cerrarBD();
-            response.sendRedirect("../vista/menu/prof.jsp");
-        }
-        if(n==2){  //ADMINISTRADOR DE AULA
-            ConexionEstatica.cerrarBD();
-            response.sendRedirect("../vista/menu/menuAdminAula.jsp");
-        }
-        if(n==3){  //ADMINISTRADOR GENERAL
-            ConexionEstatica.cerrarBD();
-            response.sendRedirect("../vista/menu/menuAdminGene.jsp");
-        }
-    }*/
     
     //editar usuario
     if(request.getParameter("editarUsuario")!=null){

@@ -4,6 +4,7 @@
     Author     : daw207
 --%>
 
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,20 +18,37 @@
         <link rel="stylesheet" type="text/css" href="../../css/css_gestionarUsu.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
-            LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
+            ConexionEstatica.nueva();
+            LinkedList <Usuario> v = ConexionEstatica.obtenerUsuarios();
+            ConexionEstatica.cerrarBD();
         %>
-            <nav id="menuLoginAdminGene">
-                <ul>
-                    <li><a href="../menu/menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="../menu/prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
+        <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
+            <header>
+                <nav id="menuLoginAdminGene">
+                    <ul>
+                        <li>Administrador General
+                            <ul>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
+                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                            </ul>
+                        </li>
+                        <li>Profesor
+                            <ul>
+                                <li><a href="prof.jsp">Reservar Aula</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                        </li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </form>
         <table name="gestionarUsuario" >
             <caption>LISTA USUARIOS</caption>

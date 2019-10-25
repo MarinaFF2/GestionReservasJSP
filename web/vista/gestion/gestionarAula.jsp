@@ -4,6 +4,7 @@
     Author     : daw207
 --%>
 
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="clase.Aula"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,32 +21,57 @@
     <body>
         
         <%
-            LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
+            ConexionEstatica.nueva();
+            LinkedList <Aula> v = ConexionEstatica.obtenerAulas();
+            ConexionEstatica.cerrarBD();
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
-        <form  name="tablaGestionarAula" action="../controlador/controladorGestion.jsp" method="POST">
-        <header>
-            <nav id="menuLoginAdminGene">
-                <ul>
-                    <li><a href="../menu/menuAdminAula.jsp">Administrador General</a></li>
-                    <li><a href="../menu/prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
-        </header>
+            <header>
+                <nav id="menuLoginAdminGene">
+                    <ul>
+                        <li>Administrador General
+                            <ul>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
+                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                            </ul>
+                        </li>
+                        <li>Profesor
+                            <ul>
+                                <li><a href="prof.jsp">Reservar Aula</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                        </li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         <%  
             }else if(n==2){
         %>
             <header>
                 <nav id="menuLoginAdminAula">
                     <ul>
-                        <li><a href="../menu/menuAdminGene.jsp">Administrador Aula</a></li>
-                        <li><a href="../menu/prof.jsp">Profesor</a></li>
-                        <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        <li>Administrador Aula
+                            <ul>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                            </ul>
+                        </li>
+                        <li>Profesor
+                            <ul>
+                                <li><a href="prof.jsp">Reservar Aula</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                        </li>
                         <li>
                             <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                         </li>
@@ -54,12 +80,18 @@
             </header>
         <% 
             }else{
-        %>
+        %>  
             <header>
                 <nav id="prof">
                     <ul>
-                        <li><a href="../menu/prof.jsp">Profesor</a></li>
-                        <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        <li>Profesor
+                            <ul>
+                                <li><a href="prof.jsp">Reservar Aula</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                        </li>
                         <li>
                             <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
                         </li>

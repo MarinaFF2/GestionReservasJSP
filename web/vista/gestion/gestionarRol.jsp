@@ -21,16 +21,31 @@
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lR");
         %>
         <form  name="tablaGestionarRol" action="../../controlador/controladorGeneral.jsp" method="POST">
-            <nav id="menuLoginAdminGene">
-                <ul>
-                    <li><a href="../menu/menuAdminGene.jsp">Administrador General</a></li>
-                    <li><a href="../menu/prof.jsp">Profesor</a></li>
-                    <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                    <li>
-                        <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                    </li>
-                </ul>
-            </nav>
+            <header>
+                <nav id="menuLoginAdminGene">
+                    <ul>
+                        <li>Administrador General
+                            <ul>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
+                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                            </ul>
+                        </li>
+                        <li>Profesor
+                            <ul>
+                                <li><a href="prof.jsp">Reservar Aula</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                        </li>
+                        <li>
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </form>
         <table name="gestionarRol" >
             <caption>LISTA USUARIOS</caption>

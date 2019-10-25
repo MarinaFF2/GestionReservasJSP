@@ -111,13 +111,4 @@
             response.sendRedirect("../vista/gestion/gestionarAula.jsp");
         }
     }
-    
-    //cerrar sesion
-    if(request.getParameter("cerrarSesion")!=null){
-        String n = (String) session.getAttribute("usu");
-            BitacorasFichero.escribirBitacoras("El usuario " + n + " ha acerrado sesion y se le redirige al index.");
-        session.invalidate();
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../index.jsp");
-    }
 %>

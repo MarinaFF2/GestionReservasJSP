@@ -1,7 +1,7 @@
 <%-- 
-    Document   : gestionarFranja
-    Created on : 18-oct-2019, 12:43:11
-    Author     : daw207
+    Document   : prof
+    Created on : 15-oct-2019, 22:51:10
+    Author     : Marina Flores Fernandez
 --%>
 
 <%@page import="BBDD.ConexionEstatica"%>
@@ -15,20 +15,15 @@
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../../css/css_gestionarFranja.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_prof.css" media="screen" />
         
     </head>
     <body>
-        
         <%
-            ConexionEstatica.nueva();
-            LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerFranjaDeterminada();
-            ConexionEstatica.cerrarBD();
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
-        <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
-            <header>
+        <header>
                 <nav id="menuLoginAdminGene">
                     <ul>
                         <li>Administrador General
@@ -103,39 +98,57 @@
             }
         %>
         </form>
-        <table name="gestionarFranja" >
-            <caption>LISTA FRANJAS</caption>
+        <form id="menuProf" action="../../controlador/controladorGestion.jsp" method="POST">
+            <label>Elige la fecha</label><input type="date" id="fechaDia" name="fechaDia" value=""><br>
+            <label>Elige el aula</label><select id="eligeAula" name="eligeAula">
+                <option value="" selected> </option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="201">201</option>
+                <option value="202">202</option>
+                <option value="203">203</option>
+                <option value="301">301</option>
+                <option value="302">302</option>
+                <option value="303">303</option>
+            </select><br>
+            <input type="submit" id="verReservaAula" name="verReservaAula" value="verCuadrante"><br>
+        </form>
+            <!-- no aparece-->
+                
+        <table name="verReservasAulaUsuario">
             <thead>
                 <tr>
-                    <th>NUMERO</th>
-                    <th>EMPIEZA</th>
-                    <th>TERMINA</th>
+                    <th>HORA COMIENZO</th>
+                    <th>HORA FINAL</th>
+                    <th>RESERVADO</th>
                 </tr>
             </thead>
             <tbody>
-            <%
+        <%
+                String usu = (String) session.getAttribute("usu");
+                ConexionEstatica.nueva();
+                LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerAulasReservadas(usu);
+                ConexionEstatica.cerrarBD();
                 for (int i = 0; i < v.size(); i++) {
-            %>
-                <form  name="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
+                session.setAttribute("usuOcupado", v.get(i).getCodProfesor());
+        %>
+                <form  name="tablaReservaAulas" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
-                           <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">
+                            <input type="text" id="iniHora" name="finHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
                         </td>   
                         <td>
-                           <input type="text" name="iniHora" value="<%out.print(v.get(i).getInicioHora());%>">
-                        </td>
+                            <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>" readonly="true">
+                        </td> 
                         <td>
-                            <input type="text" name="finHora" value="<%out.print(v.get(i).getFinHora());%>">
-                        </td>
-                        <td>
-                            <input type="submit" name="botFranja" value="Editar">
-                            <input type="hidden" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
+                            <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
                         </td>
                     </tr>
                 </form>
-            <%
-                }
-            %>
+        <%
+            }
+        %>
             </tbody>
         </table>
     </body>
