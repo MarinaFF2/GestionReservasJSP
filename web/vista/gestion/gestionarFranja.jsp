@@ -18,7 +18,7 @@
         
     </head>
     <body>
-        <form  name="tablaGestionarFranja" action="../controlador/controladorGestion.jsp" method="POST">
+        <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
         <%
             LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lFt");
             int n = (Integer)session.getAttribute("rol");
@@ -62,21 +62,21 @@
         <% 
             }
         %>
-        
-            <table name="gestionarFranja" >
-                <caption>LISTA FRANJAS</caption>
-                <thead>
-                    <tr>
-                        <th>NUMERO</th>
-                        <th>EMPIEZA</th>
-                        <th>TERMINA</th>
-                    </tr>
-                </thead>
-                <tbody>
-        <%
-            for (int i = 0; i < v.size(); i++) {
-        %>
-                <!--hacer invisible--><input type="text" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
+        </form>
+        <table name="gestionarFranja" >
+            <caption>LISTA FRANJAS</caption>
+            <thead>
+                <tr>
+                    <th>NUMERO</th>
+                    <th>EMPIEZA</th>
+                    <th>TERMINA</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%
+                for (int i = 0; i < v.size(); i++) {
+            %>
+                <form  name="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                            <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">
@@ -89,13 +89,14 @@
                         </td>
                         <td>
                             <input type="submit" name="botFranja" value="Editar">
+                            <input type="hidden" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
                         </td>
                     </tr>
-        <%
-            }
-        %>
-                </tbody>
-            </table>
-        </form>
+                </form>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
     </body>
 </html>

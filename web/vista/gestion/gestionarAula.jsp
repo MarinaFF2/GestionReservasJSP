@@ -18,12 +18,13 @@
         
     </head>
     <body>
-        <form  name="tablaGestionarAula" action="../controlador/controladorGestion.jsp" method="POST">
+        
         <%
             LinkedList <Aula> v = (LinkedList <Aula>) session.getAttribute("lA");
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
+        <form  name="tablaGestionarAula" action="../controlador/controladorGestion.jsp" method="POST">
         <header>
             <nav id="menuLoginAdminGene">
                 <ul>
@@ -68,19 +69,20 @@
         <% 
             }
         %>
-            <table name="gestionarAula" >
-                <caption>LISTA AULAS</caption>
-                <thead>
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                    </tr>
-                </thead>
-                <tbody>
-        <%
-            for (int i = 0; i < v.size(); i++) {
-        %>
-            <!--hacer invisible--><input type="text" id="clave" name="aula" value="<%out.print(v.get(i).getCodAula());%>">
+        </form>
+        <table name="gestionarAula" >
+            <caption>LISTA AULAS</caption>
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%
+                for (int i = 0; i < v.size(); i++) {
+            %>
+                <form  name="tablaGestionarAula" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                             <input type="text" name="codAula" value="<%out.print(v.get(i).getCodAula());%>">
@@ -93,13 +95,14 @@
                         </td>
                         <td>
                             <input type="submit" name="botAula" value="Editar">
+                            <input type="hidden" id="clave" name="aula" value="<%out.print(v.get(i).getCodAula());%>">
                         </td>
                     </tr>
-        <%
-            }
-        %>
-                </tbody>
-            </table>
-        </form>
+                </form>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
     </body>
 </html>

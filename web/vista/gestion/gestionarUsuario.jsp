@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="../../css/css_gestionarUsu.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaGestionarUsuario" action="../../controlador/controladorGestion.jsp" method="POST">
+        <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
             LinkedList <Usuario> v = (LinkedList <Usuario>) session.getAttribute("lU");
         %>
@@ -31,18 +31,20 @@
                     </li>
                 </ul>
             </nav>
-            <table name="gestionarUsuario" >
-                <caption>LISTA USUARIOS</caption>
-                <thead>
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                    </tr>
-                </thead>
-                <tbody>
-        <%
-            for (int i = 0; i < v.size(); i++) {
-        %>
+        </form>
+        <table name="gestionarUsuario" >
+            <caption>LISTA USUARIOS</caption>
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%
+                for (int i = 0; i < v.size(); i++) {
+            %>
+                <form  name="tablaGestionarUsuario" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                             <input type="text" name="correo" value="<%out.print(v.get(i).getCorreo());%>" readonly="true">
@@ -63,11 +65,11 @@
                             <input type="submit" name="botUsuario" value="Editar">
                         </td>
                     </tr>
+                </form>
         <%
             }
         %>
-                </tbody>
-            </table>
-        </form>
+            </tbody>
+        </table>
     </body>
 </html>
