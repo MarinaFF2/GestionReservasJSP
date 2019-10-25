@@ -46,18 +46,8 @@
                 BitacorasFichero.escribirBitacoras("El usuario " + u.getCorreo() + " ha inicado session en el sistema");
             int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
             session.setAttribute("rol", n);
-            if(n==1){  //PROFESOR
-                ConexionEstatica.cerrarBD();
-                response.sendRedirect("../vista/menu/prof.jsp");
-            }
-            if(n==2){  //ADMINISTRADOR DE AULA
-                ConexionEstatica.cerrarBD();
-                response.sendRedirect("../vista/menu/menuAdminAula.jsp");
-            }
-            if(n==3){  //ADMINISTRADOR GENERAL
-                ConexionEstatica.cerrarBD();
-                response.sendRedirect("../vista/menu/menuAdminGene.jsp");
-            }
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../vista/principal.jsp");
         }else{
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../index.jsp");
