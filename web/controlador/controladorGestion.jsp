@@ -13,7 +13,7 @@
     //para ver reservar Aula
     if((request.getParameter("verReservaAula")!=null)){
         //TODO fecha pasada y con letra y no coincide el dia
-        String f = (request.getParameter("fechaDia"));
+        String f = request.getParameter("fechaDia");
         session.setAttribute("fecD", f);
         int n = Integer.parseInt(request.getParameter("eligeAula"));
         session.setAttribute("Aula",n);
@@ -24,25 +24,28 @@
         response.sendRedirect("../vista/gestion/reservarAula.jsp");
     }
     //reservar Aula
-    if((request.getParameter("reservadoAula")!=null)){
+    if(request.getParameter("reservadoAula")!=null){
         String f = (String) session.getAttribute("fecD");
         int n = (Integer) session.getAttribute("Aula");
-        String usu = (String) session.getAttribute("usu");
+        String ini = request.getParameter("iniHora");
+        String fin = request.getParameter("finHora");
+        String usu = (String) session.getAttribute("usu");//usuario de la sesion
         String re = request.getParameter("reservadoAula");
+        int nu = Integer.parseInt(request.getParameter("clave"));
+        String usuR = request.getParameter("usuReservar");//usuario de tabla 
         if(re.equals("LIBRE")){
             ConexionEstatica.nueva();
             re="OCUPADO";
-            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , usu , re);
-            LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", usu ,re, nu, n, f);
+            LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/reservarAula.jsp");
-        }
-        if(re.equals("OCUPADO")){
+        }else if(re.equals("OCUPADO") && usuR.equals(usu)){
             ConexionEstatica.nueva();
             re = "LIBRE";
-            //ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja", f, n , "NULL" , re);
-            LinkedList lF = ConexionEstatica.obtenerFranjaReservaAula(f, n);
+            ConexionEstatica.Modificar_Dato_Reservado_CodProfesor("franja",null, re, nu, n, f);
+            LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
             session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/reservarAula.jsp");

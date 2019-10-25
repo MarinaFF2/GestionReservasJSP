@@ -17,9 +17,8 @@
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_reservarAula.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaReservarAulas" action="../../controlador/controladorGestion.jsp" method="POST">
+        <form  name="tablaReservarAulas" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
-            LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
@@ -61,8 +60,8 @@
         <% 
             }
         %>
-        
-            <p>Fecha: <input type="text" id="fecha" name="fecha" value="<%out.print((String)session.getAttribute("fecD"));%>" readonly="true">
+        </form>
+        <p>Fecha: <input type="text" id="fecha" name="fecha" value="<%out.print((String)session.getAttribute("fecD"));%>" readonly="true">
             <p>Aula: <input type="text" id="aula" name="fecha" value="<%out.print((Integer)session.getAttribute("Aula"));%>" readonly="true">
             <table name="reservaAula" >
                 <thead>
@@ -74,26 +73,28 @@
                 </thead>
                 <tbody>
         <%
+            LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
             for (int i = 0; i < v.size(); i++) {
         %>
-                <form  name="tablaReservarAulas1" action="../controlador/controlador.jsp" method="POST">
+                    <form  name="tablaReservarAulas1" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
-                            <input type="text" id="iniHora" name="finHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
+                            <input type="text" id="iniHora" name="iniHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
                         </td>   
                         <td>
                             <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>" readonly="true">
                         </td> 
                         <td>
-                            <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
+                            <input type="submit" id="reservadoAula" name="reservadoAula" value="<%out.print(v.get(i).getReservado());%>">
+                           <input type="hidden" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>">
+                            <input type="hidden" id="usuReservar" name="usuReservar" value="<%out.print(v.get(i).getCodProfesor());%>">
                         </td>
                     </tr>
-                </form>
+                    </form>
         <%
             }
         %>
                 </tbody>
             </table>
-        </form>
     </body>
 </html>

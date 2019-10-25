@@ -14,7 +14,7 @@ import java.sql.Date;
 public class FranjaHoraria {
     private int aula;
     private int franja;
-    private Date fechaDia;
+    private String fechaDia;
     private String inicioHora;
     private String finHora;
     private String codProfesor;
@@ -56,7 +56,7 @@ public class FranjaHoraria {
      * @param codProfesor
      * @param clave 
      **/
-    public FranjaHoraria(int aula, int franja, Date fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
+    public FranjaHoraria(int aula, int franja, String fechaDia, String inicioHora, String finHora, String codProfesor, int clave,String reservado) {
         this.aula = aula;
         this.franja = franja;
         this.fechaDia = fechaDia;
@@ -105,11 +105,11 @@ public class FranjaHoraria {
         this.franja = franja;
     }
 
-    public Date getFechaDia() {
+    public String getFechaDia() {
         return fechaDia;
     }
 
-    public void setFechaDia(Date fechaDia) {
+    public void setFechaDia(String fechaDia) {
         this.fechaDia = fechaDia;
     }
 

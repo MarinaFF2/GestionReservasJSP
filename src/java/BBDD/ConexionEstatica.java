@@ -186,29 +186,29 @@ public class ConexionEstatica {
         }
         return v;
     }*/
-    public static LinkedList obtenerFranjaReservaAula(String fecha, int aula) {
+    public static LinkedList obtenerFranjaAulaDeterminada(String fecha, int aula) {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
         try {
-            String sentencia = "SELECT codFranja,inicioHora,finHora,reservado FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
+            String sentencia = "SELECT DISTINCT * FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                f = new FranjaHoraria(Conj_Registros.getInt("codFranja"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"));
+                f = new FranjaHoraria(Conj_Registros.getInt("codAula"),Conj_Registros.getInt("codFranja"),Conj_Registros.getString("fechaDia"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("codProfesor"),Conj_Registros.getInt("clave"),Conj_Registros.getString("reservado"));
                 v.add(f);
             }
         } catch (SQLException ex) {
         }
         return v;
     }
-    public static LinkedList obtenerFranjaAulaDeterminada(String fecha, int aula) {
+    public static LinkedList obtenerAulasReservadas(String correo) {
         LinkedList v = new LinkedList<>();
-        FranjaHoraria f = null;
+        Aula a = null;
         try {
-            String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora,reservado FROM franja WHERE codAula= '"+aula+"' AND fechaDia='"+fecha+"';";
+            String sentencia = "SELECT codFranja,inicioHora,finHora,reservado FROM aula,franja where aula.correo = franja.codProfesor and aula.correo = '"+correo+"' and franja.reservado = 'OCUPADA'";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                f = new FranjaHoraria(Conj_Registros.getInt("codFranja"),Conj_Registros.getString("inicioHora"),Conj_Registros.getString("finHora"),Conj_Registros.getString("reservado"));
-                v.add(f);
+                a = new Aula(Conj_Registros.getInt("codAula"),Conj_Registros.getString("descripcion"));
+                v.add(a);
             }
         } catch (SQLException ex) {
         }
@@ -237,8 +237,8 @@ public class ConexionEstatica {
         String Sentencia = "UPDATE " + tabla + " SET codFranja = '" + Nuevo_codFranja+"', inicioHora = '" + Nuevo_inicioHora + "', finHora = '" + Nuevo_finHora +"' WHERE clave = '" + clave + "' ";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
-    public static void Modificar_Dato_Reservado_CodProfesor(String tabla,int aula, String fecha, String Nuevo_codProfesor, String Nuevo_reservado) throws SQLException {
-        String Sentencia = "UPDATE " + tabla + " SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "' WHERE codAula = '" + aula + " AND fechaDia='"+fecha+"'";
+    public static void Modificar_Dato_Reservado_CodProfesor(String tabla,String Nuevo_codProfesor, String Nuevo_reservado, int clave, int aula,String fecha) throws SQLException {
+        String Sentencia = "UPDATE " + tabla + " SET codProfesor = '" + Nuevo_codProfesor + "',  reservado = '" + Nuevo_reservado + "', codAula = '"+aula+"', fechaDia= '"+fecha+"' WHERE clave='"+clave+"'";
         ConexionEstatica.Sentencia_SQL.executeUpdate(Sentencia);
     }
     
@@ -268,6 +268,7 @@ public class ConexionEstatica {
         }
         return v;
     }
+    
     //----------------------------------------------------------
     public static void Modificar_Dato_CodAula_DescripcionAula(String tabla, int aula, int Nuevo_aula, String Nuevo_descripcion) throws SQLException {
         String Sentencia = "UPDATE " + tabla + " SET descripcion = '" + Nuevo_descripcion + "', codAula = '" + Nuevo_aula + "' WHERE codAula = '" + aula + "'";

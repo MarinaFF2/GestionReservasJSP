@@ -4,6 +4,8 @@
     Author     : Marina Flores Fernandez
 --%>
 
+<%@page import="java.util.LinkedList"%>
+<%@page import="clase.FranjaHoraria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,7 @@
         
     </head>
     <body>
-        <form id="menuProf" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <form id="menuProf" action="../../controlador/controladorGestion.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -74,5 +76,31 @@
             </select><br>
             <input type="submit" id="verReservaAula" name="verReservaAula" value="verCuadrante"><br>
         </form>
+            <!-- no aparece-->
+                <form  name="tablaReservaAulas" action="../../controlador/controladorGestion.jsp" method="POST">
+                    <table>
+                <%
+                    LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lr");
+                    for (int i = 0; i < v.size(); i++) {
+                        session.setAttribute("usuOcupado", v.get(i).getCodProfesor());
+                %>
+                        
+                            <tr>
+                                <td>
+                                    <input type="text" id="iniHora" name="finHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
+                                </td>   
+                                <td>
+                                    <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>" readonly="true">
+                                </td> 
+                                <td>
+                                    <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
+                                </td>
+                            </tr>
+                        
+                <%
+                    }
+                %>
+                    </table>
+                </form>
     </body>
 </html>
