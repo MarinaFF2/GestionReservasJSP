@@ -19,7 +19,7 @@
         
     </head>
     <body>
-        
+        <form  name="tablaGestionarAula" action="../controlador/controladorGeneral.jsp" method="POST">
         <%
             ConexionEstatica.nueva();
             LinkedList <Aula> v = ConexionEstatica.obtenerAulas();

@@ -19,7 +19,7 @@
         
     </head>
     <body>
-        
+        <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
         <%
             ConexionEstatica.nueva();
             LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerFranjaDeterminada();
@@ -27,7 +27,6 @@
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
-        <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
             <header>
                 <nav id="menuLoginAdminGene">
                     <ul>
