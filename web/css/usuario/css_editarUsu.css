@@ -3,7 +3,11 @@
     margin: 0px;
     padding: 0px;
 }
-
+#imgPerfil{
+    height: 100px;
+    width: 55px;
+    background-color: gray;
+}
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
     

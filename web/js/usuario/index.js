@@ -1,8 +1,14 @@
 $(document).ready(function () {
-    if($("#correo").val()===null || $("#clave").val()===null){
-        $("#aceptarIndex").attr("disabled", true);
-        alert("Algún campo está vacio");
-    }
+    $("#aceptar").click(function(){   
+        if($("#usuario").val()===""){
+            alert("Algún campo está vacio");
+            $("#usuario").css({'background-color':'red'});
+        }
+        if($("#pwd").val()===""){
+            alert("Algún campo está vacio");
+            $("#pwd").css({'background-color':'red'});
+        }
+    });
 });
 
 

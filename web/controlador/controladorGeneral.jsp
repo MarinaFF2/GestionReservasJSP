@@ -33,6 +33,8 @@
             response.sendRedirect("../vista/usuario/registrarse.jsp");
         }
         ConexionEstatica.cerrarBD();
+    }else{
+         response.sendRedirect("../vista/usuario/registrarse.jsp");
     }
     //index, inciar sesion en la web
     if(request.getParameter("aceptarIndex")!=null){
@@ -53,9 +55,12 @@
             response.sendRedirect("../index.jsp");
         }
     }
-    
+    //ver editar usuario
+     if(request.getParameter("editarUsuario")!=null){
+         response.sendRedirect("../vista/usuario/editarUsuario.jsp");
+     }
     //editar usuario
-    if(request.getParameter("editarUsuario")!=null){
+    if(request.getParameter("editarUsu")!=null){
         ConexionEstatica.nueva();
         Usuario u = (Usuario) session.getAttribute("usu");
         String correo = request.getParameter("correo");
@@ -69,9 +74,10 @@
         Usuario n = ConexionEstatica.existeUsuario(correo, codClave);
         ConexionEstatica.cerrarBD();
         session.setAttribute("usu", n);
+        response.sendRedirect("../vista/usuario/editarUsuario.jsp");
     }
     if(request.getParameter("gestionarFoto")!=null){
-        
+        response.sendRedirect("../vista/usuario/editarUsuario.jsp");
     }
     
     // he olvidado la contraseña

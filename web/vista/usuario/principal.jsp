@@ -21,7 +21,7 @@
             <header>
                 <nav id="menuLoginAdminGene">
                     <ul>
-                        <li>Administrador General
+                        <li><p>Administrador General</p>
                             <ul>
                                 <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
@@ -29,16 +29,16 @@
                                 <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li>Profesor
+                        <li><p>Profesor</p>
                             <ul>
                                 <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="">
                         </li>
                     </ul>
                 </nav>
@@ -61,10 +61,10 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="">
                         </li>
                     </ul>
                 </nav>
@@ -81,10 +81,10 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario" value="">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="">
                         </li>
                     </ul>
                 </nav>
@@ -100,4 +100,8 @@
             <h1> ¡Bienvenido!</h1>
         </div>
     </body>
+    <footer>
+        <div>Icons made by <a href="https://www.flaticon.es/autores/google" title="Google">Google</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.es/autores/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
+    </footer>
 </html>

@@ -14,7 +14,9 @@
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../../css/css_editarUsu.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/usuario/css_editarUsu.css" media="screen" />
+        <script src="../../jquery-3.4.1.min.js"></script>
+        <script src="js/usuario/editarUsuario.js"></script>
     </head>
     <body>
         <form name="tablaEditerUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
@@ -89,7 +91,7 @@
             Edad:*<br>
             <input type="number" id="edad" name="edad" placeholder="Edad" value="<%u.getEdad();%>"><br>
         
-            <input type="submit" id="editarUsuario" name="editarUsuario" value="Guardar"><br> 
+            <input type="submit" id="editarUsu" name="editarUsu" value="Guardar"><br> 
         </form>
         </form>
     </body>

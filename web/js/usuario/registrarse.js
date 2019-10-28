@@ -1,30 +1,40 @@
 $(document).ready(function () {
-    alert("Estoy aqui, he entrado");
-    limpiar1();
-    $("#sendRegistrar").click(function () {
-        var correo = $("#correo").val();
-        var clave = $("#clave").val();
-        var reclave = $("#reclave").val();
-        var nombre = $("#clave").val();
-        var nombre = $("#nombre").val();
-        var apellido = $("#apellido").val();
-        var edad = $("#edad").val();
-        if (correo !== null && clave !== null && reclave !== null && nombre !== null && apellido !== null && edad !== 0){
-            if (clave !== reclave){
-                $("#sendRegistrar").attr("disabled", true);
-                alert("Las claves no coinciden");
-            }
-        } else{
-            $("#sendRegistrar").attr("disabled", true);
-            alert("Algún campo está vacío");
+    $("#sendRegistrar").attr("disabled", true);
+    
+    $("#reclave").blur(function(){
+        if ($("#clave").val() !== $("#reclave").val()){
+            alert("Las claves no coinciden");
+            $("#clave").css({'border-color':'red'});
+            $("#reclave").css({'border-color':'red'});
+        }else{
+            $("#clave").css({'border-color':'white'});
+            $("#reclave").css({'border-color':'white'});
         }
     });
+    $("#clave").blur(function(){
+        if ($("#clave").val() !== $("#reclave").val()){
+            alert("Las claves no coinciden");
+            $("#clave").css({'border-color':'red'});
+            $("#reclave").css({'border-color':'red'});
+        }else{
+            $("#clave").css({'border-color':'white'});
+            $("#reclave").css({'border-color':'white'});
+        }
+    });
+    $("#sendRegistrar").click(function () {
+        if ($("#correo").val() !== "" && $("#clave").val() !== "" && $("#reclave").val() !== "" && $("#nombre").val() !== "" && $("#apellido").val() !== "" && $("#edad").val() !== 0){
+            $("#sendRegistrar").attr("disabled", false);
+        } else{
+            alert("Algún campo está vacío");
+            $("#pwd").css({'border-color':'red'});
+            $("#sendRegistrar").attr("disabled", true);
+        }
+    });
+    
     $("#limpiar").click(function () {
         limpiar1();
     });
-    
-});
-function limpiar1(){
+    function limpiar1(){
     $("#correo").val("");
     $("#clave").val("");
     $("#reclave").val("");
@@ -32,4 +42,6 @@ function limpiar1(){
     $("#apellido").val("");
     $("#edad").val("");
 }
+});
+
 
