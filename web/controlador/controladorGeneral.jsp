@@ -47,7 +47,7 @@
             int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
             session.setAttribute("rol", n);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../vista/principal.jsp");
+            response.sendRedirect("../vista/usuario/principal.jsp");
         }else{
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../index.jsp");

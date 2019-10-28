@@ -8,8 +8,14 @@ nav#menuLoginAdminAula  li {
     width: 200px;
 }
 nav#menuLoginAdminAula li a{
-    background-color: dimgrey;
-    color:white;
+    text-decoration: none;
+    list-style-type: none;
+    display: block;
+    margin: 0px;
+    height: 1.5em;
+    box-sizing: border-box;
+}
+nav#menuLoginAdminAula li input{
     text-decoration: none;
     list-style-type: none;
     display: block;
@@ -26,15 +32,36 @@ nav#menuLoginAdminAula ul li a:hover{
     background-color:red;
 }
 
+/* Configuración de los niveles siguientes */
+    nav#menuLoginAdminAula  ul li ul {
+        display: none;
+        visibility: hidden;
+        list-style-type: none;
 
+    }
+    nav#menuLoginAdminAula   ul li:hover > ul{
+        display: block;
+        visibility: visible;
+        position: absolute;
+
+        z-index: 100;
+
+        transition: all 500ms 500ms linear;
+    }
 
 nav#prof  li {
     position: relative;
     width: 200px;
 }
 nav#prof li a{
-    background-color: dimgrey;
-    color:white;
+    text-decoration: none;
+    list-style-type: none;
+    display: block;
+    margin: 0px;
+    height: 1.5em;
+    box-sizing: border-box;
+}
+nav#prof li input{
     text-decoration: none;
     list-style-type: none;
     display: block;
@@ -50,20 +77,41 @@ nav#prof ul li a:hover{
     color: black;
     background-color:red;
 }
+/* Configuración de los niveles siguientes */
+    nav#prof  ul li ul {
+        display: none;
+        visibility: hidden;
+        list-style-type: none;
+
+    }
+    nav#prof  ul li:hover > ul{
+        display: block;
+        visibility: visible;
+        position: absolute;
+
+        z-index: 100;
+
+        transition: all 500ms 500ms linear;
+    }
 
 
-nav#menuLoginAdminGene  li {
+
+nav#menuLoginAdminGene  li, nav#menuLoginAdminGene  li input{
     position: relative;
     width: 200px;
 }
 nav#menuLoginAdminGene li a{
-    background-color: dimgrey;
-    color:white;
     text-decoration: none;
     list-style-type: none;
     display: block;
     margin: 0px;
     height: 1.5em;
+    box-sizing: border-box;
+}
+nav#menuLoginAdminGene li input{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0px;
     box-sizing: border-box;
 }
 nav#menuLoginAdminGene li a:hover{
@@ -75,12 +123,27 @@ nav#menuLoginAdminGene ul li a:hover{
     background-color:red;
 }
 
-
-
-nav#menuLoginAdminGene  > ul > li{
+nav#menuLoginAdminGene > ul > li{
     display: inline-block;
     /*margin: 5px 2px 0px;*/
 }
+nav#menuLoginAdminGene > ul > li input{
+    display: inline-block;
+    /*margin: 5px 2px 0px;*/
+}
+/* Configuración de los niveles siguientes */
+    nav#menuLoginAdminGene  ul li ul {
+        display: none;
+        visibility: hidden;
+        list-style-type: none;
+    }
+    nav#menuLoginAdminGene   ul li:hover > ul{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        z-index: 100;
+        transition: all 500ms 500ms linear;
+    }
 
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){

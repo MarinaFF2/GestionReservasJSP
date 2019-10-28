@@ -10,27 +10,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
     </head>
     <body>
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
-        <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
+        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
             <header>
                 <nav id="menuLoginAdminGene">
                     <ul>
                         <li>Administrador General
                             <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="../gestion/gestionarRol.jsp">Gestion Rol</a></li>
+                                <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
                         <li>Profesor
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
@@ -48,15 +49,15 @@
             <header>
                 <nav id="menuLoginAdminAula">
                     <ul>
-                        <li>Administrador Aula
+                        <li><p>Administrador Aula</p>
                             <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
                             </ul>
                         </li>
-                        <li>Profesor
+                        <li><p>Profesor</p>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
@@ -74,9 +75,9 @@
             <header>
                 <nav id="prof">
                     <ul>
-                        <li>Profesor
+                        <li><p>Profesor</p>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
@@ -92,5 +93,11 @@
             }
         %>
         </form>
+        
+        
+        
+        <div>
+            <h1> ¡Bienvenido!</h1>
+        </div>
     </body>
 </html>

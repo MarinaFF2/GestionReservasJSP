@@ -4,6 +4,7 @@
     Author     : daw207
 --%>
 
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -67,7 +68,10 @@
             %>
         </form>
         <% 
-            Usuario u = (Usuario) session.getAttribute("usu");
+            String uu = (String) session.getAttribute("usu");
+            ConexionEstatica.nueva();
+            Usuario u = ConexionEstatica.existeUsu(uu);
+            ConexionEstatica.cerrarBD();
         %>
         <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
             <div id="imgPerfil">

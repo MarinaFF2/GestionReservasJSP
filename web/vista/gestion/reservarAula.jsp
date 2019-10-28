@@ -25,7 +25,7 @@
         <header>
                 <nav id="menuLoginAdminGene">
                     <ul>
-                        <li>Administrador General
+                        <li><p>Administrador General</p>
                             <ul>
                                 <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
@@ -33,9 +33,9 @@
                                 <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li>Profesor
+                        <li><p>Profesor</a>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
@@ -53,15 +53,15 @@
             <header>
                 <nav id="menuLoginAdminAula">
                     <ul>
-                        <li>Administrador Aula
+                        <li><p>Administrador Aula</p>
                             <ul>
                                 <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
                             </ul>
                         </li>
-                        <li>Profesor
+                        <li><p>Profesor</p>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
@@ -79,9 +79,9 @@
             <header>
                 <nav id="prof">
                     <ul>
-                        <li>Profesor
+                        <li><p>Profesor</p>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</li>
+                                <li><a href="prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
