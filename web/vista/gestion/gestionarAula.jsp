@@ -28,26 +28,30 @@
             if(n==3){
         %>
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="menuLoginAdminGene">
                     <ul>
-                        <li><p>Administrador General</p>
+                        <li><a href="#">Administrador General</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -56,24 +60,29 @@
             }else if(n==2){
         %>
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="menuLoginAdminAula">
                     <ul>
-                        <li><p>Administrador Aula</p>
+                        <li><a href="#">Administrador Aula</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
                             </ul>
                         </li>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -82,18 +91,23 @@
             }else{
         %>  
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="prof">
                     <ul>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>

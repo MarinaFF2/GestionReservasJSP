@@ -25,26 +25,30 @@
         %>
         <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="menuLoginAdminGene">
                     <ul>
-                        <li><p>Administrador General</p>
+                        <li><a href="#">Administrador General</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a>
                             <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -54,8 +58,11 @@
             <caption>LISTA USUARIOS</caption>
             <thead>
                 <tr>
+                    <th>CORREO</th>
                     <th>NOMBRE</th>
-                    <th>DESCRIPCION</th>
+                    <th>APELLIDO</th>
+                    <th>EDAD</th>
+                    <th>ROL</th>
                 </tr>
             </thead>
             <tbody>
@@ -77,6 +84,9 @@
                             <input type="number" name="edad" value="<%out.print(v.get(i).getEdad());%>">
                         </td>
                         <td>
+                            <input type="text" name="rol" value="<%v.get(i).getRol();%>" pattern="[1-3]">
+                        </td>
+                        <td>
                             <input type="submit" name="botUsuario" value="X">
                         </td>
                         <td>
@@ -90,4 +100,7 @@
             </tbody>
         </table>
     </body>
+    <footer>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+    </footer>
 </html>

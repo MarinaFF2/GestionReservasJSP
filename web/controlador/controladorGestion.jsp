@@ -66,8 +66,10 @@
             String u = request.getParameter("correo");
             String nom = request.getParameter("nombre");
             String ape = request.getParameter("apellido");
+            int rol = Integer.parseInt(request.getParameter("rol"));
             int edad = Integer.parseInt(request.getParameter("edad"));
             ConexionEstatica.Modificar_Dato_Nombre_Apellido_Edad("usuario", u, nom, ape, edad);
+            ConexionEstatica.Modificar_Dato_IdAsignarRol("asignarRol",u,rol);
             LinkedList lU = ConexionEstatica.obtenerUsuarios();
             session.setAttribute("lU", lU);
             ConexionEstatica.cerrarBD();

@@ -17,11 +17,14 @@
     </head>
     <body>
         <%
-            HttpSession s = request.getSession();
+            /*HttpSession s = request.getSession();
             
             s.setMaxInactiveInterval(59); 
-            if
-        %>    
+            if(s.getMaxInactiveInterval()==0){
+                s.removeAttribute("usu");
+                s.invalidate();
+            }*/
+        %>
         <main>
             <h1 id="cabe">Iniciar Sesión</h1>
             <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">

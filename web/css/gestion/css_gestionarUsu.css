@@ -12,7 +12,6 @@
 @media (min-width:320px) and (orientation:portrait){
     
 }
-
 /*Tablet Apps horizontal 768x1024*/
 @media (min-width:1024px) and (orientation:landscape){
     
@@ -21,8 +20,6 @@
 @media (min-width:768px) and (orientation:portrait){
     
 }
-
-
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
     

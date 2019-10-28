@@ -1,24 +1,21 @@
 $(document).ready(function () {
-    $("#sendRegistrar").attr("disabled", true);
-    
+    $("#sendRegistrar").attr("disabled", false);
     $("#reclave").blur(function(){
         if ($("#clave").val() !== $("#reclave").val()){
-            alert("Las claves no coinciden");
             $("#clave").css({'border-color':'red'});
             $("#reclave").css({'border-color':'red'});
         }else{
-            $("#clave").css({'border-color':'white'});
-            $("#reclave").css({'border-color':'white'});
+            $("#clave").css({'border-color':'black'});
+            $("#reclave").css({'border-color':'black'});
         }
     });
     $("#clave").blur(function(){
         if ($("#clave").val() !== $("#reclave").val()){
-            alert("Las claves no coinciden");
             $("#clave").css({'border-color':'red'});
             $("#reclave").css({'border-color':'red'});
         }else{
-            $("#clave").css({'border-color':'white'});
-            $("#reclave").css({'border-color':'white'});
+            $("#clave").css({'border-color':'black'});
+            $("#reclave").css({'border-color':'black'});
         }
     });
     $("#sendRegistrar").click(function () {

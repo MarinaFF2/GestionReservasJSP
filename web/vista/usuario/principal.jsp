@@ -13,32 +13,36 @@
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
     </head>
     <body>
+        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
-        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="menuLoginAdminGene">
                     <ul>
-                        <li><p>Administrador General</p>
+                        <li><a href="#">Administrador General</a><span class="flecha"></span>
                             <ul>
                                 <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="../gestion/gestionarRol.jsp">Gestion Rol</a></li>
                                 <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a>
                             <ul>
-                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                                <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -47,24 +51,29 @@
             }else if(n==2){
         %>
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="menuLoginAdminAula">
                     <ul>
-                        <li><p>Administrador Aula</p>
+                        <li><a href="#">Administrador Aula</a><span class="flecha"></span>
                             <ul>
                                 <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
                             </ul>
                         </li>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a><span class="flecha"></span>
                             <ul>
                                 <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -73,18 +82,23 @@
             }else{
         %>  
             <header>
+                <a href="#" id="menu_on">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
                 <nav id="prof">
                     <ul>
-                        <li><p>Profesor</p>
+                        <li><a href="#">Profesor</a><span class="flecha"></span>
                             <ul>
                                 <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="">
+                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="">
+                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
                         </li>
                     </ul>
                 </nav>
@@ -94,14 +108,8 @@
         %>
         </form>
         
-        
-        
         <div>
             <h1> ¡Bienvenido!</h1>
         </div>
     </body>
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.es/autores/google" title="Google">Google</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.es/autores/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-    </footer>
 </html>

@@ -9,14 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registrarse</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/usuario/css_registrarse.css" media="screen" />
         <script src="../../jquery-3.4.1.min.js"></script>
         <script src="../../js/usuario/registrarse.js"></script>
     </head>
     <body>
-        <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <header><h1>Registrarse</h1></header>
+        <form id="registrarse" action="../../controlador/subefichero.jsp" enctype="multipart/form-data" method="POST">
             Correo:*<br>
             <input type="email" id="correo" name="correo" placeholder="Correo"><br>
             Contraseña:*<br>
@@ -32,6 +33,8 @@
             Foto: <input type="file" name="fichero"/></br> 
             <input type="submit" id="sendRegistrar" name="sendRegistrar" value="Enviar"><br>
             <input type="button" id="limpiar" value="Limpiar"><br>
+        </form>   
+        <form id="volver" action="../../controlador/controladorGeneral.jsp" method="POST">
             <input type="submit" id="volverAIndex" name="volverAIndex" value="Volver al login"><br>
         </form>
     </body>

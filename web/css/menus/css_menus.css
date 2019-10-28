@@ -6,19 +6,94 @@
 
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
 
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
 }
 /*Movil site vertical 480x320*/
 @media (min-width:320px) and (orientation:portrait){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
 
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
 }
 /*Tablet Apps horizontal 768x1024*/
 @media (min-width:1024px) and (orientation:landscape){
-
+    
 }
 /*Tablet Apps vertical 1024x768*/
 @media (min-width:768px) and (orientation:portrait){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
 
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
@@ -26,22 +101,18 @@
         height: 50px;
     }
     nav p{
-        padding-top: 5px;
+        padding-top: 4px;
         height: 25px;
         background-color: red;
         text-align: center;
     }
     input#cerrarSesion{
-        background-image: url("../../img/iconos/saliir.jpg");
-        background-repeat: no-repeat;
-        background-size: 32px;
-        width: 32px;
-        height:32px;
+        position: relative;
+        right: 25px;
     }
     input#editarUsuario{
-        background-image: url("../../img/iconos/editarUsu.jpg");
-        background-repeat: no-repeat;
-        background-size: 64px;
+        position: relative;
+        right: 5px;
     }
     nav li {
         position: relative;
@@ -57,11 +128,8 @@
         box-sizing: border-box;
     }
     navli input{
-        text-decoration: none;
         list-style-type: none;
-        display: block;
         margin: 0px;
-        height: 1.5em;
         box-sizing: border-box;
     }
     nav li a:hover{
@@ -73,34 +141,33 @@
         background-color:red;
     }
     /* 1 nivel*/
-        nav {
-            padding-left: 110px;
-            height: 150px;
-        }
-        nav li a{
-            text-align: center;
-            list-style-type: none;
-        }
-        nav > ul{
-            /**margin-left: 10px;**/
-        }
-        nav > ul > li{
-            display: inline-block;
-            /*margin: 5px 2px 0px;*/
-        }
+    nav {
+        padding-left: 110px;
+        height: 150px;
+    }
+    nav li a{
+        text-align: center;
+        list-style-type: none;
+    }
+    nav > ul{
+        margin-left: 10px;
+    }
+    nav > ul > li{
+        display: inline-block;
+        margin: 5px 2px 0px;
+    }
 
     /* Configuración de los niveles siguientes */
-        nav ul li ul {
-            display: none;
-            visibility: hidden;
-            list-style-type: none;
+    nav ul li ul {
+        display: none;
+        visibility: hidden;
+        list-style-type: none;
 
-        }
-        nav ul li:hover > ul{
-            display: block;
-            visibility: visible;
-            position: absolute;
-            z-index: 100;
-            transition: all 500ms 500ms linear;
-        }
+    }
+    nav ul li:hover > ul{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        z-index: 100;
+    }
 }
