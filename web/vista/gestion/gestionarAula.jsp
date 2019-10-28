@@ -88,31 +88,6 @@
                 </nav>
             </header>
         <% 
-            }else{
-        %>  
-            <header>
-                <a href="#" id="menu_on">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-                <nav id="prof">
-                    <ul>
-                        <li><a href="#">Profesor</a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
-                        </li>
-                        <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        <% 
             }
         %>
         </form>
