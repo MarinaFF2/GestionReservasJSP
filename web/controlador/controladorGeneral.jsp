@@ -15,25 +15,6 @@
 <%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    //registrar usuarios
-    /*if(request.getParameter("sendRegistrar")!=null){
-        String correo = request.getParameter("correo");
-        ConexionEstatica.nueva();
-        Usuario u = ConexionEstatica.existeUsu(correo);
-        if(u==null){
-            String clave = request.getParameter("clave");
-                String codClave = Codificar.codifica(clave);
-            String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            String foto = request.getParameter("foto");
-            int edad = Integer.parseInt(request.getParameter("edad"));
-            ConexionEstatica.Insertar_Dato_Usuario(correo, codClave, nombre, apellido,foto, edad);
-            ConexionEstatica.Insertar_Dato_AsignarRol(correo, 1);
-            ConexionEstatica.cerrarBD();
-            response.sendRedirect("../vista/usuario/registrarse.jsp");
-        }
-        ConexionEstatica.cerrarBD();
-    }*/
     //index, inciar sesion en la web
     if (request.getParameter("aceptarIndex") != null) {
         String usu = request.getParameter("usuario");
@@ -44,7 +25,7 @@
         if (u != null) {
             session.setAttribute("usu", usu);
             //BitacorasFichero.escribirBitacoras("El usuario " + u.getCorreo() + " ha inicado session en el sistema");
-            int n = (ConexionEstatica.Conseguir_Rol("usuario", u.getCorreo()));
+            int n = (ConexionEstatica.Conseguir_Rol(u.getCorreo()));
             session.setAttribute("rol", n);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/usuario/principal.jsp");
@@ -59,6 +40,7 @@
     }
     //editar usuario
     if (request.getParameter("editarUsu") != null) {
+        /**
         ConexionEstatica.nueva();
         Usuario u = (Usuario) session.getAttribute("usu");
         String correo = request.getParameter("correo");
@@ -66,13 +48,15 @@
         String codClave = Codificar.codifica(clave);
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
-        String foto = request.getParameter("foto");
         int edad = Integer.parseInt(request.getParameter("edad"));
-        ConexionEstatica.Modificar_Dato_Usuario(u.getCorreo(), correo, codClave, nombre, apellido, foto, edad);
-        Usuario n = ConexionEstatica.existeUsuario(correo, codClave);
+        Usuario n = new Usuario(correo, codClave, nombre, apellido, edad);
+        ConexionEstatica.Modificar_Dato_Usuario(u, n);
+        Usuario v = ConexionEstatica.existeUsuario(correo, codClave);
         ConexionEstatica.cerrarBD();
-        session.setAttribute("usu", n);
+        session.setAttribute("usu", v);* */
+        
         response.sendRedirect("../vista/usuario/editarUsuario.jsp");
+        
     }
     if (request.getParameter("gestionarFoto") != null) {
         response.sendRedirect("../vista/usuario/editarUsuario.jsp");

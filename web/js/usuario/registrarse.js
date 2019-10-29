@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $("#sendRegistrar").attr("disabled", false);
+    var cont = 0;
+    
     $("#reclave").blur(function(){
         if ($("#clave").val() !== $("#reclave").val()){
             $("#clave").css({'border-color':'red'});
@@ -7,6 +8,11 @@ $(document).ready(function () {
         }else{
             $("#clave").css({'border-color':'black'});
             $("#reclave").css({'border-color':'black'});
+        }
+        if ($("#reclave").val() !== ""){
+            cont++;
+        }else{
+            $("#reclave").css({'color':'orange'});
         }
     });
     $("#clave").blur(function(){
@@ -17,16 +23,72 @@ $(document).ready(function () {
             $("#clave").css({'border-color':'black'});
             $("#reclave").css({'border-color':'black'});
         }
-    });
-    $("#sendRegistrar").click(function () {
-        if ($("#correo").val() !== "" && $("#clave").val() !== "" && $("#reclave").val() !== "" && $("#nombre").val() !== "" && $("#apellido").val() !== "" && $("#edad").val() !== 0){
-            $("#sendRegistrar").attr("disabled", false);
-        } else{
-            alert("Algún campo está vacío");
-            $("#pwd").css({'border-color':'red'});
-            $("#sendRegistrar").attr("disabled", true);
+        if ($("#clave").val() !== ""){
+            cont++;
+        }else{
+            $("#clave").css({'color':'orange'});
         }
     });
+    $("#correo").blur(function(){
+        if ($("#correo").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#correo").css({'border-color':'red'});
+        }
+    });
+    $("#nombre").blur(function(){
+        if ($("#nombre").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#nombre").css({'border-color':'red'});
+        }
+    });
+    $("#apellido").blur(function(){
+        if ($("#apellido").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#apellido").css({'border-color':'red'});
+        }
+    });
+    $("#correo").blur(function(){
+        if ($("#correo").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#correo").css({'border-color':'red'});
+        }
+    });
+    $("#clave").blur(function(){
+        if ($("#clave").val() !== ""){
+            cont++;
+        }else{
+            $("#clave").css({'color':'orange'});
+        }
+    });
+    $("#reclave").blur(function(){
+        if ($("#reclave").val() !== ""){
+            cont++;
+        }else{
+            $("#reclave").css({'color':'orange'});
+        }
+    });
+    $("#nombre").blur(function(){
+        if ($("#nombre").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#nombre").css({'border-color':'red'});
+        }
+    });
+    $("#edad").blur(function(){
+        if ($("#edad").val() !== ""){
+            cont=cont++;
+        }else{
+            $("#edad").css({'border-color':'red'});
+        }
+    });
+    
+    if(cont>=5){
+        $("#sendRegistrar").attr("disabled", false);
+    }
     
     $("#limpiar").click(function () {
         limpiar1();

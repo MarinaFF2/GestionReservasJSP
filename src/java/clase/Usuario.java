@@ -5,6 +5,10 @@
  */
 package clase;
 
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Base64;
+
 /**
  * 
  * @author Marina Flores Fernandez
@@ -14,10 +18,16 @@ public class Usuario {
     private String clave;
     private String nombre;
     private String apellido;
-    private String foto;
+    private byte [] foto;
+    private Blob fotoBlob;
     private int edad;
     private int rol;
 
+    public Usuario() {
+    }
+
+    
+    
     /**
      * Constructor para gestion de rol
      * @param correo
@@ -36,15 +46,27 @@ public class Usuario {
      * @param nombre
      * @param apellido
      * @param edad
-     * @param foto 
+     * @param foto
+     * @param fotoBLob 
      */
-    public Usuario(String correo, String clave, String nombre, String apellido, int edad,String foto) {
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,byte[] foto,Blob fotoBLob) {
         this.correo = correo;
         this.clave = clave;
         this.nombre = nombre;
         this.apellido = apellido;
         this.foto = foto;
+        this.fotoBlob=fotoBlob;
         this.edad = edad;
+    }
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,byte[] foto,Blob fotoBLob,int rol) {
+        this.correo = correo;
+        this.clave = clave;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.foto = foto;
+        this.fotoBlob=fotoBlob;
+        this.edad = edad;
+        this.rol=rol;
     }
 
    
@@ -97,12 +119,32 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+
+    public Blob getFotoBlob() {
+        return fotoBlob;
+    }
+
+    public void setFotoBlob(Blob fotoBlob) {
+        this.fotoBlob = fotoBlob;
+    }
+
+    public String getFotoimgString() {
+        String image =null;
+        try {
+            byte[] imageBytes = this.fotoBlob.getBytes(1, (int) this.fotoBlob.length());
+            String encodedImage = Base64.getEncoder().encodeToString(imageBytes);
+            image = "data:image/jpg;base64," + encodedImage;
+            
+        } catch (SQLException ex) {
+        }
+        return image;
     }
 
     public int getEdad() {

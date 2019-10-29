@@ -119,9 +119,9 @@
             Usuario u = ConexionEstatica.existeUsu(uu);
             ConexionEstatica.cerrarBD();
         %>
-        <form id="registrarse" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <form id="editarUsu1" name="asd" action="../../controlador/subefichero.jsp" enctype="multipart/form-data" method="POST">
             <div id="imgPerfil">
-                <img id="fotoPerfil" src="<%u.getFoto();%>"/>
+                <img id="fotoPerfil" src="<%=u.getFotoimgString() %>" alt='Foto de perfil no encontrada'/>
             </div>
             <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
             Correo:*<br>

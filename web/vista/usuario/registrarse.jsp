@@ -17,7 +17,7 @@
     </head>
     <body>
         <header><h1>Registrarse</h1></header>
-        <form id="registrarse" action="../../controlador/subefichero.jsp" enctype="multipart/form-data" method="POST">
+        <form id="registrarse" name="asd" action="../../controlador/subefichero.jsp" enctype="multipart/form-data" method="POST">
             Correo:*<br>
             <input type="email" id="correo" name="correo" placeholder="Correo"><br>
             Contraseña:*<br>
@@ -29,7 +29,7 @@
             Apellidos:*<br>
             <input type="text" id="apellido" name="apellido" placeholder="Apellido" pattern="[A-Za-z]{1,50}"><br>
             Edad:*<br>
-            <input type="number" id="edad" name="edad" placeholder="Edad" pattern="[0-9]"><br>
+            <input type="number" id="edad" name="edad" placeholder="Edad" value="0" pattern="[0-9]"><br>
             Foto: <input type="file" name="fichero"/></br> 
             <input type="submit" id="sendRegistrar" name="sendRegistrar" value="Enviar"><br>
             <input type="button" id="limpiar" value="Limpiar"><br>

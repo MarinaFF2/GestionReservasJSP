@@ -14,6 +14,6 @@ public class Constantes {
     public static String usuario="marina";
     public static String password="Chubaca2019";
     public static String ficheroBitacoras="dsf1.txt";
-    public static String rutaServidorLinux = "/home/5amari/NetBeansProjects/DAW2_19_20/SubirArchivos/web/perfiles";
-    public static String rutaServidorWindows = "C:/Users/ff_ma/Documents/glassfish5/glassfish/domains/domain1/config/perfil";
+    public String rutaServidorLinux = "/home/daw207/glassfish5/glassfish/domains/domain1/config/perfiles/";
+    public String rutaServidorWindows = "C:/Users/ff_ma/Documents/glassfish5/glassfish/domains/domain1/config/perfil";
 }
