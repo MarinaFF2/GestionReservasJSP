@@ -92,7 +92,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT usuario.correo, usuario.clave,usuario.nombre,usuario.apellido, usuario.edad, usuario.foto rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                u = new Usuario(Conj_Registros.getString("correo"), Conj_Registros.getString("clave"), Conj_Registros.getString("nombre"), Conj_Registros.getString("apellido"), Conj_Registros.getInt("edad"), Conj_Registros.getBytes(6),Conj_Registros.getBlob(6),Conj_Registros.getInt("rol"));
+                u = new Usuario(Conj_Registros.getString(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4), Conj_Registros.getInt(5), Conj_Registros.getBytes(6),Conj_Registros.getBlob(6),Conj_Registros.getInt(7));
                 v.add(u);
             }
         } catch (SQLException ex) {
