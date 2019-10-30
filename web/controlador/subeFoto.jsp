@@ -102,7 +102,7 @@
                 Date d = new Date();
                 String f = s.format(d);
                 int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-                BitacorasFichero b =new BitacorasFichero("Se ha registrado en el sistema",f,u.getCorreo(),rol);
+                BitacorasFichero.escribirBitacorasCuerpo("Se ha registrado en el sistema",f,u.getCorreo(),rol);
             }
             response.sendRedirect( "../vista/usuario/registrarse.jsp");
             ConexionEstatica.cerrarBD();

@@ -29,8 +29,7 @@
             Date d = new Date();
             String f = s.format(d);
             int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-            BitacorasFichero b =new BitacorasFichero("Inicia sesion en el sistema",f,u.getCorreo(),rol);
-            b.escribirBitacorasCuerpo();
+            BitacorasFichero.escribirBitacorasCuerpo("Inicia sesion en el sistema",f,u.getCorreo(),rol);
             int n = (ConexionEstatica.Conseguir_Rol(u.getCorreo()));
             session.setAttribute("rol", n);
             ConexionEstatica.cerrarBD();
@@ -61,8 +60,7 @@
             Date d = new Date();
             String f = s.format(d);
             int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-            BitacorasFichero b =new BitacorasFichero("Ha cambiado de contraseña",f,u.getCorreo(),rol);
-            b.escribirBitacorasCuerpo();
+            BitacorasFichero.escribirBitacorasCuerpo("Ha cambiado de contraseña",f,u.getCorreo(),rol);
             response.sendRedirect("../vista/usuario/editarUsuario.jsp");
         }
     }
@@ -83,8 +81,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-        BitacorasFichero b =new BitacorasFichero("Ha editado el usuario",f,u.getCorreo(),rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Ha editado el usuario",f,u.getCorreo(),rol);
         response.sendRedirect("../vista/usuario/editarUsuario.jsp");
         
     }
@@ -111,8 +108,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(emil);
-        BitacorasFichero b =new BitacorasFichero("Ha pedido recuperar la contraseña por olvido",f,emil,rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Ha pedido recuperar la contraseña por olvido",f,emil,rol);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../index.html");
     }
@@ -126,8 +122,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-        BitacorasFichero b =new BitacorasFichero("Ha pedido ver bitacora",f,u.getCorreo(),rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Ha pedido ver bitacora",f,u.getCorreo(),rol);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../vista/gestion/Bitacora.jsp");
     }
@@ -141,8 +136,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(n);
-        BitacorasFichero b =new BitacorasFichero("Ha cerrado sesion en el sistema",f,n,rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Ha cerrado sesion en el sistema",f,n,rol);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("../index.jsp");
     }
@@ -156,8 +150,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-        BitacorasFichero b =new BitacorasFichero("Se le ha redirigido al index",f,u.getCorreo(),rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Se le ha redirigido al index",f,u.getCorreo(),rol);
         ConexionEstatica.cerrarBD();
     }
 

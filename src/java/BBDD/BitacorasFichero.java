@@ -13,14 +13,10 @@ import java.io.IOException;
  * @author fernando
  */
 public class BitacorasFichero {
-    private static String accion;
-    private static String feHo;
-    private static String correo;
-    private static String rol;
-    private static String cuerpo = "<tr><td>"+BitacorasFichero.accion+"</td><td>"+BitacorasFichero.feHo+"</td><td>"+BitacorasFichero.correo+"</td> <td>"+BitacorasFichero.rol+"</td></tr>";
-      
+    public static void escribirBitacorasCuerpo(String accion, String feHo,String correo, int ro) {
+        String rol = getRol(ro);
+        String cuerpo = "<tr><td>"+accion+"</td><td>"+feHo+"</td><td>"+correo+"</td> <td>"+rol+"</td></tr>";
     
-    public static void escribirBitacorasCuerpo() {
         FileWriter fw = null;
         try {
             fw = new FileWriter(Constantes.ficheroBitacoras, true);
@@ -31,45 +27,18 @@ public class BitacorasFichero {
         }
     }
 
-    public BitacorasFichero(String accion, String feHo,String correo, int ro) {
-        BitacorasFichero.correo=correo;
-        BitacorasFichero.accion=accion;
-        BitacorasFichero.rol=BitacorasFichero.getRol(ro);
-        BitacorasFichero.feHo=feHo;
-    }
-    public static String getAccion() {
-        return accion;
-    }
-
-    public static void setAccion(String accion) {
-        BitacorasFichero.accion = accion;
-    }
-
-    public static String getFeHo() {
-        return feHo;
-    }
-
-    public static void setFeHo(String feHo) {
-        BitacorasFichero.feHo = feHo;
-    }
-
-    public static String getCorreo() {
-        return correo;
-    }
-
-    public static void setCorreo(String correo) {
-        BitacorasFichero.correo = correo;
-    }
-
     public static String getRol(int ro) {
-        if(ro==3){
-            rol="Administrador General";
-        }
-        if(ro==2){
-            rol="Administrador Aulas";
-        }
-        if(ro==1){
-            rol="Profesor";
+        String rol="";
+        switch(ro){
+            case 3:
+                rol="Administrador General";
+            break;
+            case 2:
+                rol="Administrador Aulas";
+            break;
+            case 1:
+                rol="Profesor";
+            break;
         }
         return rol;
     }

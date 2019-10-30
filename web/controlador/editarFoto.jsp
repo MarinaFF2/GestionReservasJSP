@@ -65,8 +65,7 @@
         Date d = new Date();
         String f = s.format(d);
         int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-        BitacorasFichero b =new BitacorasFichero("Ha cambiado la foto de perfil",f,u.getCorreo(),rol);
-        b.escribirBitacorasCuerpo();
+        BitacorasFichero.escribirBitacorasCuerpo("Ha cambiado la foto de perfil",f,u.getCorreo(),rol);
     }
     response.sendRedirect( "../vista/usuario/editarFoto.jsp");
     ConexionEstatica.cerrarBD();

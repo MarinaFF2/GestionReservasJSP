@@ -326,7 +326,7 @@ public class ConexionEstatica {
     public static int Conseguir_Rol(String correo) throws SQLException {
         int rol = 1;
         try {
-            String sentencia = "SELECT rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo and usuario.correo = ?";
+            String sentencia = "SELECT rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo and asignarrol.codProfesor = ?";
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, correo);
             ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
