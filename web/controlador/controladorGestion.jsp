@@ -116,7 +116,7 @@
             Date d = new Date();
             String f = s.format(d);
             int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-           BitacorasFichero.escribirBitacorasCuerpo("Ha modificado la franja "+w,f,u.getCorreo(),rol);
+            BitacorasFichero.escribirBitacorasCuerpo("Ha modificado la franja "+w,f,u.getCorreo(),rol);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/gestionarFranja.jsp");
         }
@@ -159,8 +159,9 @@
     //boton de gestion aula
     if(request.getParameter("botAula")!=null){
         ConexionEstatica.nueva();
+        int w = Integer.parseInt(request.getParameter("aula"));
         if(request.getParameter("botAula").equals("Editar")){
-            int w = Integer.parseInt(request.getParameter("aula"));
+            
             int aula = Integer.parseInt(request.getParameter("codAula"));
             String des = request.getParameter("descripcionAula");
             ConexionEstatica.Modificar_Dato_CodAula_DescripcionAula(w,aula,des);
@@ -176,8 +177,8 @@
             response.sendRedirect("../vista/gestion/gestionarAula.jsp");
         }
         if(request.getParameter("botAula").equals("X")){
-            int w = Integer.parseInt(request.getParameter("aula"));
             ConexionEstatica.Borrar_Dato_Aula(w);
+            
             String usu = (String) session.getAttribute("usu");
             Usuario u = ConexionEstatica.existeUsu(usu);
 

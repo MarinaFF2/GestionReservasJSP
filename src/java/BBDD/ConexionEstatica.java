@@ -414,14 +414,14 @@ public class ConexionEstatica {
         }
     }
     public static void Modificar_Dato_Franja_IniHora_FinHora(int clave, int codFranja, String inicioHora, String finHora) throws SQLException {
-        String sql = "UPDATE franja SET codFranja = ?, inicioHora = ?, finHora = ? WHERE clave ?";
+        String sql = "UPDATE franja SET codFranja = ?, inicioHora = ?, finHora = ? WHERE clave = ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);
-            ps.setInt(4, clave);
             ps.setInt(1, codFranja);
             ps.setString(2, inicioHora);
             ps.setString(3, finHora);
+            ps.setInt(4, clave);
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error de SQL: " + ex.getMessage());
@@ -567,7 +567,7 @@ public class ConexionEstatica {
         }
     }
     public static void Borrar_Dato_Aula(int aula) throws SQLException {
-        String sql = "DELETE FROM aula WHERE codAula = ?";
+        String sql = "DELETE FROM aula WHERE codAula = ? ";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);

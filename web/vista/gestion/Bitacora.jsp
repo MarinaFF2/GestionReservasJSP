@@ -69,33 +69,34 @@
             </thead>
             <tbody>
                 <% 
-                    File f =null;
-                    FileReader fw = null;
-                    BufferedReader br = null;
-                    try {
-                        f= new File(Constantes.ficheroBitacoras);
+                File f =null;
+                FileReader fw = null;
+                BufferedReader br = null;
+                try {
+                    f = new File(Constantes.ficheroBitacoras);
+                    if(f.exists()){
                         fw = new FileReader(f);
                         br = new BufferedReader(fw);
                         String linea;
                         while((linea = br.readLine())!=null){
                             out.print(linea);
-                        
-                    %>
-            <br>
-            <%
+
+                        %>
+                <br>
+                <%
                         }
-                            
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }finally{
-                        try{
-                            if(null!= fw){
-                            fw.close();
-                            }
-                        }catch (Exception e1) {
-                            e1.printStackTrace();
+                    }   
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }finally{
+                    try{
+                        if(null!= fw){
+                        fw.close();
                         }
+                    }catch (Exception e1) {
+                        e1.printStackTrace();
                     }
+                }
                     %>
             </tbody>
         </table>
