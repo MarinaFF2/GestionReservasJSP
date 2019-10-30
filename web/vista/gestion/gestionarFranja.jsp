@@ -98,7 +98,7 @@
             }
         %> 
         </form>
-        <table name="gestionarFranja" >
+        <table id="gestionarFranja" >
             <caption>LISTA FRANJAS</caption>
             <thead>
                 <tr>
@@ -114,7 +114,7 @@
                 ConexionEstatica.cerrarBD();
                 for (int i = 0; i < v.size(); i++) {
             %>
-                <form  name="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
+                <form  id="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                            <input type="text" name="nFranja" value="<%=v.get(i).getFranja()%>">

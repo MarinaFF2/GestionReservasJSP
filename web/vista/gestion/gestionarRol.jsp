@@ -56,7 +56,7 @@
                 </nav>
             </header>
         </form>
-        <table name="gestionarUsuario" >
+        <table id="gestionarUsuario" >
             <caption>LISTA ROLES</caption>
             <thead>
                 <tr>
@@ -71,7 +71,7 @@
                 ConexionEstatica.cerrarBD();
                 for (int i = 0; i < v.size(); i++) {
             %>
-                <form  name="tablaGestionarUsuario" action="../../controlador/controladorGestion.jsp" method="POST">
+                <form  id="tablaGestionarUsuario" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                             <input type="text" name="correo" value="<%=v.get(i).getCorreo()%>" readonly="true">

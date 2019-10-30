@@ -18,65 +18,56 @@
 <%@page import="java.io.File"%>
 <%@page import="BBDD.ConexionEstatica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <%
-            FileItemFactory factory = new DiskFileItemFactory();
-            ServletFileUpload upload = new ServletFileUpload(factory);
+<%
+    FileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
 
-            Usuario n = new Usuario();
-            // 'request' es la HttpServletRequest que recibimos del formulario.
-            // Los items obtenidos serán cada uno de los campos del formulario,
-            // tanto campos normales como ficheros subidos.
-            List items = upload.parseRequest(request);
-             File fichero = null;
+    Usuario n = new Usuario();
+    // 'request' es la HttpServletRequest que recibimos del formulario.
+    // Los items obtenidos serán cada uno de los campos del formulario,
+    // tanto campos normales como ficheros subidos.
+    List items = upload.parseRequest(request);
+     File fichero = null;
 
-            // Se recorren todos los items, que son de tipo FileItem
-            for (Object item : items) {
-                FileItem uploaded = (FileItem) item;
-                // Hay que comprobar si es un campo de formulario. Si no lo es, se guarda el fichero
-                // subido donde nos interese.
-                if (!uploaded.isFormField()) {
-                    // Es un campo fichero: guardamos el fichero en alguna carpeta (en este caso perfiles).
-                    //Si lo ponemos como sigue: el archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
-                    //File fichero = new File("perfiles", uploaded.getName()); 
-                    //Este directorio anterior, por seguridad, luego no será accesible.
+    // Se recorren todos los items, que son de tipo FileItem
+    for (Object item : items) {
+        FileItem uploaded = (FileItem) item;
+        // Hay que comprobar si es un campo de formulario. Si no lo es, se guarda el fichero
+        // subido donde nos interese.
+        if (!uploaded.isFormField()) {
+            // Es un campo fichero: guardamos el fichero en alguna carpeta (en este caso perfiles).
+            //Si lo ponemos como sigue: el archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
+            //File fichero = new File("perfiles", uploaded.getName()); 
+            //Este directorio anterior, por seguridad, luego no será accesible.
 
-                    //Cambiamos la ruta de destino a:
-                    //String rutaDestino = "/home/fernando/NetBeansProjects/DAW2_19_20/SubirArchivos/web/perfiles";
-                    //String rutaDestino = "aulasInstituto/web/img/perfiles";
-                    String nf = uploaded.getName();
-                    //File fichero = new File(Constantes.rutaServidorWindows, uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
-                    fichero = new File("perfiles", uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
-                    uploaded.write(fichero);
-                    out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");
-                    //pasamos a binario la imagen para almacenarla en mySql
-                    byte[] icono = new byte[(int) fichero.length()];
-                    InputStream input = new FileInputStream(fichero);
-                    input.read(icono);
-                    n.setFoto(icono);
-                }
-            }
+            //Cambiamos la ruta de destino a:
+            //String rutaDestino = "/home/fernando/NetBeansProjects/DAW2_19_20/SubirArchivos/web/perfiles";
+            //String rutaDestino = "aulasInstituto/web/img/perfiles";
+            String nf = uploaded.getName();
+            //File fichero = new File(Constantes.rutaServidorWindows, uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
+            fichero = new File("perfiles", uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
+            uploaded.write(fichero);
+            out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");
+            //pasamos a binario la imagen para almacenarla en mySql
+            byte[] icono = new byte[(int) fichero.length()];
+            InputStream input = new FileInputStream(fichero);
+            input.read(icono);
+            n.setFoto(icono);
+        }
+    }
 
-            ConexionEstatica.nueva();
-            String correo = n.getCorreo();
-            Usuario u = ConexionEstatica.existeUsu(correo);
-            if (u != null) {
-                ConexionEstatica.Modificar_Dato_Foto(u.getCorreo(),n.getFoto());
-                SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
-                Date d = new Date();
-                String f = s.format(d);
-                int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-                BitacorasFichero b =new BitacorasFichero("Ha cambiado la foto de perfil",f,u.getCorreo(),rol);
-
-            }
-            response.sendRedirect( "../vista/usuario/editarFoto.jsp");
-            ConexionEstatica.cerrarBD();
-        %>
-    </body>
-</html>
+    ConexionEstatica.nueva();
+    String correo = n.getCorreo();
+    Usuario u = ConexionEstatica.existeUsu(correo);
+    if (u != null) {
+        ConexionEstatica.Modificar_Dato_Foto(u.getCorreo(),n.getFoto());
+        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
+        Date d = new Date();
+        String f = s.format(d);
+        int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
+        BitacorasFichero b =new BitacorasFichero("Ha cambiado la foto de perfil",f,u.getCorreo(),rol);
+        b.escribirBitacorasCuerpo();
+    }
+    response.sendRedirect( "../vista/usuario/editarFoto.jsp");
+    ConexionEstatica.cerrarBD();
+%>

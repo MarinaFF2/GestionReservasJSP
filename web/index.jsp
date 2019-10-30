@@ -29,8 +29,8 @@
             <h1 id="cabe">Iniciar Sesión</h1>
             <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
                 <p id="usu">Usuario</p><input type="text" id="usuario" name="usuario" placeholder="usuario@x.x"><br>
-                <p id="con">Contraseña</p><input type="password" id="pwd" name="pwd" placeholder="Contraseña"cer><br>
-                <a id="regis"href="vista/usuario/registrarse.jsp">Registrarse</a>
+                <p id="con">Contraseña</p><input type="password" id="pwd" name="pwd" placeholder="Contraseña"><br>
+                <a id="regis" href="vista/usuario/registrarse.jsp">Registrarse</a>
                 <a id="olvidar" href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
                 <input type="submit" id="aceptar" name="aceptarIndex" value="Aceptar">
             </form>

@@ -88,9 +88,6 @@
         response.sendRedirect("../vista/usuario/editarUsuario.jsp");
         
     }
-    if (request.getParameter("gestionarFoto") != null) {
-        response.sendRedirect("../vista/usuario/editarUsuario.jsp");
-    }
 
     // he olvidado la contraseña
     if (request.getParameter("botOlvidoPwd") != null) {
@@ -162,6 +159,6 @@
         BitacorasFichero b =new BitacorasFichero("Se le ha redirigido al index",f,u.getCorreo(),rol);
         b.escribirBitacorasCuerpo();
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../index.jsp");
     }
+
 %>

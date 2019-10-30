@@ -10,8 +10,7 @@ $(document).ready(function () {
             $("#reclave").css({'border-color':'black'});
         }
         if ($("#reclave").val() !== ""){
-            cont++;
-            $("#correo").css({'color':'black'});
+            cont++;$("#reclave").css({'color':'black'});
         }else{
             $("#reclave").css({'color':'orange'});
         }
@@ -26,7 +25,7 @@ $(document).ready(function () {
         }
         if ($("#clave").val() !== ""){
             cont++;
-            $("#correo").css({'color':'black'});
+            $("#clave").css({'color':'black'});
         }else{
             $("#clave").css({'color':'orange'});
         }
@@ -42,7 +41,7 @@ $(document).ready(function () {
     $("#nombre").blur(function(){
         if ($("#nombre").val() !== ""){
             cont=cont++;
-            $("#correo").css({'border-color':'black'});
+            $("#nombre").css({'border-color':'black'});
         }else{
             $("#nombre").css({'border-color':'red'});
         }
@@ -50,47 +49,15 @@ $(document).ready(function () {
     $("#apellido").blur(function(){
         if ($("#apellido").val() !== ""){
             cont=cont++;
-            $("#correo").css({'border-color':'black'});
+            $("#apellido").css({'border-color':'black'});
         }else{
             $("#apellido").css({'border-color':'red'});
-        }
-    });
-    $("#correo").blur(function(){
-        if ($("#correo").val() !== ""){
-            cont=cont++;
-            $("#correo").css({'border-color':'black'});
-        }else{
-            $("#correo").css({'border-color':'red'});
-        }
-    });
-    $("#clave").blur(function(){
-        if ($("#clave").val() !== ""){
-            cont++;
-            $("#correo").css({'border-color':'black'});
-        }else{
-            $("#clave").css({'color':'orange'});
-        }
-    });
-    $("#reclave").blur(function(){
-        if ($("#reclave").val() !== ""){
-            cont++;
-            $("#correo").css({'border-color':'black'});
-        }else{
-            $("#reclave").css({'color':'orange'});
-        }
-    });
-    $("#nombre").blur(function(){
-        if ($("#nombre").val() !== ""){
-            cont=cont++;
-            $("#correo").css({'border-color':'black'});
-        }else{
-            $("#nombre").css({'border-color':'red'});
         }
     });
     $("#edad").blur(function(){
         if ($("#edad").val() !== ""){
             cont=cont++;
-            $("#correo").css({'border-color':'black'});
+            $("#edad").css({'border-color':'black'});
         }else{
             $("#edad").css({'border-color':'red'});
         }

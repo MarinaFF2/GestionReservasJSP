@@ -41,7 +41,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
@@ -76,7 +76,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
@@ -105,7 +105,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
@@ -125,9 +125,9 @@
         <div>
             <h1> ¡Bienvenido!</h1>
         </div>
-    </body>
-    <footer>
+        <footer>
         <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
         <div>Icons made by <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
     </footer>
+    </body>
 </html>

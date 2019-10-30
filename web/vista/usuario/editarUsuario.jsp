@@ -46,7 +46,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
@@ -81,7 +81,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
@@ -110,7 +110,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                             <ul>
                                 <li><a href="editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
