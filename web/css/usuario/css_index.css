@@ -1,0 +1,91 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+main{
+    display:grid;
+    grid-template-areas:
+        "h0"
+        "h1"
+        "h2"
+        "h3"
+        "h4"
+        "h5"
+        "h6";
+    border: 1px black solid;
+}
+p, h1{
+    text-align: center;
+}
+#cabe{
+        grid-areas:h0;
+    }
+    #usu{
+        grid-areas:h1;
+    }
+    #usuario{
+        grid-areas:h2;
+    }
+    #con{
+        grid-areas:h3;
+    }
+    #pwd{
+        grid-areas:h4;
+    }
+    #regis{
+        grid-areas:h5;
+    }
+    #olvidar{
+        grid-areas:h5;
+    }
+    #aceptar{
+        grid-areas:h6;
+    }
+/*Movil site horizontal 320x480*/
+@media (min-width:480px) and (orientation:landscape){
+
+}
+/*Movil site vertical 480x320*/
+@media (min-width:320px) and (orientation:portrait){
+
+
+}
+
+/*Tablet Apps horizontal 768x1024*/
+@media (min-width:1024px) and (orientation:landscape){
+
+}
+/*Tablet Apps vertical 1024x768*/
+@media (min-width:768px) and (orientation:portrait){
+
+}
+
+
+/*Pantalla de escritorio WebSite 1680x1050*/
+@media (min-width:1050px){
+    main{
+        margin-top: 100px;
+        margin-left:300px;
+        border: 1px black solid;
+        max-width:450px; 
+        padding: 10px;
+    }
+    p, h1{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    a{
+        margin: 10px 0px 10px 40px;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 350px;
+        text-align: center;
+    }
+    #aceptar{
+        margin:10px 0px 10px 200px;
+    }
+}

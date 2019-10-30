@@ -1,0 +1,196 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    height: 100px;
+    margin: 0px;
+    padding-top: 5px;
+    background-color: brown;
+}
+nav{
+    position: relative;
+    top:-25px;
+}
+button#cerrarSesion{
+    background-image: url("../../img/iconos/out.png");
+    border:none;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+#editarUsuario{
+    width: 50px;
+    height: 50px;
+}
+#imgUsu{
+    width: 50px;
+    height: 50px;
+}
+/*Movil site horizontal 320x480*/
+@media (min-width:480px) and (orientation:landscape){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
+}
+/*Movil site vertical 480x320*/
+@media (min-width:320px) and (orientation:portrait){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
+}
+/*Tablet Apps horizontal 768x1024*/
+@media (min-width:1024px) and (orientation:landscape){
+    
+}
+/*Tablet Apps vertical 1024x768*/
+@media (min-width:768px) and (orientation:portrait){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+        transform-origin : 0px 100%;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
+}
+/*Pantalla de escritorio WebSite 1680x1050*/
+@media (min-width:1050px){
+    #menu_on{
+        visibility: hidden;
+    }
+    nav{
+        margin:0px;
+        height: 55px;
+        background-color: green;
+    }
+    button#cerrarSesion{
+        position: relative;
+        right: 5px;
+    }
+    button#editarUsuario{
+        position: relative;
+        right: 05px;
+    }
+    nav li {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+    nav li a{
+        text-decoration: none;
+        display: block;
+        margin: 0px;
+        height: 1.5em;
+        box-sizing: border-box;
+    }
+    navli input{
+        list-style-type: none;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    nav li a:hover{
+        color: black;
+        background-color:red;
+    }
+    nav ul li a:hover{
+        color: black;
+        background-color:red;
+    }
+    /* 1 nivel*/
+    nav {
+        padding-left: 50px;
+    }
+    nav li a{
+        text-align: center;
+        list-style-type: none;
+        background-color: white;
+    }
+    nav > ul{
+        margin-left: 10px;
+    }
+    nav > ul > li{
+        display: inline-block;
+        margin: 5px 2px 0px;
+    }
+
+    /* Configuración de los niveles siguientes */
+    nav ul li ul {
+        display: none;
+        visibility: hidden;
+        list-style-type: none;
+
+    }
+    nav ul li:hover > ul{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        z-index: 100;
+    }
+}
