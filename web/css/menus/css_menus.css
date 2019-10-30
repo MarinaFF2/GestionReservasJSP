@@ -12,6 +12,7 @@ header{
 nav{
     position: relative;
     top:-25px;
+    /*background-color: green;*/
 }
 button#cerrarSesion{
     background-image: url("../../img/iconos/out.png");
@@ -128,7 +129,6 @@ button#cerrarSesion{
     nav{
         margin:0px;
         height: 55px;
-        background-color: green;
     }
     button#cerrarSesion{
         position: relative;

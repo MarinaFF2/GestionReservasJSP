@@ -4,6 +4,7 @@
     Author     : daw207
 --%>
 
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="clase.FranjaHoraria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -136,8 +137,12 @@
                     </tr>
                 </thead>
                 <tbody>
-        <%
-            LinkedList <FranjaHoraria> v = (LinkedList <FranjaHoraria>) session.getAttribute("lF");
+        <%  
+            String f = (String) session.getAttribute("fecD");
+            int w = (Integer) session.getAttribute("Aula");
+            ConexionEstatica.nueva();
+            LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerFranjaAulaDeterminada(f, w);
+            ConexionEstatica.cerrarBD();
             for (int i = 0; i < v.size(); i++) {
         %>
                     <form  name="tablaReservarAulas1" action="../../controlador/controladorGestion.jsp" method="POST">

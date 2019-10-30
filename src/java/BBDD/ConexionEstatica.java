@@ -436,12 +436,12 @@ public class ConexionEstatica {
         }
     }
     public static void Modificar_Dato_Reservado_CodProfesor(String codPro, String rese, int clave, int aula, String fecha) throws SQLException {
-        String sql = "UPDATE franja SET codProfesor = ?,  reservado = ?, codAula = ?, fechaDia= ? WHERE clave= ?";
+        String sql = "UPDATE franja SET codProfesor = ?,  reservado = ?, codAula = ?, fechaDia = ? WHERE clave = ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);
             ps.setString(1, codPro);
-            ps.setString(1, rese);
+            ps.setString(2, rese);
             ps.setInt(3, aula);
             ps.setString(4, fecha);
             ps.setInt(5, clave);
@@ -453,8 +453,10 @@ public class ConexionEstatica {
         } finally {
             try {
                 ps.close();
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
                 System.out.println("Error general: " + ex.getMessage());
+            } catch (Exception e) {
+                System.out.println("Error general: " + e.getMessage());
             }
         }
     }
