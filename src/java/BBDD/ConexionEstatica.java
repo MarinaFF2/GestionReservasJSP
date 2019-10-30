@@ -41,7 +41,6 @@ public class ConexionEstatica {
         }
 
     }
-
     public static void cerrarBD() {
         try {
             // resultado.close();
@@ -51,7 +50,9 @@ public class ConexionEstatica {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error de Desconexion", JOptionPane.ERROR_MESSAGE);
         }
     }
-    //      USUARIOS (PROFESORES)
+    
+
+//      USUARIOS (PROFESORES)
     public static Usuario existeUsu(String usuario) {
         Usuario existe = null;
         try {
@@ -247,7 +248,7 @@ public class ConexionEstatica {
             String Sentencia = "SELECT usuario.correo, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(Sentencia);
             while (Conj_Registros.next()) {
-                u = new Usuario(Conj_Registros.getString("usuario.correo"), Conj_Registros.getInt("rol.codRol"));
+                u = new Usuario(Conj_Registros.getString(1), Conj_Registros.getInt(2));
                 v.add(u);
             }
         } catch (SQLException ex) {
@@ -301,7 +302,7 @@ public class ConexionEstatica {
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, correo);
             while (Conj_Registros.next()) {
-                rol = Conj_Registros.getInt("rol.codRol");
+                rol = Conj_Registros.getInt(1);
             }
         } catch (SQLException ex) {
         }
@@ -321,7 +322,7 @@ public class ConexionEstatica {
             sentenciaPreparada.setInt(1, aula);
             sentenciaPreparada.setString(2, fecha);
             while (Conj_Registros.next()) {
-                f = new FranjaHoraria(Conj_Registros.getInt("codAula"), Conj_Registros.getInt("codFranja"), Conj_Registros.getString("fechaDia"), Conj_Registros.getString("inicioHora"), Conj_Registros.getString("finHora"), Conj_Registros.getString("codProfesor"), Conj_Registros.getInt("clave"), Conj_Registros.getString("reservado"));
+                f = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getInt(2), Conj_Registros.getString(3), Conj_Registros.getString(5), Conj_Registros.getString(6), Conj_Registros.getString(7), Conj_Registros.getInt(4), Conj_Registros.getString(8));
                 v.add(f);
             }
         } catch (SQLException ex) {
@@ -330,14 +331,14 @@ public class ConexionEstatica {
     }
     public static LinkedList obtenerAulasReservadas(String correo) {
         LinkedList v = new LinkedList<>();
-        Aula a = null;
+        FranjaHoraria a = null;
         try {
             String sentencia = "SELECT codFranja,inicioHora,finHora,reservado FROM aula,franja where aula.correo = franja.codProfesor and aula.correo = ? and franja.reservado = 'OCUPADA'";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, correo);
             while (Conj_Registros.next()) {
-                a = new Aula(Conj_Registros.getInt("codAula"), Conj_Registros.getString("descripcion"));
+                a = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4));
                 v.add(a);
             }
         } catch (SQLException ex) {
@@ -351,7 +352,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora FROM franja;";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                f = new FranjaHoraria(Conj_Registros.getInt("codFranja"), Conj_Registros.getString("inicioHora"), Conj_Registros.getString("finHora"));
+                f = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getString(2), Conj_Registros.getString(3));
                 v.add(f);
             }
         } catch (SQLException ex) {
@@ -478,7 +479,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT * FROM aula";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                a = new Aula(Conj_Registros.getInt("codAula"), Conj_Registros.getString("descripcion"));
+                a = new Aula(Conj_Registros.getInt(1), Conj_Registros.getString(2));
                 v.add(a);
             }
         } catch (SQLException ex) {
