@@ -34,6 +34,7 @@
                                 <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
+                        <li><a href="#">Ver Bitacora</a></li>
                         <li><p>Profesor</p>
                             <ul>
                                 <li><a href="prof.jsp">Reservar Aula</a></li>

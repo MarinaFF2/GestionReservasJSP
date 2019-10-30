@@ -3,7 +3,32 @@
     margin: 0px;
     padding: 0px;
 }
-
+header{
+    height: 55px;
+    margin: 0px;
+    padding-top: 5px;
+    background-color: brown;
+}
+nav{
+    position: relative;
+    top:-25px;
+}
+button#cerrarSesion{
+    background-image: url("../../img/iconos/out.png");
+    border:none;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+button#editarUsuario{
+    background-image: url("../../img/iconos/usu.png");
+    border:none;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
     #menu_on{
@@ -97,22 +122,21 @@
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
-    header{
-        height: 50px;
+    #menu_on{
+        visibility: hidden;
     }
-    nav p{
-        padding-top: 4px;
-        height: 25px;
-        background-color: red;
-        text-align: center;
+    nav{
+        margin:0px;
+        height: 55px;
+        background-color: green;
     }
-    input#cerrarSesion{
-        position: relative;
-        right: 25px;
-    }
-    input#editarUsuario{
+    button#cerrarSesion{
         position: relative;
         right: 5px;
+    }
+    button#editarUsuario{
+        position: relative;
+        right: 05px;
     }
     nav li {
         position: relative;
@@ -121,7 +145,6 @@
     }
     nav li a{
         text-decoration: none;
-        list-style-type: none;
         display: block;
         margin: 0px;
         height: 1.5em;
@@ -142,12 +165,12 @@
     }
     /* 1 nivel*/
     nav {
-        padding-left: 110px;
-        height: 150px;
+        padding-left: 50px;
     }
     nav li a{
         text-align: center;
         list-style-type: none;
+        background-color: white;
     }
     nav > ul{
         margin-left: 10px;

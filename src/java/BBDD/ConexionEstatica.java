@@ -56,10 +56,11 @@ public class ConexionEstatica {
     public static Usuario existeUsu(String usuario) {
         Usuario existe = null;
         try {
-            String sentencia = "SELECT * FROM personas WHERE nombre =? ";
+            String sentencia = "SELECT * FROM usuario WHERE correo =? ";
             //Preparamos la sentencia para evitar la inyección.
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, usuario);
+            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
                 existe = new Usuario(Conj_Registros.getString(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4), Conj_Registros.getInt(5), Conj_Registros.getBytes(6), Conj_Registros.getBlob(6));
@@ -72,11 +73,12 @@ public class ConexionEstatica {
     public static Usuario existeUsuario(String usuario,String clave) {
         Usuario existe = null;
         try {
-            String sentencia = "SELECT * FROM usuario WHERE correo =? and clave=?";
+            String sentencia = "SELECT * FROM usuario WHERE correo = ? and clave= ?";
             //Preparamos la sentencia para evitar la inyección.
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, usuario);
             sentenciaPreparada.setString(2, clave);
+            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
                 existe = new Usuario(Conj_Registros.getString(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4), Conj_Registros.getInt(5), Conj_Registros.getBytes(6), Conj_Registros.getBlob(6));
@@ -301,6 +303,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo and usuario.correo = ?";
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, correo);
+            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
             while (Conj_Registros.next()) {
                 rol = Conj_Registros.getInt(1);
             }
@@ -317,10 +320,10 @@ public class ConexionEstatica {
         FranjaHoraria f = null;
         try {
             String sentencia = "SELECT DISTINCT * FROM franja WHERE codAula= ? AND fechaDia=?;";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setInt(1, aula);
             sentenciaPreparada.setString(2, fecha);
+            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
             while (Conj_Registros.next()) {
                 f = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getInt(2), Conj_Registros.getString(3), Conj_Registros.getString(5), Conj_Registros.getString(6), Conj_Registros.getString(7), Conj_Registros.getInt(4), Conj_Registros.getString(8));
                 v.add(f);
@@ -334,9 +337,9 @@ public class ConexionEstatica {
         FranjaHoraria a = null;
         try {
             String sentencia = "SELECT codFranja,inicioHora,finHora,reservado FROM aula,franja where aula.correo = franja.codProfesor and aula.correo = ? and franja.reservado = 'OCUPADA'";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
             sentenciaPreparada.setString(1, correo);
+            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
             while (Conj_Registros.next()) {
                 a = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4));
                 v.add(a);

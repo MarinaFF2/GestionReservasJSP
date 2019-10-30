@@ -42,16 +42,17 @@
                                 <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
+                        <li><a href="#">Ver Bitacora</a></li>
                         <li><a href="#">Profesor</a>
                             <ul>
                                 <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
+                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>
@@ -79,10 +80,10 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario">
+                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>
