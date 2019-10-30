@@ -32,16 +32,21 @@
                                 <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
                                 <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
                                 <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ver Bitacora</a></li>
+                        <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
                         <li><p>Profesor</p>
                             <ul>
                                 <li><a href="prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
@@ -67,7 +72,11 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
@@ -87,7 +96,11 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="editarUsuario" name="editarUsuario" value="EditarUsuario">
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
@@ -115,42 +128,5 @@
             </select><br>
             <input type="submit" id="verReservaAula" name="verReservaAula" value="verCuadrante"><br>
         </form>
-            <!-- no aparece-->
-                
-        <table name="verReservasAulaUsuario">
-            <thead>
-                <tr>
-                    <th>HORA COMIENZO</th>
-                    <th>HORA FINAL</th>
-                    <th>RESERVADO</th>
-                </tr>
-            </thead>
-            <tbody>
-        <%
-                String usu = (String) session.getAttribute("usu");
-                ConexionEstatica.nueva();
-                LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerAulasReservadas(usu);
-                ConexionEstatica.cerrarBD();
-                for (int i = 0; i < v.size(); i++) {
-                session.setAttribute("usuOcupado", v.get(i).getCodProfesor());
-        %>
-                <form  name="tablaReservaAulas" action="../../controlador/controladorGestion.jsp" method="POST">
-                    <tr>
-                        <td>
-                            <input type="text" id="iniHora" name="finHora" value="<%out.print(v.get(i).getInicioHora());%>" readonly="true">
-                        </td>   
-                        <td>
-                            <input type="text" id="finHora" name="finHora" value="<%out.print(v.get(i).getFinHora());%>" readonly="true">
-                        </td> 
-                        <td>
-                            <input type="submit" name="reservado" value="<%out.print(v.get(i).getReservado());%>">
-                        </td>
-                    </tr>
-                </form>
-        <%
-            }
-        %>
-            </tbody>
-        </table>
     </body>
 </html>

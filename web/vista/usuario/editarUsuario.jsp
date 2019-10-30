@@ -39,14 +39,18 @@
                                 <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ver Bitacora</a></li>
+                        <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
                         <li><a href="#">Profesor</a>
                             <ul>
                                 <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
@@ -77,7 +81,11 @@
                             </ul>
                         </li>
                         <li>
-                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
@@ -102,7 +110,11 @@
                             </ul>
                         </li>
                         <li>
-                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
@@ -120,24 +132,24 @@
             Usuario u = ConexionEstatica.existeUsu(uu);
             ConexionEstatica.cerrarBD();
         %>
-        <form id="editarUsu1" name="asd" action="../../controlador/subefichero.jsp" enctype="multipart/form-data" method="POST">
-            <div id="imgPerfil">
-                <img id="fotoPerfil" src="<%=u.getFotoimgString() %>" alt='Foto de perfil no encontrada'/>
-            </div>
-            <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
-            Correo:*<br>
-            <input type="email" id="correo" name="correo" placeholder="Correo" value="<%u.getCorreo();%>"><br>
-            Contraseña:*<br>
-            <input type="password" id="clave" name="clave" placeholder="Contaseña" value="<%u.getClave();%>"><br>
-            Nombre:*<br>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%u.getNombre();%>" pattern="[A-Za-z]{1,50}"><br>
-            Apellidos:*<br>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%u.getApellido();%>" pattern="[A-Za-z]{1,50}"><br>
-            Edad:*<br>
-            <input type="number" id="edad" name="edad" placeholder="Edad" value="<%u.getEdad();%>"><br>
-        
-            <input type="submit" id="editarUsu" name="editarUsu" value="Guardar"><br> 
+        <form id="editarUsu2" name="editarUsu2" action="../../controlador/controladorGeneral.jsp"method="POST">
+            
+            Nueva contraseña:*<br>
+            <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
+            Confirmar nueva contraseña:*<br>
+            <input type="password" id="reclave" name="reclave" placeholder="Confirmar contaseña" ><br>
+            <input type="submit" id="cambiarContra" name="cambiarContra" value="Cambiar"><br> 
         </form>
+        <form id="editarUsu3" name="editarUsu3" action="../../controlador/controladorGeneral.jsp"method="POST">
+            Correo:*<br>
+            <input type="email" id="correo" name="correo" placeholder="Correo" value="<%=u.getCorreo()%>"><br>
+            Nombre:*<br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%=u.getNombre()%>" pattern="[A-Za-z]{1,50}"><br>
+            Apellidos:*<br>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%=u.getApellido()%>" pattern="[A-Za-z]{1,50}"><br>
+            Edad:*<br>
+            <input type="number" id="edad" name="edad" placeholder="Edad" value="<%=u.getEdad()%>"><br>
+            <input type="submit" id="editarUsu" name="editarUsu" value="Guardar"><br> 
         </form>
     </body>
 </html>

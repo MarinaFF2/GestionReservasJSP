@@ -4,7 +4,7 @@
     padding: 0px;
 }
 header{
-    height: 55px;
+    height: 100px;
     margin: 0px;
     padding-top: 5px;
     background-color: brown;
@@ -21,11 +21,11 @@ button#cerrarSesion{
     width: 50px;
     height: 50px;
 }
-button#editarUsuario{
-    background-image: url("../../img/iconos/usu.png");
-    border:none;
-    background-repeat: no-repeat;
-    background-size: 50px;
+#editarUsuario{
+    width: 50px;
+    height: 50px;
+}
+#imgUsu{
     width: 50px;
     height: 50px;
 }

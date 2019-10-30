@@ -38,16 +38,12 @@
             ConexionEstatica.nueva();
             re="OCUPADO";
             ConexionEstatica.Modificar_Dato_Reservado_CodProfesor(usu ,re, nu, n, f);
-            LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
-            session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/reservarAula.jsp");
         }else if(re.equals("OCUPADO") && usuR.equals(usu)){
             ConexionEstatica.nueva();
             re = "LIBRE";
             ConexionEstatica.Modificar_Dato_Reservado_CodProfesor(null, re, nu, n, f);
-            LinkedList lF = ConexionEstatica.obtenerFranjaAulaDeterminada(f, n);
-            session.setAttribute("lF", lF);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/reservarAula.jsp");
         }
@@ -66,10 +62,8 @@
             String u = request.getParameter("correo");
             String nom = request.getParameter("nombre");
             String ape = request.getParameter("apellido");
-            int rol = Integer.parseInt(request.getParameter("rol"));
             int edad = Integer.parseInt(request.getParameter("edad"));
             ConexionEstatica.Modificar_Nombre_Apellido_Edad(u, nom, ape, edad);
-            ConexionEstatica.Modificar_Dato_IdAsignarRol(u,rol);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/gestionarUsuario.jsp");
         }
@@ -78,15 +72,30 @@
     if(request.getParameter("botFranja")!=null){
         ConexionEstatica.nueva();
         if(request.getParameter("botFranja").equals("Editar")){
-            int u = Integer.parseInt(request.getParameter("franja"));
+            int u = Integer.parseInt(request.getParameter("clave"));
             int nF = Integer.parseInt(request.getParameter("nFranja"));
             String ini = request.getParameter("iniHora");
             String fin = request.getParameter("finHora");
             ConexionEstatica.Modificar_Dato_Franja_IniHora_FinHora(u, nF, ini, fin);
-            LinkedList lFt = ConexionEstatica.obtenerFranjaDeterminada();
-            session.setAttribute("lFt", lFt);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/gestionarFranja.jsp");
+        }
+    }
+    //boton de gestion rol
+    if(request.getParameter("botRol")!=null){
+        ConexionEstatica.nueva();
+        if(request.getParameter("botRol").equals("Editar")){
+            String u = request.getParameter("correo");
+            int r = Integer.parseInt(request.getParameter("rol"));
+            ConexionEstatica.Modificar_Dato_IdAsignarRol(u, r);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../vista/gestion/gestionarRol.jsp");
+        }
+        if(request.getParameter("botRol").equals("X")){
+            String u = request.getParameter("correo");
+            ConexionEstatica.Borrar_Dato_Rol(u);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../vista/gestion/gestionarRol.jsp");
         }
     }
     //boton de gestion aula
@@ -97,16 +106,12 @@
             int aula = Integer.parseInt(request.getParameter("codAula"));
             String des = request.getParameter("descripcionAula");
             ConexionEstatica.Modificar_Dato_CodAula_DescripcionAula(u,aula,des);
-            LinkedList lA = ConexionEstatica.obtenerAulas();
-            session.setAttribute("lA", lA);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/gestionarAula.jsp");
         }
         if(request.getParameter("botAula").equals("X")){
             int u = Integer.parseInt(request.getParameter("aula"));
             ConexionEstatica.Borrar_Dato_Aula(u);
-            LinkedList lA = ConexionEstatica.obtenerAulas();
-            session.setAttribute("lA", lA);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../vista/gestion/gestionarAula.jsp");
         }

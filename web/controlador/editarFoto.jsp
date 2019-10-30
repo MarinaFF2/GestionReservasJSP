@@ -1,22 +1,19 @@
 <%-- 
-    Document   : subefichero
-    Created on : 20-oct-2019, 18:06:24
-    Author     : fernando
+    Document   : editarFoto
+    Created on : 30-oct-2019, 11:01:29
+    Author     : daw207
 --%>
 
-
-<%@page import="java.io.FileInputStream"%>
-<%@page import="java.io.InputStream"%>
-<%@page import="clase.Codificar"%>
-<%@page import="BBDD.ConexionEstatica"%>
-<%@page import="clase.Usuario"%>
-<%@page import="BBDD.Constantes"%>
-<%@page import="java.io.File"%>
-<%@page import="org.apache.commons.fileupload.FileItem"%>
-<%@page import="java.util.List"%>
-<%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
 <%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <%@page import="org.apache.commons.fileupload.FileItemFactory"%>
+<%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
+<%@page import="clase.Usuario"%>
+<%@page import="java.util.List"%>
+<%@page import="org.apache.commons.fileupload.FileItem"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.io.File"%>
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -60,44 +57,16 @@
                     InputStream input = new FileInputStream(fichero);
                     input.read(icono);
                     n.setFoto(icono);
-                } else {//Si es un campo de formulario (no fichero) extraemos su valor de la siguiente manera.
-                    /*
-                            Como el formulario debe ser enctype="multipart/form-data" para que admita el envío del fichero. 
-                            La primera pega que encontramos con JSP es que si el envío el multipart, no funcionan las llamadas a 
-                            request.getParameter(), siempre devuelven null. Por ello, si el formulario tiene más campos que 
-                            necesitemos leer, debemos delegar toda la tarea en la librería apache-commons-fileupload.
-                     */
-                    // Para obtener clave y valor de los campos formulario.
-
-                    String key = uploaded.getFieldName();
-                    String valor = uploaded.getString();
-
-                    //--> Vemos que la siguiente línea devolverá null por el tipo de enctype del formulario (necesario para sublir ficheros).
-                    if (key.equals("correo")) {
-                        n.setCorreo(valor);
-                    }
-                    if (key.equals("clave")) {
-                        n.setClave(Codificar.codifica(valor));
-                    }
-                    if (key.equals("nombre")) {
-                        n.setNombre(valor);
-                    }
-                    if (key.equals("apellido")) {
-                        n.setApellido(valor);
-                    }
-                    if (key.equals("edad")) {
-                        n.setEdad(Integer.parseInt(valor));
-                    }
                 }
             }
 
             ConexionEstatica.nueva();
             String correo = n.getCorreo();
             Usuario u = ConexionEstatica.existeUsu(correo);
-            if (u == null) {
-                ConexionEstatica.Insertar_Usuario(n);
+            if (u != null) {
+                ConexionEstatica.Modificar_Dato_Foto(u.getCorreo(),n.getFoto());
             }
-            response.sendRedirect( "../vista/usuario/registrarse.jsp");
+            response.sendRedirect( "../vista/usuario/editarFoto.jsp");
             ConexionEstatica.cerrarBD();
         %>
     </body>

@@ -21,9 +21,6 @@
     <body>
         <form  name="tablaGestionarFranja" action="../controlador/controladorGeneral.jsp" method="POST">
         <%
-            ConexionEstatica.nueva();
-            LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerFranjaDeterminada();
-            ConexionEstatica.cerrarBD();
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
         %>
@@ -37,19 +34,24 @@
                     <ul>
                         <li><a href="#">Administrador General</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ver Bitacora</a></li>
+                        <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
                         <li><a href="#">Profesor</a>
                             <ul>
-                                <li><a href="../gestion/prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
+                                <li><a href="prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
                             </ul>
                         </li>
                         <li>
-                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
@@ -70,17 +72,21 @@
                     <ul>
                         <li><a href="#">Administrador Aula</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Profesor</a><span class="flecha"></span>
                             <ul>
-                                <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                                <li><a href="prof.jsp">Reservar Aula</a></li>
                             </ul>
                         </li>
                         <li>
-                            <button type="submit" id="editarUsuario" name="editarUsuario"  value="EditarUsuario"></button>
+                            <a href="#" id="editarUsuario"  alt="EditarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                            <ul>
+                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                            </ul>
                         </li>
                         <li>
                             <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
@@ -103,22 +109,25 @@
             </thead>
             <tbody>
             <%
+                ConexionEstatica.nueva();
+                LinkedList <FranjaHoraria> v = ConexionEstatica.obtenerFranjaDeterminada();
+                ConexionEstatica.cerrarBD();
                 for (int i = 0; i < v.size(); i++) {
             %>
                 <form  name="tablaGestionarFranja" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
-                           <input type="text" name="nFranja" value="<%out.print(v.get(i).getFranja());%>">
+                           <input type="text" name="nFranja" value="<%=v.get(i).getFranja()%>">
                         </td>   
                         <td>
-                           <input type="text" name="iniHora" value="<%out.print(v.get(i).getInicioHora());%>">
+                           <input type="text" name="iniHora" value="<%=v.get(i).getInicioHora()%>">
                         </td>
                         <td>
-                            <input type="text" name="finHora" value="<%out.print(v.get(i).getFinHora());%>">
+                            <input type="text" name="finHora" value="<%=v.get(i).getFinHora()%>">
                         </td>
                         <td>
                             <input type="submit" name="botFranja" value="Editar">
-                            <input type="hidden" id="clave" name="clave" value="<%out.print(v.get(i).getClave());%>" >
+                            <input type="hidden" id="clave" name="clave" value="<%=v.get(i).getClave()%>" >
                         </td>
                     </tr>
                 </form>

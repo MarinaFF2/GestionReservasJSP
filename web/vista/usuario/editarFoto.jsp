@@ -1,19 +1,25 @@
 <%-- 
-    Document   : principal
-    Created on : 25-oct-2019, 13:31:52
+    Document   : editarUsuario
+    Created on : 23-oct-2019, 13:01:59
     Author     : daw207
 --%>
 
+<%@page import="BBDD.ConexionEstatica"%>
+<%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/usuario/css_editarUsu.css" media="screen" />
+        <script src="../../jquery-3.4.1.min.js"></script>
+        <script src="js/usuario/editarUsuario.js"></script>
     </head>
     <body>
-        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <form name="tablaEditerUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
         <%
             int n = (Integer)session.getAttribute("rol");
             if(n==3){
@@ -31,7 +37,6 @@
                                 <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
                                 <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
                                 <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
-                                <li><a href="../gestion/gestionarRol.jsp">Gestion Rol</a></li>
                             </ul>
                         </li>
                         <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
@@ -121,13 +126,18 @@
             }
         %>
         </form>
-        
-        <div>
-            <h1> ¡Bienvenido!</h1>
-        </div>
+        <% 
+            String uu = (String) session.getAttribute("usu");
+            ConexionEstatica.nueva();
+            Usuario u = ConexionEstatica.existeUsu(uu);
+            ConexionEstatica.cerrarBD();
+        %>
+        <form id="editarUsu1" name="editarUsu1" action="../../controlador/editarFoto.jsp" enctype="multipart/form-data" method="POST">
+            <div id="imgPerfil">
+                <img id="fotoPerfil" src="<%=u.getFotoimgString() %>" alt='Foto de perfil no encontrada'/></br>
+                <input type="file" name="fichero"/></br>
+                <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
+            </div>
+        </form>
     </body>
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-    </footer>
 </html>

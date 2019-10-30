@@ -4,6 +4,7 @@
     Author     : daw207
 --%>
 
+<%@page import="BBDD.BitacorasFichero"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,13 +18,13 @@
     </head>
     <body>
         <%
-            /*HttpSession s = request.getSession();
-            
+            HttpSession s = request.getSession();
             s.setMaxInactiveInterval(59); 
             if(s.getMaxInactiveInterval()==0){
                 s.removeAttribute("usu");
                 s.invalidate();
-            }*/
+            }
+            BitacorasFichero.crearFichero();
         %>
         <main>
             <h1 id="cabe">Iniciar Sesión</h1>

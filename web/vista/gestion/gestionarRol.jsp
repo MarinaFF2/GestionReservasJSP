@@ -57,13 +57,10 @@
             </header>
         </form>
         <table name="gestionarUsuario" >
-            <caption>LISTA USUARIOS</caption>
+            <caption>LISTA ROLES</caption>
             <thead>
                 <tr>
                     <th>CORREO</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>EDAD</th>
                     <th>ROL</th>
                 </tr>
             </thead>
@@ -78,21 +75,15 @@
                     <tr>
                         <td>
                             <input type="text" name="correo" value="<%=v.get(i).getCorreo()%>" readonly="true">
-                        </td> 
-                        <td>
-                            <input type="text" name="nombre" value="<%=v.get(i).getNombre()%>">
-                        </td>   
-                        <td>
-                            <input type="text" name="apellido" value="<%=v.get(i).getApellido()%>">
                         </td>
                         <td>
-                            <input type="number" name="edad" value="<%=v.get(i).getEdad()%>">
+                            <input type="number" name="rol" value="<%=v.get(i).getRol()%>" pattern="[1-3]{1}">
                         </td>
                         <td>
-                            <input type="submit" name="botUsuario" value="X">
+                            <input type="submit" name="botRol" value="X">
                         </td>
                         <td>
-                            <input type="submit" name="botUsuario" value="Editar">
+                            <input type="submit" name="botRol" value="Editar">
                         </td>
                     </tr>
                 </form>
