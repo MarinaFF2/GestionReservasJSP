@@ -58,6 +58,11 @@
             u = ConexionEstatica.existeUsu(usu);
             ConexionEstatica.cerrarBD();
             session.setAttribute("usu", u);
+            SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
+            Date d = new Date();
+            String f = s.format(d);
+            int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
+            BitacorasFichero b =new BitacorasFichero("Ha cambiado de contraseña",f,u.getCorreo(),rol);
             response.sendRedirect("../vista/usuario/editarUsuario.jsp");
         }
     }
@@ -74,6 +79,11 @@
         u = ConexionEstatica.existeUsu(correo);
         ConexionEstatica.cerrarBD();
         session.setAttribute("usu", u);
+        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
+            Date d = new Date();
+            String f = s.format(d);
+            int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
+            BitacorasFichero b =new BitacorasFichero("Ha editado el usuario",f,u.getCorreo(),rol);
         response.sendRedirect("../vista/usuario/editarUsuario.jsp");
         
     }
@@ -101,20 +111,12 @@
 
         //BitacorasFichero.escribirBitacoras("El usuario " + n.getCorreo() + " ha dado a enviar nueva contraseña.");
         ConexionEstatica.cerrarBD();
-
+        
         response.sendRedirect("../index.html");
     }
     //Bitacoras
     if (request.getParameter("bitacora") != null) {
-        String usu = (String) session.getAttribute("usu");
-        Usuario u = ConexionEstatica.existeUsu(usu);
-        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
-        Date d = new Date();
-        String f = s.format(d);
-        int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-        BitacorasFichero b = new BitacorasFichero("Cerrado el fichero Bitacoras",f,u.getCorreo(),rol);
-        BitacorasFichero.escribirBitacorasPie();
-        //hacer que se muestre por pantalla
+        response.sendRedirect("../vista/gestion/Bitacora.jsp");
     }
     //cerrar sesion
     if (request.getParameter("cerrarSesion") != null) {

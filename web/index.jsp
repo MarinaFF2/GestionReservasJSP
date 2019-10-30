@@ -24,7 +24,6 @@
                 s.removeAttribute("usu");
                 s.invalidate();
             }
-            BitacorasFichero.crearFichero();
         %>
         <main>
             <h1 id="cabe">Iniciar Sesión</h1>

@@ -26,6 +26,13 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String correo, String nombre, String apellido, int edad) {
+        this.correo = correo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
     
     
     /**
@@ -47,17 +54,60 @@ public class Usuario {
      * @param apellido
      * @param edad
      * @param foto
-     * @param fotoBLob 
+     * @param fotoBlo 
      */
-    public Usuario(String correo, String clave, String nombre, String apellido, int edad,byte[] foto,Blob fotoBLob) {
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,byte[] foto,Blob fotoBlo) {
         this.correo = correo;
         this.clave = clave;
         this.nombre = nombre;
         this.apellido = apellido;
         this.foto = foto;
-        this.fotoBlob=fotoBlob;
+        this.fotoBlob= fotoBlo;
         this.edad = edad;
     }
+    /**
+     * Contructor para modificar datos en editar usuario
+     * @param correo
+     * @param clave
+     * @param nombre
+     * @param apellido
+     * @param edad 
+     */
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad) {
+        this.correo = correo;
+        this.clave = clave;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+    /**
+     * 
+     * @param correo
+     * @param clave
+     * @param nombre
+     * @param apellido
+     * @param edad
+     * @param rol 
+     */
+    public Usuario(String correo, String clave, String nombre, String apellido, int edad,int rol) {
+        this.correo = correo;
+        this.clave = clave;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.rol=rol;
+    }
+    /**
+     * 
+     * @param correo
+     * @param clave
+     * @param nombre
+     * @param apellido
+     * @param edad
+     * @param foto
+     * @param fotoBLob
+     * @param rol 
+     */
     public Usuario(String correo, String clave, String nombre, String apellido, int edad,byte[] foto,Blob fotoBLob,int rol) {
         this.correo = correo;
         this.clave = clave;

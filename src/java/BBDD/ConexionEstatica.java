@@ -91,11 +91,33 @@ public class ConexionEstatica {
     public static LinkedList obtenerUsuarios() {
         LinkedList v = new LinkedList<>();
         Usuario u = null;
+        String sentencia = "SELECT usuario.correo, usuario.clave,usuario.nombre,usuario.apellido, usuario.edad, usuario.foto, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
+        PreparedStatement ps = null;
+        
         try {
-            String sentencia = "SELECT usuario.correo, usuario.clave,usuario.nombre,usuario.apellido, usuario.edad, usuario.foto rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            ps = ConexionEstatica.Conex.prepareStatement(sentencia);
+            ConexionEstatica.Conj_Registros = ps.executeQuery(sentencia);
+            
             while (Conj_Registros.next()) {
                 u = new Usuario(Conj_Registros.getString(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4), Conj_Registros.getInt(5), Conj_Registros.getBytes(6),Conj_Registros.getBlob(6),Conj_Registros.getInt(7));
+                v.add(u);
+            }
+        } catch (SQLException ex) {
+        }
+        return v;
+    }
+    public static LinkedList obtenerUsu() {
+        LinkedList v = new LinkedList<>();
+        Usuario u = null;
+        String sentencia = "SELECT usuario.correo, usuario.clave,usuario.nombre,usuario.apellido, usuario.edad, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
+        PreparedStatement ps = null;
+        
+        try {
+            ps = ConexionEstatica.Conex.prepareStatement(sentencia);
+            ConexionEstatica.Conj_Registros = ps.executeQuery(sentencia);
+            
+            while (Conj_Registros.next()) {
+                u = new Usuario(Conj_Registros.getString(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4), Conj_Registros.getInt(5), Conj_Registros.getInt(6));
                 v.add(u);
             }
         } catch (SQLException ex) {
@@ -134,13 +156,13 @@ public class ConexionEstatica {
             }
         }
     }
-    public static void Modificar_Dato_Foto(Usuario n) {
+    public static void Modificar_Dato_Foto(String u, byte [] f) {
         String sql1 = "UPDATE usuario SET foto = ? WHERE correo = ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql1);
-            ps.setBytes(1, n.getFoto());
-            ps.setString(2, n.getCorreo());
+            ps.setBytes(1, f);
+            ps.setString(2, u);
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error de SQL: " + ex.getMessage());
@@ -201,13 +223,13 @@ public class ConexionEstatica {
             }
         }
     }
-    public static void Modificar_Dato_Clave(Usuario n) throws SQLException {
+    public static void Modificar_Dato_Clave(String c, String cl) throws SQLException {
         String sql1 = "UPDATE usuario SET clave = ? WHERE correo = ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql1);
-            ps.setString(1, n.getCorreo());
-            ps.setString(2, n.getClave());
+            ps.setString(1, c);
+            ps.setString(2,cl);
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error de SQL: " + ex.getMessage());
@@ -246,9 +268,13 @@ public class ConexionEstatica {
     public static LinkedList Obtener_Rol() throws SQLException {
         LinkedList v = new LinkedList<>();
         Usuario u = null;
+        String sentencia = "SELECT usuario.correo, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
+        PreparedStatement ps = null;
+        
         try {
-            String Sentencia = "SELECT usuario.correo, rol.codRol FROM rol,asignarrol,usuario WHERE rol.codRol = asignarrol.codRol and asignarrol.codProfesor = usuario.correo";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(Sentencia);
+            ps = ConexionEstatica.Conex.prepareStatement(sentencia);
+            ConexionEstatica.Conj_Registros = ps.executeQuery(sentencia);
+            
             while (Conj_Registros.next()) {
                 u = new Usuario(Conj_Registros.getString(1), Conj_Registros.getInt(2));
                 v.add(u);
@@ -258,7 +284,7 @@ public class ConexionEstatica {
         return v;
     }
     public static void Modificar_Dato_IdAsignarRol(String u , int rol) throws SQLException {
-        String sql1 = "UPDATE usuario,asignarrol SET asignarrol.codRol = ? WHERE correo = ?";
+        String sql1 = "UPDATE usuario,asignarrol SET asignarrol.codRol = ? WHERE codProfesor = ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql1);
@@ -312,12 +338,31 @@ public class ConexionEstatica {
 
         return rol;
     }
-    
+    public static void Borrar_Dato_Rol(String u) throws SQLException {
+        String sql = "DELETE FROM asignarrol WHERE codProfesor = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = ConexionEstatica.Conex.prepareStatement(sql);
+            ps.setString(1, u);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error de SQL: " + ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Error general: " + ex.getMessage());
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception ex) {
+                System.out.println("Error general: " + ex.getMessage());
+            }
+        }
+    }
     
     //   FRANJA HORARIA
     public static LinkedList obtenerFranjaAulaDeterminada(String fecha, int aula) {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
+            
         try {
             String sentencia = "SELECT DISTINCT * FROM franja WHERE codAula= ? AND fechaDia=?;";
             PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
@@ -332,28 +377,14 @@ public class ConexionEstatica {
         }
         return v;
     }
-    public static LinkedList obtenerAulasReservadas(String correo) {
-        LinkedList v = new LinkedList<>();
-        FranjaHoraria a = null;
-        try {
-            String sentencia = "SELECT codFranja,inicioHora,finHora,reservado FROM aula,franja where aula.correo = franja.codProfesor and aula.correo = ? and franja.reservado = 'OCUPADA'";
-            PreparedStatement sentenciaPreparada = ConexionEstatica.Conex.prepareStatement(sentencia);
-            sentenciaPreparada.setString(1, correo);
-            ConexionEstatica.Conj_Registros = sentenciaPreparada.executeQuery();
-            while (Conj_Registros.next()) {
-                a = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getString(2), Conj_Registros.getString(3), Conj_Registros.getString(4));
-                v.add(a);
-            }
-        } catch (SQLException ex) {
-        }
-        return v;
-    }
     public static LinkedList obtenerFranjaDeterminada() {
         LinkedList v = new LinkedList<>();
         FranjaHoraria f = null;
+        String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora FROM franja;";
+        PreparedStatement ps = null;
         try {
-            String sentencia = "SELECT DISTINCT codFranja,inicioHora,finHora FROM franja;";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            ps = ConexionEstatica.Conex.prepareStatement(sentencia);
+            ConexionEstatica.Conj_Registros = ps.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 f = new FranjaHoraria(Conj_Registros.getInt(1), Conj_Registros.getString(2), Conj_Registros.getString(3));
                 v.add(f);
@@ -387,10 +418,10 @@ public class ConexionEstatica {
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);
-            ps.setInt(1, clave);
-            ps.setInt(2, codFranja);
-            ps.setString(3, inicioHora);
-            ps.setString(4, finHora);
+            ps.setInt(4, clave);
+            ps.setInt(1, codFranja);
+            ps.setString(2, inicioHora);
+            ps.setString(3, finHora);
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error de SQL: " + ex.getMessage());
@@ -405,7 +436,7 @@ public class ConexionEstatica {
         }
     }
     public static void Modificar_Dato_Reservado_CodProfesor(String codPro, String rese, int clave, int aula, String fecha) throws SQLException {
-        String sql = "UPDATE franja SET codProfesor = ?,  reservado = ?, codAula = ?, fechaDia= ? WHERE clave=?";
+        String sql = "UPDATE franja SET codProfesor = ?,  reservado = ?, codAula = ?, fechaDia= ? WHERE clave= ?";
         PreparedStatement ps = null;
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);
@@ -478,9 +509,12 @@ public class ConexionEstatica {
     public static LinkedList obtenerAulas() {
         LinkedList v = new LinkedList<>();
         Aula a = null;
+        String sentencia = "SELECT * FROM aula";
+        PreparedStatement ps = null;
         try {
-            String sentencia = "SELECT * FROM aula";
-            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            ps = ConexionEstatica.Conex.prepareStatement(sentencia);
+            ConexionEstatica.Conj_Registros = ps.executeQuery(sentencia);
+            
             while (Conj_Registros.next()) {
                 a = new Aula(Conj_Registros.getInt(1), Conj_Registros.getString(2));
                 v.add(a);
@@ -495,7 +529,7 @@ public class ConexionEstatica {
         try {
             ps = ConexionEstatica.Conex.prepareStatement(sql);
             ps.setString(1, des);
-            ps.setInt(3, au);
+            ps.setInt(2, au);
             ps.setInt(3, aula);
             ps.executeUpdate();
         } catch (SQLException ex) {

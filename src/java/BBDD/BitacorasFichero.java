@@ -7,25 +7,70 @@ package BBDD;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
 
 /**
  * Este fichero se creará en el servidor: glassfishXX/glassfish/domains/domain1/config
  * @author fernando
  */
 public class BitacorasFichero {
-
-    public static void escribirBitacoras(String accion, Date feHo, String correo, String rol) {
+    private static String accion;
+    private static String feHo;
+    private static String correo;
+    private static String rol;
+    private static String cuerpo = "<tr><td>"+BitacorasFichero.accion+"</td><td>"+BitacorasFichero.feHo+"</td><td>"+BitacorasFichero.correo+"</td> <td>"+BitacorasFichero.rol+"</td></tr>";
+      
+    
+    public static void escribirBitacorasCuerpo() {
         FileWriter fw = null;
-        String n = "<td>"+accion+"</td><td>"+feHo+"</td><td>"+correo+"</td> <td>"+rol+"</td>";
-        String m = "<table><caption>Contenido del archivo Bitacora</caption><thead><tr><th>Acción</th><th>Fecha y hora se la acción</th><th>correo del usuario</th><th>Rol</th></tr></thead><tbody><tr>"+n+"s</tr></tbody></table>";
-
         try {
             fw = new FileWriter(Constantes.ficheroBitacoras, true);
-            fw.write(m+"\r\n");
+            fw.write(cuerpo+"\r\n");
             fw.close();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    public BitacorasFichero(String accion, String feHo,String correo, int ro) {
+        BitacorasFichero.correo=correo;
+        BitacorasFichero.accion=accion;
+        BitacorasFichero.rol=BitacorasFichero.getRol(ro);
+        BitacorasFichero.feHo=feHo;
+    }
+    public static String getAccion() {
+        return accion;
+    }
+
+    public static void setAccion(String accion) {
+        BitacorasFichero.accion = accion;
+    }
+
+    public static String getFeHo() {
+        return feHo;
+    }
+
+    public static void setFeHo(String feHo) {
+        BitacorasFichero.feHo = feHo;
+    }
+
+    public static String getCorreo() {
+        return correo;
+    }
+
+    public static void setCorreo(String correo) {
+        BitacorasFichero.correo = correo;
+    }
+
+    public static String getRol(int ro) {
+        if(ro==3){
+            rol="Administrador General";
+        }
+        if(ro==2){
+            rol="Administrador Aulas";
+        }
+        if(ro==1){
+            rol="Profesor";
+        }
+        return rol;
     }
 }
