@@ -39,6 +39,7 @@
                 uploaded = (FileItem) item;
                 if (!uploaded.isFormField()) {
                     String nf = uploaded.getName();
+                    
                     fichero = new File("perfiles", uploaded.getName()); 
                     uploaded.write(fichero);
                     out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");

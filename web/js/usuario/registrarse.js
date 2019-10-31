@@ -91,6 +91,14 @@ $(document).ready(function () {
             $("#apellido").css({'border-color':'red'});
         }
     });
+    $("#file").blur(function(){
+        if ($("#file").val() !== ""){
+            cont=cont++;
+            $("#file").css({'border-color':'black'});
+        }else{
+            $("#file").css({'border-color':'red'});
+        }
+    });
     $("#edad").blur(function(){
         if ($("#edad").val() !== ""){
             cont=cont++;
