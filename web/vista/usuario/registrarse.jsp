@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registrarse</title>
-        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/usuario/css_registrarse.css" media="screen" />
         <script src="../../jquery-3.4.1.min.js"></script>

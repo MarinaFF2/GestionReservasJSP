@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <link rel="stylesheet" type="text/css" href="../../css/usuario/css_olvidarContrasenia.css" media="screen" />
     </head>
     <body>
