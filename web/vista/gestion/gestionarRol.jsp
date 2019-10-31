@@ -13,9 +13,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarUsu.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarRol.css" media="screen" />
     </head>
     <body>
         
@@ -50,7 +51,7 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>
@@ -81,10 +82,10 @@
                             <input type="number" name="rol" value="<%=v.get(i).getRol()%>" pattern="[1-3]{1}">
                         </td>
                         <td>
-                            <input type="submit" name="botRol" value="X">
+                            <button type="submit" id="eliminar" name="botRol" value="X">
                         </td>
                         <td>
-                            <input type="submit" name="botRol" value="Editar">
+                            <button type="submit" id="editar" name="botRol" value="Editar">
                         </td>
                     </tr>
                 </form>

@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_reservarAula.css" media="screen" />
@@ -53,7 +54,7 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>
@@ -88,7 +89,7 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>
@@ -117,7 +118,7 @@
                             </ul>
                         </li>
                         <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion">
+                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                         </li>
                     </ul>
                 </nav>

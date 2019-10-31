@@ -4,6 +4,7 @@
     Author     : Marina Flores Fernandez
 --%>
 
+<%@page import="clase.Aula"%>
 <%@page import="BBDD.ConexionEstatica"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="clase.FranjaHoraria"%>
@@ -13,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_prof.css" media="screen" />
@@ -112,19 +114,21 @@
             }
         %>
         </form>
+        
         <form id="menuProf" action="../../controlador/controladorGestion.jsp" method="POST">
             <p>Elige la fecha</p><input type="date" id="fechaDia" name="fechaDia" value=""><br>
             <p>Elige el aula</p><select id="eligeAula" name="eligeAula">
                 <option value="" selected> </option>
-                <option value="101">101</option>
-                <option value="102">102</option>
-                <option value="103">103</option>
-                <option value="201">201</option>
-                <option value="202">202</option>
-                <option value="203">203</option>
-                <option value="301">301</option>
-                <option value="302">302</option>
-                <option value="303">303</option>
+                <%
+                ConexionEstatica.nueva();
+                LinkedList <Aula> v = ConexionEstatica.obtenerAulas();
+                ConexionEstatica.cerrarBD();
+                for (Aula paux : v) {
+            %>
+                    <option value="<%=paux.getCodAula()%>"><%=paux.getCodAula()%></option>
+            <%
+                }
+            %>
             </select><br>
             <input type="submit" id="verReservaAula" name="verReservaAula" value="verCuadrante"><br>
         </form>

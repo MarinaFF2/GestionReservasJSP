@@ -165,6 +165,7 @@
             int aula = Integer.parseInt(request.getParameter("codAula"));
             String des = request.getParameter("descripcionAula");
             ConexionEstatica.Modificar_Dato_CodAula_DescripcionAula(w,aula,des);
+            ConexionEstatica.Borrar_Dato_Franja_Aula(aula);
             String usu = (String) session.getAttribute("usu");
             Usuario u = ConexionEstatica.existeUsu(usu);
 

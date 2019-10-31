@@ -77,11 +77,11 @@
                 SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
                 Date d = new Date();
                 String f = s.format(d);
-                int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
-                BitacorasFichero.escribirBitacorasCuerpo("Se ha registrado en el sistema",f,u.getCorreo(),rol);
+                int rol = ConexionEstatica.Conseguir_Rol(correo);
+                BitacorasFichero.escribirBitacorasCuerpo("Se ha registrado en el sistema",f,correo,rol);
             }
-            response.sendRedirect( "../vista/usuario/registrarse.jsp");
             ConexionEstatica.cerrarBD();
+            response.sendRedirect( "../vista/usuario/registrarse.jsp");
         %>
     </body>
 </html>

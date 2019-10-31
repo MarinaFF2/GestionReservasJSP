@@ -12,6 +12,7 @@
 <html>
     <head>
         <title>JSP Page</title>
+        <meta http-equiv="refresh" content="1;url='../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarAula.css" media="screen" />
@@ -123,10 +124,10 @@
                             <input type="text" name="descripcionAula" value="<%=v.get(i).getDescripcion()%>">
                         </td>    
                         <td>
-                            <input type="submit" name="botAula" value="X">
+                            <button type="submit" id="eliminar" name="botAula" value="X">
                         </td>
                         <td>
-                            <input type="submit" name="botAula" value="Editar">
+                            <button type="submit" id="editar" name="botAula" value="Editar">
                             <input type="hidden" id="clave" name="aula" value="<%=v.get(i).getCodAula()%>">
                         </td>
                     </tr>

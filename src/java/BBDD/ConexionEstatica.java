@@ -566,6 +566,25 @@ public class ConexionEstatica {
             }
         }
     }
+    public static void Borrar_Dato_Franja_Aula(int a) throws SQLException {
+        String sql = "DELETE FROM franja WHERE codAula = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = ConexionEstatica.Conex.prepareStatement(sql);
+            ps.setInt(1, a);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error de SQL: " + ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println("Error general: " + ex.getMessage());
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception ex) {
+                System.out.println("Error general: " + ex.getMessage());
+            }
+        }
+    }
     public static void Borrar_Dato_Aula(int aula) throws SQLException {
         String sql = "DELETE FROM aula WHERE codAula = ? ";
         PreparedStatement ps = null;
