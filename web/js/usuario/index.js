@@ -1,12 +1,21 @@
 $(document).ready(function () {
     $("#aceptar").click(function(){   
         if($("#usuario").val()===""){
-            alert("Algún campo está vacio");
-            $("#usuario").css({'background-color':'red'});
+            location.replace("../../index.jsp");
         }
         if($("#pwd").val()===""){
-            alert("Algún campo está vacio");
-            $("#pwd").css({'background-color':'red'});
+            location.replace("../../index.jsp");
+        }
+    });
+    $("#usuario").blur(function(){   
+        if($("#usuario").val()===""){
+            $("#usuario").css({'border-color':'red'});
+        }
+    });
+    $("#pwd").blur(function(){
+        if($("#pwd").val()===""){
+            location.replace("../../index.jsp");
+            $("#pwd").css({'border-color':'red'});
         }
     });
 });

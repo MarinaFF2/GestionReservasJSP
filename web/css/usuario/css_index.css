@@ -3,80 +3,119 @@
     margin: 0px;
     padding: 0px;
 }
-header{
-    margin-top:150px;
-    margin-left: 100px;
-    padding:5px;
-}
-#as{
-    display:grid;
-    grid-template-areas:
-        "h0"
-        "h1"
-        "h2"
-        "h3"
-        "h4"
-        "h5"
-        "h6";
-    border: 1px black solid;
-    background-color: green;
-}
 p, h1{
     text-align: center;
 }
 #cabe{
-        grid-areas:h0;
-    }
-    #usu{
-        grid-areas:h1;
-    }
-    #usuario{
-        grid-areas:h2;
-    }
-    #con{
-        grid-areas:h3;
-    }
-    #pwd{
-        grid-areas:h4;
-    }
-    #regis{
-        grid-areas:h5;
-    }
-    #olvidar{
-        grid-areas:h5;
-    }
-    #aceptar{
-        grid-areas:h6;
-    }
+    grid-areas:h0;
+}
+#usu{
+    grid-areas:h1;
+}
+#con{
+    grid-areas:h2;
+}
+#re{
+    grid-areas:h3;
+}
+#acep{
+    grid-areas:h4;
+}
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
-
+    header{
+        text-align: center;
+        height: 50px;
+    }
+    main{
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4";
+        border: 1px black solid;
+        background-color: green;
+    }
 }
 /*Movil site vertical 480x320*/
 @media (min-width:320px) and (orientation:portrait){
-
+    header{
+        text-align: center;
+        height: 50px;
+    }
+    main{
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4";
+        border: 1px black solid;
+        background-color: green;
+    }
 
 }
 
 /*Tablet Apps horizontal 768x1024*/
 @media (min-width:1024px) and (orientation:landscape){
-
+    header{
+        text-align: center;
+        height: 50px;
+    }
+    main{
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4";
+        border: 1px black solid;
+        background-color: green;
+    }
 }
 /*Tablet Apps vertical 1024x768*/
 @media (min-width:768px) and (orientation:portrait){
-
+    header{
+        text-align: center;
+        height: 50px;
+    }
+    main{
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4";
+        border: 1px black solid;
+        background-color: green;
+    }
 }
 
 
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1050px){
+    header{
+        text-align: center;
+        height: 50px;
+    }
     main{
-        margin-top: 100px;
-        margin-left:300px;
+        display:grid;
+        grid-template-areas:
+            "h0"
+            "h1"
+            "h2"
+            "h3"
+            "h4";
+        background-color: green;
+        margin-top: 200px;
         border: 1px black solid;
         max-width:450px; 
         padding: 10px;
-        background-color: green;
     }
     p{
         margin-bottom: 10px;
@@ -93,6 +132,6 @@ p, h1{
         text-align: center;
     }
     #aceptar{
-        margin:10px 0px 10px 200px;
+        justify-content: center;
     }
 }

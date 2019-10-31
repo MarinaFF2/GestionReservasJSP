@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html"charset="UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url='../../index.jsp">
+        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarUsu.css" media="screen" />
@@ -106,7 +106,7 @@
             </tbody>
         </table>
         </div>
-            <footer>
+            <footer class="w3-display-bottomleft w3-padding-large">
                 <div>Icons made by <a href="https://www.flaticon.es/autores/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
                 <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
             </footer>

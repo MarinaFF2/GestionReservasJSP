@@ -1,20 +1,73 @@
 $(document).ready(function () {
-    alert("Estoy aqui, he entrado");
     $("#editarUsuario").click(function () {
-        var correo = $("#correo").val();
-        var clave = $("#clave").val();
-        var reclave = $("#reclave").val();
-        var nombre = $("#nombre").val();
-        var apellido = $("#apellido").val();
-        var edad = $("#edad").val();
-        if (correo !== null && clave !== null && reclave !== null && nombre !== null && apellido !== null && edad !== 0){
+        if($("#correo").val() === "" && $("#clave").val() === "" && $("#correo").val() === "" && $("#nombre").val() === "" && $("#apellido").val() === "" && $("#edad").val() === 0 ){
+            location.replace("../../vista/usuario/editarUsuario.jsp");
+        }
+    });
+    
+    $("#correo").blur(function(){
+        if ($("#correo").val() !== ""){
+            
+            $("#correo").css({'border-color':'black'});
+        }else{
+            $("#correo").css({'border-color':'red'});
+        }
+    });
+    $("#nombre").blur(function(){
+        if ($("#nombre").val() !== ""){
+            
+            $("#nombre").css({'border-color':'black'});
+        }else{
+            $("#nombre").css({'border-color':'red'});
+        }
+    });
+    $("#apellido").blur(function(){
+        if ($("#apellido").val() !== ""){
+            $("#apellido").css({'border-color':'black'});
+        }else{
+            $("#apellido").css({'border-color':'red'});
+        }
+    });x
+    $("#edad").blur(function(){
+        if ($("#edad").val() !== ""){
+            $("#edad").css({'border-color':'black'});
+        }else{
+            $("#edad").css({'border-color':'red'});
+        }
+    });
+    $("#cambiarContra").click(function(){
+        if($("#clave").val() === "" && $("#reclave").val() === ""){
             if (clave !== reclave){
-                $("#editarUsuario").attr("disabled", true);
-                alert("Algun campo esta en blanco");
+                location.replace("../../vista/usuario/editarUsuario.jsp");
             }
         }
     });
-    $("#gestionarFoto").click(function () {
-        var foto = $("#foto").val();
+    $("#reclave").blur(function(){
+        if ($("#clave").val() !== $("#reclave").val()){
+            $("#clave").css({'border-color':'red'});
+            $("#reclave").css({'border-color':'red'});
+        }else{
+            $("#clave").css({'border-color':'black'});
+            $("#reclave").css({'border-color':'black'});
+        }
+        if ($("#reclave").val() !== ""){
+            $("#reclave").css({'color':'black'});
+        }else{
+            $("#reclave").css({'color':'orange'});
+        }
+    });
+    $("#clave").blur(function(){
+        if ($("#clave").val() !== $("#reclave").val()){
+            $("#clave").css({'border-color':'red'});
+            $("#reclave").css({'border-color':'red'});
+        }else{
+            $("#clave").css({'border-color':'black'});
+            $("#reclave").css({'border-color':'black'});
+        }
+        if ($("#clave").val() !== ""){
+            $("#clave").css({'color':'black'});
+        }else{
+            $("#clave").css({'color':'orange'});
+        }
     });
 });
