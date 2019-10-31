@@ -17,7 +17,7 @@
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../../css/.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/gestion/css_bitacora.css" media="screen" />
     </head>
     <body>
         <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
@@ -57,6 +57,7 @@
                 </nav>
             </header>
         </form>
+        <div>
         <table>
             <caption>Contenido del archivo Bitacora</caption>
             <thead>
@@ -100,5 +101,6 @@
                     %>
             </tbody>
         </table>
+        </div>
     </body>
 </html>

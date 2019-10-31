@@ -3,6 +3,15 @@
     margin: 0px;
     padding: 0px;
 }
+div{
+    font-size: 25px;
+    width: 700px;
+    border: 1px solid black;
+    margin:150px;
+    padding:5px;
+    margin-left: 300px;
+    background-color: green;
+}
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
 

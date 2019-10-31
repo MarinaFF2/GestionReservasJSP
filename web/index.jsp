@@ -25,8 +25,9 @@
                 s.invalidate();
             }
         %>
-        <main>
-            <h1 id="cabe">Iniciar Sesión</h1>
+        <header><h1 id="cabe">Iniciar Sesión</h1></header>
+        <main id="as">
+            
             <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
                 <p id="usu">Usuario</p><input type="text" id="usuario" name="usuario" placeholder="usuario@x.x"><br>
                 <p id="con">Contraseña</p><input type="password" id="pwd" name="pwd" placeholder="Contraseña"><br>

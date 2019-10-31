@@ -126,9 +126,10 @@
             }
         %>
         </form>
-        <p>Fecha: <input type="text" id="fecha" name="fecha" value="<%=(String)session.getAttribute("fecD")%>" readonly="true">
-            <p>Aula: <input type="text" id="aula" name="fecha" value="<%=(Integer)session.getAttribute("Aula")%>" readonly="true">
-            <table name="reservaAula" >
+        <div>
+            <p>Fecha: </p><input type="text" id="fecha" name="fecha" value="<%=(String)session.getAttribute("fecD")%>" readonly="true">
+            <p>Aula: </p><input type="text" id="aula" name="fecha" value="<%=(Integer)session.getAttribute("Aula")%>" readonly="true">
+            <table id="reservaAula" >
                 <thead>
                     <tr>
                         <th>HORA COMIENZO</th>
@@ -145,7 +146,7 @@
             ConexionEstatica.cerrarBD();
             for (int i = 0; i < v.size(); i++) {
         %>
-                    <form  name="tablaReservarAulas1" action="../../controlador/controladorGestion.jsp" method="POST">
+                    <form  id="tablaReservarAulas1" action="../../controlador/controladorGestion.jsp" method="POST">
                     <tr>
                         <td>
                             <input type="text" id="iniHora" name="iniHora" value="<%=v.get(i).getInicioHora()%>" readonly="true">
@@ -165,5 +166,6 @@
         %>
                 </tbody>
             </table>
+        </div>
     </body>
 </html>

@@ -18,17 +18,17 @@
     <body  onload="aniadir()">
         <header><h1>Registrarse</h1></header>
         <form id="registrarse" name="asd" action="../../controlador/subeFoto.jsp" enctype="multipart/form-data" method="POST">
-            <p>Correo:*</p><br>
+            <p>Correo:*</p>
             <input type="email" id="correo" name="correo" placeholder="Correo"><br>
-            <p>Contraseña:*</p><br>
+            <p>Contraseña:*</p>
             <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
-            <p>Confirmar contraseña:*</p><br>
+            <p>Confirmar contraseña:*</p>
             <input type="password" id="reclave" name="reclave" placeholder="Confirmar contaseña" ><br>
-            <p>Nombre:*</p><br>
+            <p>Nombre:*</p>
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="" pattern="[A-Za-z]{1,50}"><br>
-            <p>Apellidos:*</p><br>
+            <p>Apellidos:*</p>
             <input type="text" id="apellido" name="apellido" placeholder="Apellido" pattern="[A-Za-z]{1,50}"><br>
-            <p>Edad:*</p><br>
+            <p>Edad:*</p>
             <input type="number" id="edad" name="edad" placeholder="Edad" value="0" pattern="[0-9]"><br>
             <p>Foto: </p><input type="file" id="file" name="fichero"/></br> 
             <div id="catchap">

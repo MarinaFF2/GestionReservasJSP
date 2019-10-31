@@ -113,8 +113,8 @@
         %>
         </form>
         <form id="menuProf" action="../../controlador/controladorGestion.jsp" method="POST">
-            <label>Elige la fecha</label><input type="date" id="fechaDia" name="fechaDia" value=""><br>
-            <label>Elige el aula</label><select id="eligeAula" name="eligeAula">
+            <p>Elige la fecha</p><input type="date" id="fechaDia" name="fechaDia" value=""><br>
+            <p>Elige el aula</p><select id="eligeAula" name="eligeAula">
                 <option value="" selected> </option>
                 <option value="101">101</option>
                 <option value="102">102</option>

@@ -15,7 +15,7 @@
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../../css/css_gestionarFranja.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarFranja.css" media="screen" />
         
     </head>
     <body>
@@ -98,6 +98,7 @@
             }
         %> 
         </form>
+        <div>
         <table id="gestionarFranja" >
             <caption>LISTA FRANJAS</caption>
             <thead>
@@ -136,5 +137,6 @@
             %>
             </tbody>
         </table>
+        </div>
     </body>
 </html>
