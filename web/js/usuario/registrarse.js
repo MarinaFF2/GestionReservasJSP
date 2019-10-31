@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //$("#sendRegistrar").attr("disabled", true);
+    //$("#sendRegistrar").prop("disabled", true);
     var cont = 0;
     var cap = null;
     var i = Math.floor(Math.random() * 6) + 1;
@@ -29,11 +29,11 @@ $(document).ready(function () {
             cap="Y4Y7D";
         break;
     }
-    $("#catchap" ).blur(function(){
+    $("#catchap").blur(function(){
         if($("#correo").val() !== "" &&$("#clave").val() !== "" && $("#correo").val() !== "" && $("#nombre").val() !== "" && $("#apellido").val() !== "" && $("#edad").val() !== 0 && $("#clave").val() !== "" && $("#reclave").val() !== ""){
             if ($("#clave").val() !== $("#reclave").val()){
                 if($("#capt").val()===cap){
-                    $("#sendRegistrar").attr("disabled", false);
+                    $("#sendRegistrar").prop("disabled", false);
                 }
             }
         }

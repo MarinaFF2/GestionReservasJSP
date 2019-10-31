@@ -57,7 +57,6 @@
                 </nav>
             </header>
         </form>
-        <div>
         <table>
             <caption>Contenido del archivo Bitacora</caption>
             <thead>
@@ -81,10 +80,6 @@
                         String linea;
                         while((linea = br.readLine())!=null){
                             out.print(linea);
-
-                        %>
-                <br>
-                <%
                         }
                     }   
                 } catch (Exception ex) {
@@ -101,6 +96,5 @@
                     %>
             </tbody>
         </table>
-        </div>
     </body>
 </html>

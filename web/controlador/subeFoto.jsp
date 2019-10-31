@@ -31,50 +31,26 @@
         <%
             FileItemFactory factory = new DiskFileItemFactory();
             ServletFileUpload upload = new ServletFileUpload(factory);
-
             Usuario n = new Usuario();
-            // 'request' es la HttpServletRequest que recibimos del formulario.
-            // Los items obtenidos serán cada uno de los campos del formulario,
-            // tanto campos normales como ficheros subidos.
             List items = upload.parseRequest(request);
             File fichero = null;
-            // Se recorren todos los items, que son de tipo FileItem
+            FileItem uploaded = null;
             for (Object item : items) {
-                FileItem uploaded = (FileItem) item;
-                // Hay que comprobar si es un campo de formulario. Si no lo es, se guarda el fichero
-                // subido donde nos interese.
+                uploaded = (FileItem) item;
                 if (!uploaded.isFormField()) {
-                    // Es un campo fichero: guardamos el fichero en alguna carpeta (en este caso perfiles).
-                    //Si lo ponemos como sigue: el archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
-                    //File fichero = new File("perfiles", uploaded.getName()); 
-                    //Este directorio anterior, por seguridad, luego no será accesible.
-
-                    //Cambiamos la ruta de destino a:
-                    //String rutaDestino = "/home/fernando/NetBeansProjects/DAW2_19_20/SubirArchivos/web/perfiles";
-                    //String rutaDestino = "aulasInstituto/web/img/perfiles";
                     String nf = uploaded.getName();
-                    //File fichero = new File(Constantes.rutaServidorWindows, uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'.
-                    fichero = new File("perfiles", uploaded.getName()); //El archivo se guardará en 'glassfish5/glassfish/domains/domain1/config/perfiles'
+                    fichero = new File("perfiles", uploaded.getName()); 
                     uploaded.write(fichero);
                     out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");
-                    //pasamos a binario la imagen para almacenarla en mySql
                     byte[] icono = new byte[(int) fichero.length()];
                     InputStream input = new FileInputStream(fichero);
                     input.read(icono);
                     n.setFoto(icono);
-                } else {//Si es un campo de formulario (no fichero) extraemos su valor de la siguiente manera.
-                    /*
-                            Como el formulario debe ser enctype="multipart/form-data" para que admita el envío del fichero. 
-                            La primera pega que encontramos con JSP es que si el envío el multipart, no funcionan las llamadas a 
-                            request.getParameter(), siempre devuelven null. Por ello, si el formulario tiene más campos que 
-                            necesitemos leer, debemos delegar toda la tarea en la librería apache-commons-fileupload.
-                     */
-                    // Para obtener clave y valor de los campos formulario.
+                } else {
 
                     String key = uploaded.getFieldName();
                     String valor = uploaded.getString();
 
-                    //--> Vemos que la siguiente línea devolverá null por el tipo de enctype del formulario (necesario para sublir ficheros).
                     if (key.equals("correo")) {
                         n.setCorreo(valor);
                     }
