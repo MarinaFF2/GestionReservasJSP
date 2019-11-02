@@ -7,7 +7,6 @@ $(document).ready(function () {
     
     $("#correo").blur(function(){
         if ($("#correo").val() !== ""){
-            
             $("#correo").css({'border-color':'black'});
         }else{
             $("#correo").css({'border-color':'red'});
@@ -15,7 +14,6 @@ $(document).ready(function () {
     });
     $("#nombre").blur(function(){
         if ($("#nombre").val() !== ""){
-            
             $("#nombre").css({'border-color':'black'});
         }else{
             $("#nombre").css({'border-color':'red'});
@@ -37,37 +35,28 @@ $(document).ready(function () {
     });
     $("#cambiarContra").click(function(){
         if($("#clave").val() === "" && $("#reclave").val() === ""){
-            if (clave !== reclave){
+            if (("#clave").val() !== ("#reclave").val()){
                 location.replace("../../vista/usuario/editarUsuario.jsp");
+                $("#clave").css({'border-color':'red'});
+                $("#reclave").css({'border-color':'red'});
+            }else{
+                $("#clave").css({'border-color':'black'});
+                $("#reclave").css({'border-color':'black'});
             }
         }
     });
     $("#reclave").blur(function(){
-        if ($("#clave").val() !== $("#reclave").val()){
-            $("#clave").css({'border-color':'red'});
-            $("#reclave").css({'border-color':'red'});
-        }else{
-            $("#clave").css({'border-color':'black'});
-            $("#reclave").css({'border-color':'black'});
-        }
         if ($("#reclave").val() !== ""){
-            $("#reclave").css({'color':'black'});
+            $("#reclave").css({'border-color':'black'});
         }else{
-            $("#reclave").css({'color':'orange'});
+            $("#reclave").css({'border-color':'orange'});
         }
     });
     $("#clave").blur(function(){
-        if ($("#clave").val() !== $("#reclave").val()){
-            $("#clave").css({'border-color':'red'});
-            $("#reclave").css({'border-color':'red'});
-        }else{
-            $("#clave").css({'border-color':'black'});
-            $("#reclave").css({'border-color':'black'});
-        }
         if ($("#clave").val() !== ""){
-            $("#clave").css({'color':'black'});
+            $("#clave").css({'border-color':'black'});
         }else{
-            $("#clave").css({'color':'orange'});
+            $("#clave").css({'border-color':'orange'});
         }
     });
 });

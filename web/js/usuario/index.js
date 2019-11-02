@@ -1,9 +1,6 @@
 $(document).ready(function () {
     $("#aceptar").click(function(){   
-        if($("#usuario").val()===""){
-            location.replace("../../index.jsp");
-        }
-        if($("#pwd").val()===""){
+        if($("#usuario").val()==="" && $("#pwd").val()===""){
             location.replace("../../index.jsp");
         }
     });
