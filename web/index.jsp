@@ -7,7 +7,7 @@
 <%@page import="BBDD.BitacorasFichero"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>I.E.S.</title>
         <meta charset="UTF-8">
@@ -25,22 +25,22 @@
                 s.invalidate();
             }
         %>
-        <header class="">
+        <header>
             <h1 id="cabe">Iniciar Sesión</h1>
         </header>
-        <main class=" ">
+        <main>
             <form id="inicioSesion" action="controlador/controladorGeneral.jsp" method="POST">
                 <div id="usu">
                     <p>Usuario</p><input type="text" id="usuario" name="usuario" placeholder="usuario@x.x"><br>
                 </div>
-                <div id='con'>
+                <div id="con">
                     <p>Contraseña</p><input type="password" id="pwd" name="pwd" placeholder="Contraseña"><br>
                 </div>
-                <div id='re'>
+                <div id="re">
                     <a id="regis" href="vista/usuario/registrarse.jsp">Registrarse</a>
-                    <a id="olvidar" href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a></br>
+                    <a id="olvidar" href="vista/usuario/olvidoPwd.jsp">He olvidado la contraseña</a><br>
                 </div>
-                <div id='acep'>
+                <div id="acep">
                     <input type="submit" id="aceptar" name="aceptarIndex" value="Aceptar">
                 </div>
             </form>
