@@ -45,7 +45,7 @@ $(document).ready(function () {
             $("#reclave").css({'border-color':'black'});
         }
         if ($("#reclave").val() !== ""){
-            cont++;$("#reclave").css({'border-color':'black'});
+            $("#reclave").css({'border-color':'black'});
         }else{
             $("#reclave").css({'border-color':'orange'});
         }
