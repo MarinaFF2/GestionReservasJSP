@@ -119,6 +119,10 @@ nav  ul ul ul a {
     background-color: dimgrey;
     color:white;
 }
+#bitacora{
+    background-color: transparent;
+    border: none;
+}
 /*Movil site horizontal 320x480*/
 @media only screen and (max-width:480px) and (orientation:landscape){
     button#cerrarSesion{
@@ -170,6 +174,22 @@ nav  ul ul ul a {
 /*Tablet Apps vertical 1024x768*/
 @media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
     button#cerrarSesion{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    #imgUsu{
+        width: 50px;
+        height: 50px;
+    }
+    #bitacora{
+        background-color: transparent;
+        border: none;
+    }
+}
+/*Tablet Apps vertical 1024x768*/
+@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+     button#cerrarSesion{
         background-size: 50px;
         width: 50px;
         height: 50px;
