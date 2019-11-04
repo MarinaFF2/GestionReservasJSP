@@ -134,10 +134,6 @@ nav  ul ul ul a {
         width: 30px;
         height: 30px;
     }
-    #bitacora{
-        background-color: transparent;
-        border: none;
-    }
 }
 /*Movil site vertical 480x320*/
 @media only screen and (max-width:768px) and (orientation:portrait){
@@ -149,10 +145,6 @@ nav  ul ul ul a {
     #imgUsu{
         width: 30px;
         height: 30px;
-    }
-    #bitacora{
-        background-color: transparent;
-        border: none;
     }
 }
 /*Tablet Apps horizontal 768x1024*/
@@ -166,10 +158,6 @@ nav  ul ul ul a {
         width: 50px;
         height: 50px;
     }
-    #bitacora{
-        background-color: transparent;
-        border: none;
-    }
 }
 /*Tablet Apps vertical 1024x768*/
 @media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
@@ -181,10 +169,6 @@ nav  ul ul ul a {
     #imgUsu{
         width: 50px;
         height: 50px;
-    }
-    #bitacora{
-        background-color: transparent;
-        border: none;
     }
 }
 /*Tablet Apps vertical 1024x768*/
@@ -198,10 +182,6 @@ nav  ul ul ul a {
         width: 50px;
         height: 50px;
     }
-    #bitacora{
-        background-color: transparent;
-        border: none;
-    }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media only screen and (min-width:1680px){
@@ -213,9 +193,5 @@ nav  ul ul ul a {
     #imgUsu{
         width: 50px;
         height: 50px;
-    }
-    #bitacora{
-        background-color: transparent;
-        border: none;
     }
 }
