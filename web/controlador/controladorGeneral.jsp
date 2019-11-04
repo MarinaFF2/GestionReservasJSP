@@ -3,7 +3,6 @@
     Created on : 15-oct-2019, 18:24:39
     Author     : Marina Flores Fernandez
 --%>
-
 <%@page import="java.util.Locale"%>
 <%@page import="clase.Email"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -153,5 +152,4 @@
         BitacorasFichero.escribirBitacorasCuerpo("Se le ha redirigido al index",f,u.getCorreo(),rol);
         ConexionEstatica.cerrarBD();
     }
-
 %>

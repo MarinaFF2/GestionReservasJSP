@@ -45,9 +45,9 @@ $(document).ready(function () {
             $("#reclave").css({'border-color':'black'});
         }
         if ($("#reclave").val() !== ""){
-            cont++;$("#reclave").css({'color':'black'});
+            $("#reclave").css({'border-color':'black'});
         }else{
-            $("#reclave").css({'color':'orange'});
+            $("#reclave").css({'border-color':'orange'});
         }
     });
     $("#clave").blur(function(){
@@ -59,9 +59,9 @@ $(document).ready(function () {
             $("#reclave").css({'border-color':'black'});
         }
         if ($("#clave").val() !== ""){
-            $("#clave").css({'color':'black'});
+            $("#clave").css({'border-color':'black'});
         }else{
-            $("#clave").css({'color':'orange'});
+            $("#clave").css({'border-color':'orange'});
         }
     });
     $("#correo").blur(function(){
@@ -102,7 +102,6 @@ $(document).ready(function () {
             $("#edad").css({'border-color':'red'});
         }
     });
-    
     $("#limpiar").click(function () {
         limpiar1();
     });
@@ -114,7 +113,6 @@ $(document).ready(function () {
     $("#apellido").val("");
     $("#edad").val("");
     }
-    
 });
 
 

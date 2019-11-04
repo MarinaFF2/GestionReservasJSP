@@ -3,6 +3,21 @@
     margin: 0px;
     padding: 0px;
 }
+header{
+    margin-top: 40px;
+    text-align: center;
+    height: 50px;
+}
+main{
+    display:grid;
+    grid-template-areas:"h0"
+        "h1"
+        "h2"
+        "h3"
+        "h4";
+    border: 1px black solid;
+    background-color: green;
+}
 p, h1{
     text-align: center;
 }
@@ -22,107 +37,108 @@ p, h1{
     grid-areas:h4;
 }
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
-    header{
-        text-align: center;
-        height: 50px;
-    }
+@media (max-width:320px) and (orientation:landscape){
     main{
-        display:grid;
-        grid-template-areas:
-            "h0"
-            "h1"
-            "h2"
-            "h3"
-            "h4";
-        border: 1px black solid;
-        background-color: green;
-    }
-}
-/*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
-    header{
-        text-align: center;
-        height: 50px;
-    }
-    main{
-        display:grid;
-        grid-template-areas:
-            "h0"
-            "h1"
-            "h2"
-            "h3"
-            "h4";
-        border: 1px black solid;
-        background-color: green;
-    }
-
-}
-
-/*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    header{
-        text-align: center;
-        height: 50px;
-    }
-    main{
-        display:grid;
-        grid-template-areas:
-            "h0"
-            "h1"
-            "h2"
-            "h3"
-            "h4";
-        border: 1px black solid;
-        background-color: green;
-    }
-}
-/*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
-    header{
-        text-align: center;
-        height: 50px;
-    }
-    main{
-        display:grid;
-        grid-template-areas:
-            "h0"
-            "h1"
-            "h2"
-            "h3"
-            "h4";
-        border: 1px black solid;
-        background-color: green;
-    }
-}
-
-
-/*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
-    header{
-        text-align: center;
-        height: 50px;
-    }
-    main{
-        display:grid;
-        grid-template-areas:
-            "h0"
-            "h1"
-            "h2"
-            "h3"
-            "h4";
-        background-color: green;
-        margin-top: 200px;
-        border: 1px black solid;
-        max-width:450px; 
-        padding: 10px;
+        max-width: 400px;
+        margin-top: 10px;
+        margin-left: 7%;
+        padding: 5px;
     }
     p{
         margin-bottom: 10px;
         margin-top: 10px;
     }
     a{
-        margin: 10px 0px 10px 40px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10%;
+        width: 300px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 65%;
+    }
+}
+/*Movil site vertical 480x320*/
+@media (max-width:480px) and (orientation:portrait){
+    main{
+        max-width: 290px;
+        margin-top: 10px;
+        margin-left: 7%; 
+        margin-right: 5%;
+        padding: 5px;
+    }
+    p{
+        position: relative;
+        left: -10px;
+    }
+     a{
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-left: 10%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 60px;
+        width: 150px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-top: 5px;
+        margin-left: 160px;
+    }
+}
+
+/*Tablet Apps horizontal 1024x768*/
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+    main{
+        max-width: 512px;
+        margin-top: 30px;
+        margin-left: 25%;
+        padding: 15px;
+    }
+    p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    a{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 15%;
+        width: 350px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 440px;
+    }
+}
+/*Tablet Apps vertical 768x1024*/
+@media (min-width:480px) and (max-width:768px) and (orientation:portrait){
+    main{
+        margin-top: 100px;
+        margin-left: 25%;
+        max-width:395px; 
+        padding: 5px;
+    }
+    p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    a{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10%;
     }
     #usuario, #pwd{
         margin-bottom: 10px;
@@ -132,6 +148,38 @@ p, h1{
         text-align: center;
     }
     #aceptar{
-        justify-content: center;
+        margin-left: 340px;
+    }
+}
+
+/*Pantalla de escritorio WebSite 1680x1050*/
+@media (max-width:1680px){
+    
+    main{
+        font-size:20px;
+        max-width: 840px;
+        margin-top: 200px; 
+        margin-left: 20%;
+        padding: 10px;
+    }
+    p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    } 
+    a{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 20%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 30%;
+        width: 350px;
+        height: 30px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 75%;
     }
 }
