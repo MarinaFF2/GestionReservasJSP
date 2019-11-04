@@ -17,7 +17,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
+            <form  action="../../controlador/controladorGeneral.jsp" method="POST">
                 <%
                     int n = (Integer) session.getAttribute("rol");
                     if (n == 3) {

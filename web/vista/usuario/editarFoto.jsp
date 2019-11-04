@@ -20,26 +20,35 @@
         <script src="js/usuario/editarFoto.js"></script>
     </head>
     <body>
-        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
+        <form action="../../controlador/controladorGeneral.jsp" method="POST">
             <%
-                int n =(Integer) session.getAttribute("nrol");
-                if(n == 3) {
+                int n = (Integer) session.getAttribute("rol");
+                if (n == 3) {
             %>
             <nav>
                 <ul>
                     <li>
-                        <a href="#" id="editarUsuario" class="active"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a>
+                        <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                         <ul>
                             <li><a href="editarFoto.jsp">Editar Foto</a></li>
                             <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                         </ul>
                     </li>
-                    <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
-                    <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
-                    <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
-                    <li><a href="../gestion/gestionarRol.jsp">Gestion Rol</a></li>
-                    <li><a href="principal.jsp">Cambiar Rol</a></li>
+                    <li><a href="#">Administrador General</a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                            <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                            <li><a href="../gestion/gestionarUsuario.jsp">Gestion Usuario</a></li>
+                            <li><a href="../gestion/gestionarRol.jsp">Gestion Rol</a></li>
+                        </ul>
+                    </li>
                     <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
+                    <li><a href="#">Profesor</a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                        </ul>
+                    </li>
+
                     <li>
                         <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                     </li>
@@ -51,15 +60,23 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                        <a href="#"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
                         <ul>
                             <li><a href="editarFoto.jsp">Editar Foto</a></li>
                             <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                         </ul>
                     </li>
-                    <li><a href="principal.jsp">Cambiar Rol</a></li>
-                    <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
-                    <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                    <li><a href="#">Administrador Aula</a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../gestion/gestionarAula.jsp">Gestionar Aula</a></li>
+                            <li><a href="../gestion/gestionarFranja.jsp">Gestionar Franja</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Profesor</a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                     </li>
@@ -77,8 +94,11 @@
                             <li><a href="editarUsuario.jsp">Editar Usuario</a></li>
                         </ul>
                     </li>
-                    <li><a href="principal.jsp">Cambiar Rol</a></li>
-                    <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                    <li><a href="#">Profesor</a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../gestion/prof.jsp">Reservar Aula</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
                     </li>
@@ -88,7 +108,7 @@
                 }
             %>
         </form>
-        <% 
+        <%
             String uu = (String) session.getAttribute("usu");
             ConexionEstatica.nueva();
             Usuario u = ConexionEstatica.existeUsu(uu);
@@ -96,7 +116,7 @@
         %>
         <form id="editarUsu1" name="editarUsu1" action="../../controlador/editarFoto.jsp" enctype="multipart/form-data" method="POST">
             <div id="imgPerfil">
-                <img id="fotoPerfil" src="<%=u.getFotoimgString() %>" alt='Foto de perfil no encontrada'/></br>
+                <img id="fotoPerfil" src="<%=u.getFotoimgString()%>" alt='Foto de perfil no encontrada'/></br>
                 <input type="file" name="fichero"/></br>
                 <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
             </div>
