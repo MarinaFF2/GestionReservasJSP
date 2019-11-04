@@ -4,10 +4,13 @@
     padding: 0px;
 }
 header{
-    height: 100px;
     margin: 0px;
     padding-top: 5px;
     background-color: brown;
+}
+footer{
+    position: relative;
+    bottom: -150px;
 }
 nav{
     position: relative;
@@ -15,6 +18,7 @@ nav{
     /*background-color: green;*/
 }
 button#cerrarSesion{
+    background-color: transparent;
     background-image: url("../../img/iconos/out.png");
     border:none;
     background-repeat: no-repeat;
@@ -27,11 +31,16 @@ button#cerrarSesion{
     height: 50px;
 }
 #imgUsu{
+    background-color: transparent;
     width: 50px;
     height: 50px;
 }
+#bitacora{
+    background-color: transparent;
+    border: none;
+}
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
+@media only screen and (max-width:480px) and (orientation:landscape){
     #menu_on{
         display: inline-block;
         width:30px;
@@ -39,7 +48,6 @@ button#cerrarSesion{
         position: relative;
         z-index: 2;
     }
-
     #menu_on span{
         width: 100%;
         height: 4px;
@@ -50,17 +58,127 @@ button#cerrarSesion{
         transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
         transform-origin : 0px 100%;
     }
-
     #menu_on span:nth-child(2){
         top: calc(50% - 2px);
     }
-
     #menu_on span:nth-child(3){
         bottom: 0;
     }
+    nav{
+        margin-top: 35px;
+    }
+    nav  li {
+        position: relative;
+        width: 200px;
+    }
+    nav li a{
+        background-color: dimgrey;
+        color:white;
+
+        display: block;
+
+        list-style-type: none;
+
+        margin: 0px;
+        padding: 5px 10px;
+
+        height: 1.5em;
+        box-sizing: border-box;
+    }
+    nav li span.flecha{
+        color: white;
+
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+    nav li a:hover{
+        color: black;
+        background-color:red;
+    }
+    nav ul li a:hover{
+        color: black;
+        background-color:red;
+    }
+    nav li a,nav li a:hover{
+        transition: all 500ms 100ms ease-in;
+    }
+
+
+    /* 1 nivel*/
+        nav {
+            padding-left: 10px;
+            width: 150px;
+        }
+        nav  li a{
+            text-align: center;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        nav > ul{
+            margin-left: 10px;
+        }
+        nav  > ul > li{
+            display: inline-block;
+            /*margin: 5px 2px 0px;*/
+        }
+
+        /* Configuración de los niveles siguientes */
+            nav  ul li ul {
+                display: none;
+                visibility: hidden;
+                list-style-type: none;
+                left: 150px;
+            }
+            nav  ul li:hover > ul{
+                display: block;
+                visibility: visible;
+                position: absolute;
+                
+                z-index: 100;
+
+                transition: all 500ms 500ms linear;
+            }
+        /* Configuración específica para el nivel tercero y siguientes */
+            nav ul ul li:hover > ul{
+                /* Ojo con las posiciones y desplazamientos */
+                position: absolute; 
+                left: 150px;
+                top: 10px;
+            }
+            nav  ul ul ul a {
+               background-color: dimgrey;
+                color:white;
+            }
+
+        /* Marcador de tener elementos hijos, flecha*/
+            nav  li > span.flecha:not(:last-child):before{
+                content: "\25B8";
+            }
+            nav  li:hover > span.flecha:not(:last-child):before{
+                content: "\25BE";
+            }
 }
 /*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
+@media only screen and (max-width:768px) and (orientation:portrait){
+    .visible_menu span:nth-child(1){
+	transform: rotate(45deg) translate(-2px,1px); 
+}
+ 
+.visible_menu span:nth-child(2){
+	opacity: 0;
+}
+ 
+.visible_menu span:nth-child(3){
+	transform: rotate(-45deg) translate(-3px,3px); 
+}	
+.visible_menu nav{
+	left: 0;
+	opacity: 1;
+}
+.visible_menu #content{
+      transform: translateX(260px);
+}
     #menu_on{
         display: inline-block;
         width:30px;
@@ -87,13 +205,92 @@ button#cerrarSesion{
     #menu_on span:nth-child(3){
         bottom: 0;
     }
+    
+    nav{
+        position: absolute;
+        font-size: 13px;
+        margin-top: 30px;
+    }
+    nav  li {
+        position: relative;
+        width: 200px;
+    }
+    nav li a{
+        /*background-color: dimgrey;
+        color:white;*/
+        display: block;
+        margin: 0px;
+        padding: 5px 10px;
+        height: 1.5em;
+        box-sizing: border-box;
+    }
+    nav li span.flecha{
+        color: white;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+    nav li a:hover{
+        color: black;
+        background-color:red;
+    }
+    nav ul li a:hover{
+        color: black;
+        background-color:red;
+    }
+
+
+    /* 1 nivel*/
+        nav {
+            padding-left: 10px;
+            width: 150px;
+        }
+        nav  li a{
+            text-align: center;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        nav > ul{
+            margin-left: 10px;
+        }
+        nav  > ul > li{
+            display: inline-block;
+        }
+
+        /* Configuración de los niveles siguientes */
+            nav  ul li ul {
+                display: none;
+                visibility: hidden;
+                left: 150px;
+            }
+            nav  ul li:hover > ul{
+                display: block;
+                visibility: visible;
+                position: absolute;
+                z-index: 100;
+            }
+        /* Configuración específica para el nivel tercero y siguientes */
+            nav ul ul li:hover > ul{
+                /* Ojo con las posiciones y desplazamientos */
+                position: absolute; 
+                left: 150px;
+                top: 10px;
+            }
+            nav  ul ul ul a {
+               background-color: dimgrey;
+                color:white;
+            }
+
+        /* Marcador de tener elementos hijos, flecha*/
+            nav  li > span.flecha:not(:last-child):before{
+                content: "\25B8";
+            }
+            nav  li:hover > span.flecha:not(:last-child):before{
+                content: "\25BE";
+            }
 }
 /*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    
-}
-/*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
+@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
     #menu_on{
         display: inline-block;
         width:30px;
@@ -101,7 +298,6 @@ button#cerrarSesion{
         position: relative;
         z-index: 2;
     }
-
     #menu_on span{
         width: 100%;
         height: 4px;
@@ -119,10 +315,52 @@ button#cerrarSesion{
 
     #menu_on span:nth-child(3){
         bottom: 0;
+    }
+    nav  li > span.flecha:not(:last-child):before{
+        content: "\25B8";
+    }
+    nav  li:hover > span.flecha:not(:last-child):before{
+        content: "\25BE";
+    }
+}
+/*Tablet Apps vertical 1024x768*/
+@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    #menu_on{
+        display: inline-block;
+        width:30px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #menu_on span{
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        display: block;
+        position: absolute;
+        background: #fff;
+    }
+
+    #menu_on span:nth-child(2){
+        top: calc(50% - 2px);
+    }
+
+    #menu_on span:nth-child(3){
+        bottom: 0;
+    }
+    nav  li > span.flecha:not(:last-child):before{
+        content: "\25B8";
+    }
+    nav  li:hover > span.flecha:not(:last-child):before{
+        content: "\25BE";
     }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
+@media only screen and (min-width:1680px){
+    header{
+        height: 100px;                          
+    }
     #menu_on{
         visibility: hidden;
     }
@@ -150,18 +388,18 @@ button#cerrarSesion{
         height: 1.5em;
         box-sizing: border-box;
     }
-    navli input{
+    nav li input{
         list-style-type: none;
         margin: 0px;
         box-sizing: border-box;
     }
     nav li a:hover{
         color: black;
-        background-color:red;
+        /*background-color:red;*/
     }
     nav ul li a:hover{
         color: black;
-        background-color:red;
+        /*background-color:red;*/
     }
     /* 1 nivel*/
     nav {
@@ -170,7 +408,7 @@ button#cerrarSesion{
     nav li a{
         text-align: center;
         list-style-type: none;
-        background-color: white;
+        /*background-color: white;*/
     }
     nav > ul{
         margin-left: 10px;
@@ -192,5 +430,11 @@ button#cerrarSesion{
         visibility: visible;
         position: absolute;
         z-index: 100;
+    }
+    nav  li > span.flecha:not(:last-child):before{
+        content: "\25B8";
+    }
+    nav  li:hover > span.flecha:not(:last-child):before{
+        content: "\25BE";
     }
 }

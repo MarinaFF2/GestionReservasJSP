@@ -140,7 +140,7 @@
         response.sendRedirect("../index.jsp");
     }
     //botones de volver
-    if (request.getParameter("volverAIndex") != null) {
+    if (request.getParameter("volverIndex") != null) {
         ConexionEstatica.nueva();
         String usu = (String) session.getAttribute("usu");
         Usuario u = ConexionEstatica.existeUsu(usu);
@@ -151,5 +151,6 @@
         int rol = ConexionEstatica.Conseguir_Rol(u.getCorreo());
         BitacorasFichero.escribirBitacorasCuerpo("Se le ha redirigido al index",f,u.getCorreo(),rol);
         ConexionEstatica.cerrarBD();
+        response.sendRedirect("../index.jsp");
     }
 %>

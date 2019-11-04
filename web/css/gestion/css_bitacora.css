@@ -4,36 +4,47 @@
     padding: 0px;
 }
 table{
-    font-size: 25px;
-    width: 1200px;
-    border: 1px solid black;
-    margin-left:40px;
     padding:5px;
     background-color: green;
-}
-table{
     border:1px solid black;
 }
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
-    
+@media (max-width:320px) and (orientation:landscape){
+    table{
+        font-size: 12px;
+        width: 200px;
+        margin-left:40px;
+    }
 }
 /*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
-    
+@media (min-width:320px) and (max-width:480px) and (orientation:portrait){
+    table{
+        font-size: 16px;
+        width: 200px;
+        margin-left:40px;
+    }
 }
-
-/*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    
+/*Tablet Apps vertical 768x1024*/
+@media (min-width:480px) and (max-width:768px) and (orientation:portrait){
+    table{
+        font-size: 25px;
+        width: 500px;
+        margin-left:40px;
+    }
 }
-/*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
-    
+/*Tablet Apps horizontal 1024x768*/
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+    table{
+        font-size: 25px;
+        width: 500px;
+        margin-left:40px;
+    }
 }
-
-
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
-    
+@media (min-width:1024px){
+    table{
+        font-size: 25px;
+        width: 1200px;
+        margin-left:40px;
+    }
 }

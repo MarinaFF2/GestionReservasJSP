@@ -3,40 +3,140 @@
     margin: 0px;
     padding: 0px;
 }
-header{
-    margin-left: 300px;
-    padding-left: 5px;
-    height: 10px;
-}
-#registrarse{
-    font-size: 25px;
-    width: 300px;
-    border: 1px solid black;
-    margin-left: 300px;
-    margin-top: 25px;
+main{
     padding:5px;
     background-color: green;
 }
+#botones{
+    float:left;
+}
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
-    
+@media only screen and (max-width:480px) and (orientation:landscape){
+     header{
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px;
+        padding-top: 5px;
+        height: 10px;
+    }
+    .test{
+        width: 100px;
+    }
+    #file{
+        width: 250px;
+        font-size: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0px;
+    }
+    main{
+        font-size: 12px;
+        width: 270px;
+        border: 1px solid black;
+        margin-left: 10%;
+        margin-top: 25px;
+        padding-left: 5%;
+        background-color: green;
+    }
+    #botones{
+        margin-left: 40%;
+    }
 }
 /*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
-    
+@media only screen and (max-width:768px) and (orientation:portrait){
+    header{
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px;
+        padding-top: 5px;
+        height: 10px;
+    }
+    .test{
+        width: 100px;
+    }
+    #file{
+        width: 250px;
+        font-size: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0px;
+    }
+    main{
+        font-size: 12px;
+        width: 270px;
+        border: 1px solid black;
+        margin-left: 10%;
+        margin-top: 25px;
+        padding-left: 5%;
+        background-color: green;
+    }
+    #botones{
+        margin-left: 40%;
+    }
 }
-
-/*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    
+/*Tablet Apps vertical 768x1024*/
+@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+    header{
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px;
+        padding-top: 5px;
+        height: 10px;
+    }
+    main{
+        font-size: 16px;
+        width: 350px;
+        border: 1px solid black;
+        margin-left: 25%;
+        margin-top: 25px;
+        padding-left: 10%;
+        background-color: green;
+    }
+    #botones{
+        margin-left: 40%;
+    }
 }
-/*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
-    
+/*Tablet Apps horizontal 1024x768*/
+@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    header{
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px;
+        padding-top: 5px;
+        height: 10px;
+    }
+    main{
+        font-size: 25px;
+        width: 400px;
+        border: 1px solid black;
+        margin-left: 20%;
+        margin-top: 25px;
+        padding-left: 20%;
+        background-color: green;
+    }
+    #botones{
+        margin-left: 40%;
+    }
 }
-
-
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
-    
+@media only screen and (min-width:1680px){
+    header{
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px;
+        padding-top: 5px;
+        height: 10px;
+    }
+    main{
+        font-size: 25px;
+        width: 700px;
+        border: 1px solid black;
+        margin-left: 200px;
+        padding-left: 300px;
+        margin-top: 25px;
+        background-color: green;
+    }
+    #botones{
+        margin-left: 40%;
+    }
 }

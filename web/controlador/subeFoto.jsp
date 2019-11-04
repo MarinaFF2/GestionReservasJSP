@@ -42,7 +42,7 @@
                     
                     fichero = new File("perfiles", uploaded.getName()); 
                     uploaded.write(fichero);
-                    out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");
+                    out.println("<p>Archivo '" + uploaded.getName() + "' subido correctamente.</p>");
                     byte[] icono = new byte[(int) fichero.length()];
                     InputStream input = new FileInputStream(fichero);
                     input.read(icono);

@@ -1,28 +1,24 @@
 $(document).ready(function () {
     var cap = null;
-    var i = Math.floor(Math.random() * 6) + 1;
+    var i = Math.floor(Math.random() * 5) + 1;
     switch(i){
         case 1:
-            $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/1.jpeg'>" );
+            $("#catchap" ).append( "<img alt='error al mostrar la imagen' class='grande' src='../../img/captcha/1.jpeg'>" );
             cap="qGphJD";
         break;
         case 2:
-            $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/2.jpeg'>");
-            cap="15A84";
-        break;
-        case 3:
             $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/3.jpeg'>");
             cap="6HJH6CTN";
         break;
-        case 4:
+        case 3:
             $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/4.jpeg'>");
             cap="EXXTENHK";
         break;
-        case 5:
+        case 4:
             $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/5.jpeg'>");
             cap="XYHNXCDR";
         break;
-        case 6:
+        case 5:
             $("#catchap" ).append( "<img alt='error al mostrar la imagen' src='../../img/captcha/6.jpeg'>");
             cap="Y4Y7D";
         break;

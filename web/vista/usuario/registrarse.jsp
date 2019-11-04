@@ -17,30 +17,34 @@
     </head>
     <body  onload="aniadir()">
         <header><h1>Registrarse</h1></header>
-        <form id="registrarse" name="asd" action="../../controlador/subeFoto.jsp" enctype="multipart/form-data" method="POST">
-            <p>Correo:*</p>
-            <input type="email" id="correo" name="correo" placeholder="Correo"><br>
-            <p>Contraseña:*</p>
-            <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
-            <p>Confirmar contraseña:*</p>
-            <input type="password" id="reclave" name="reclave" placeholder="Confirmar contaseña" ><br>
-            <p>Nombre:*</p>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="" pattern="[A-Za-z]{1,50}"><br>
-            <p>Apellidos:*</p>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" pattern="[A-Za-z]{1,50}"><br>
-            <p>Edad:*</p>
-            <input type="number" id="edad" name="edad" placeholder="Edad" value="0" pattern="[0-9]"><br>
-            <p>Foto: </p><input type="file" id="file" name="fichero"/></br> 
-            <div id="catchap">
-            </div>
-            <input type="text" id="capt" value=""></br>
-            
-            <input type="submit" id="sendRegistrar" name="sendRegistrar" value="Enviar"><br>
-            <input type="button" id="limpiar" value="Limpiar"><br>
-            
-        </form>   
-        <form id="volver" action="../../controlador/controladorGeneral.jsp" method="POST">
-            <input type="submit" id="volverAIndex" name="volverAIndex" value="Volver al login"><br>
-        </form>
+        <main>
+            <form id="registrarse" name="asd" action="../../controlador/subeFoto.jsp" enctype="multipart/form-data" method="POST">
+                <p>Correo:*</p>
+                    <input type="email" class="test" id="correo" name="correo" placeholder="Correo"><br>
+                <p>Contraseña:*</p>
+                    <input type="password" class="test" id="clave" name="clave" placeholder="Contaseña"><br>
+                <p>Confirmar contraseña:*</p>
+                    <input type="password" class="test" id="reclave" name="reclave" placeholder="Confirmar contaseña" >
+                <p>Nombre:*</p>
+                    <input type="text" class="test" id="nombre" name="nombre" placeholder="Nombre" value="" pattern="[A-Za-z]{1,50}"><br>
+                <p>Apellidos:*</p>
+                    <input type="text" class="test" id="apellido" name="apellido" placeholder="Apellido" pattern="[A-Za-z]{1,50}"><br>
+                <p>Edad:*</p>
+                    <input type="number"class="test" id="edad" name="edad" placeholder="Edad" value="0" pattern="[0-9]"><br>
+                <p>Foto:</p>
+                <input type="file" id="file" name="fichero"/></br> 
+                <div id="catchap">
+                    
+                </div>
+                <input type="text" id="capt" value=""></br>
+                <div id="botones">
+                    <input type="submit" id="sendRegistrar" name="sendRegistrar" value="Enviar">
+                    <input type="button" id="limpiar" value="Limpiar">
+                </div>
+            </form>   
+            <form id="volver" action="../../controlador/controladorGeneral.jsp" method="POST">
+                <input type="submit" id="volverIndex" name="volverIndex" value="Volver">
+            </form>
+        </main>
     </body>
 </html>

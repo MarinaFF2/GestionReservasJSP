@@ -37,7 +37,7 @@ p, h1{
     grid-areas:h4;
 }
 /*Movil site horizontal 320x480*/
-@media (max-width:320px) and (orientation:landscape){
+@media only screen and (max-width:480px) and (orientation:landscape){
     main{
         max-width: 400px;
         margin-top: 10px;
@@ -51,7 +51,7 @@ p, h1{
     a{
         margin-top: 10px;
         margin-right: 10px;
-        margin-left: 10%;
+        margin-left: 5%;
     }
     #usuario, #pwd{
         margin-bottom: 10px;
@@ -65,19 +65,25 @@ p, h1{
     }
 }
 /*Movil site vertical 480x320*/
-@media (max-width:480px) and (orientation:portrait){
+@media only screen and (max-width:768px) and (orientation:portrait){
     main{
         max-width: 290px;
         margin-top: 10px;
-        margin-left: 7%; 
+        margin-left: 15%; 
         margin-right: 5%;
         padding: 5px;
+    }
+    p, a {
+        font-size:12px;
     }
     p{
         position: relative;
         left: -10px;
     }
-     a{
+    #olvidar{
+        margin-left: 5%;
+    }
+    a{
         margin-top: 5px;
         margin-right: 5px;
         margin-left: 10%;
@@ -94,14 +100,41 @@ p, h1{
         margin-left: 160px;
     }
 }
-
-/*Tablet Apps horizontal 1024x768*/
-@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+/*Tablet Apps vertical 768x1024*/
+@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
     main{
-        max-width: 512px;
+        margin-top: 40px;
+        margin-left: 22%;
+        max-width:395px; 
+        padding: 5px;
+    }
+    p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    a{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10%;
+        width: 300px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 300px;
+    }
+}
+/*Tablet Apps horizontal 1024x768*/
+@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    main{
+        max-width: 500px;
         margin-top: 30px;
-        margin-left: 25%;
-        padding: 15px;
+        margin-left: 20%;
+        padding: 10px;
     }
     p{
         margin-bottom: 10px;
@@ -110,7 +143,7 @@ p, h1{
     a{
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 20%;
+        margin-left: 15%;
     }
     #usuario, #pwd{
         margin-bottom: 10px;
@@ -123,42 +156,13 @@ p, h1{
         margin-left: 440px;
     }
 }
-/*Tablet Apps vertical 768x1024*/
-@media (min-width:480px) and (max-width:768px) and (orientation:portrait){
-    main{
-        margin-top: 100px;
-        margin-left: 25%;
-        max-width:395px; 
-        padding: 5px;
-    }
-    p{
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-    a{
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-left: 10%;
-    }
-    #usuario, #pwd{
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 30px;
-        width: 350px;
-        text-align: center;
-    }
-    #aceptar{
-        margin-left: 340px;
-    }
-}
-
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (max-width:1680px){
+@media only screen and (min-width:1680px){
     
     main{
         font-size:20px;
         max-width: 840px;
-        margin-top: 200px; 
+        margin-top: 40px; 
         margin-left: 20%;
         padding: 10px;
     }
@@ -169,7 +173,7 @@ p, h1{
     a{
         margin-top: 10px;
         margin-right: 10px;
-        margin-left: 20%;
+        margin-left: 15%;
     }
     #usuario, #pwd{
         margin-bottom: 10px;
