@@ -20,7 +20,7 @@ button#cerrarSesion{
 }
 nav  li {
     position: relative;
-    width: 200px;
+    width: 100px;
 }
 nav li a{
     background-color: dimgrey;
@@ -61,13 +61,6 @@ nav li input{
 
     height: 1.5em;
     box-sizing: border-box;
-}
-nav li span.flecha{
-    color: white;
-
-    position: absolute;
-    right: 10px;
-    top: 0px;
 }
 nav li a:hover{
     color: black;
@@ -126,24 +119,16 @@ nav  ul ul ul a {
     background-color: dimgrey;
     color:white;
 }
-
-/* Marcador de tener elementos hijos, flecha*/
-nav  li > span.flecha:not(:last-child):before{
-    content: "\25B8";
-}
-nav  li:hover > span.flecha:not(:last-child):before{
-    content: "\25BE";
-}
 /*Movil site horizontal 320x480*/
 @media only screen and (max-width:480px) and (orientation:landscape){
     button#cerrarSesion{
-        background-size: 50px;
-        width: 50px;
-        height: 50px;
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
     }
     #imgUsu{
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
     }
     #bitacora{
         background-color: transparent;
@@ -153,7 +138,7 @@ nav  li:hover > span.flecha:not(:last-child):before{
 /*Movil site vertical 480x320*/
 @media only screen and (max-width:768px) and (orientation:portrait){
     button#cerrarSesion{
-        background-size: 50px;
+        background-size: 30px;
         width: 30px;
         height: 30px;
     }
