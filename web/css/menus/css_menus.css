@@ -3,194 +3,214 @@
     margin: 0px;
     padding: 0px;
 }
-header{
-    height: 100px;
-    margin: 0px;
-    padding-top: 5px;
-    background-color: brown;
-}
-nav{
-    position: relative;
-    top:-25px;
-    /*background-color: green;*/
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 button#cerrarSesion{
+    background-color: transparent;
     background-image: url("../../img/iconos/out.png");
     border:none;
     background-repeat: no-repeat;
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
 }
-#editarUsuario{
-    width: 50px;
-    height: 50px;
+#bitacora{
+    background-color: transparent;
+    border: none;
 }
-#imgUsu{
-    width: 50px;
-    height: 50px;
+nav  li {
+    position: relative;
+    width: 200px;
+}
+nav li a{
+    background-color: dimgrey;
+    color:white;
+
+    text-decoration: none;
+    list-style-type: none;
+
+    display: block;
+
+    margin: 0px;
+
+    height: 1.5em;
+    box-sizing: border-box;
+}
+nav li img{
+    color:white;
+
+    text-decoration: none;
+    list-style-type: none;
+
+    display: block;
+
+    margin: 0px;
+
+    height: 1.5em;
+    box-sizing: border-box;
+}
+nav li input{
+    color:white;
+
+    text-decoration: none;
+    list-style-type: none;
+
+    display: block;
+
+    margin: 0px;
+
+    height: 1.5em;
+    box-sizing: border-box;
+}
+nav li span.flecha{
+    color: white;
+
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+nav li a:hover{
+    color: black;
+    background-color:red;
+}
+nav li input:hover{
+    color: black;
+    background-color:red;
+}
+nav li img:hover{
+    color: black;
+    background-color:red;
+}
+/* 1 nivel*/
+nav {
+    margin:0px;
+    padding: 15px;
+    background-color: dimgrey;
+}
+nav  li a{
+    padding-left: 5px;
+    width: 130px;
+    text-align: left;
+    list-style-type: none;
+}
+nav  li input{
+    text-align: center;
+    list-style-type: none;
+}
+nav  > ul > li{
+    display: inline-block;
+}
+
+/* Configuración de los niveles siguientes */
+nav  ul li ul {
+    display: none;
+    visibility: hidden;
+    list-style-type: none;
+
+}
+nav  ul li:hover > ul{
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 100;
+    transition: all 500ms 500ms linear;
+}
+/* Configuración específica para el nivel tercero y siguientes */
+nav  ul ul li:hover > ul{
+    /* Ojo con las posiciones y desplazamientos */
+    position: absolute; 
+    left: 50px;
+    top: 24px;
+}
+nav  ul ul ul a {
+    background-color: dimgrey;
+    color:white;
+}
+
+/* Marcador de tener elementos hijos, flecha*/
+nav  li > span.flecha:not(:last-child):before{
+    content: "\25B8";
+}
+nav  li:hover > span.flecha:not(:last-child):before{
+    content: "\25BE";
 }
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
-    #menu_on{
-        display: inline-block;
-        width:30px;
-        height: 20px;
-        position: relative;
-        z-index: 2;
+@media only screen and (max-width:480px) and (orientation:landscape){
+    button#cerrarSesion{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
     }
-
-    #menu_on span{
-        width: 100%;
-        height: 4px;
-        border-radius: 4px;
-        display: block;
-        position: absolute;
-        background: #fff;
-        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
-        transform-origin : 0px 100%;
+    #imgUsu{
+        width: 50px;
+        height: 50px;
     }
-
-    #menu_on span:nth-child(2){
-        top: calc(50% - 2px);
-    }
-
-    #menu_on span:nth-child(3){
-        bottom: 0;
+    #bitacora{
+        background-color: transparent;
+        border: none;
     }
 }
 /*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
-    #menu_on{
-        display: inline-block;
-        width:30px;
-        height: 20px;
-        position: relative;
-        z-index: 2;
+@media only screen and (max-width:768px) and (orientation:portrait){
+    button#cerrarSesion{
+        background-size: 50px;
+        width: 30px;
+        height: 30px;
     }
-
-    #menu_on span{
-        width: 100%;
-        height: 4px;
-        border-radius: 4px;
-        display: block;
-        position: absolute;
-        background: #fff;
-        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
-        transform-origin : 0px 100%;
+    #imgUsu{
+        width: 30px;
+        height: 30px;
     }
-
-    #menu_on span:nth-child(2){
-        top: calc(50% - 2px);
-    }
-
-    #menu_on span:nth-child(3){
-        bottom: 0;
+    #bitacora{
+        background-color: transparent;
+        border: none;
     }
 }
 /*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    
+@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+    button#cerrarSesion{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    #imgUsu{
+        width: 50px;
+        height: 50px;
+    }
+    #bitacora{
+        background-color: transparent;
+        border: none;
+    }
 }
 /*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
-    #menu_on{
-        display: inline-block;
-        width:30px;
-        height: 20px;
-        position: relative;
-        z-index: 2;
+@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    button#cerrarSesion{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
     }
-
-    #menu_on span{
-        width: 100%;
-        height: 4px;
-        border-radius: 4px;
-        display: block;
-        position: absolute;
-        background: #fff;
-        transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
-        transform-origin : 0px 100%;
+    #imgUsu{
+        width: 50px;
+        height: 50px;
     }
-
-    #menu_on span:nth-child(2){
-        top: calc(50% - 2px);
-    }
-
-    #menu_on span:nth-child(3){
-        bottom: 0;
+    #bitacora{
+        background-color: transparent;
+        border: none;
     }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
-    #menu_on{
-        visibility: hidden;
-    }
-    nav{
-        margin:0px;
-        height: 55px;
-    }
+@media only screen and (min-width:1680px){
     button#cerrarSesion{
-        position: relative;
-        right: 5px;
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
     }
-    button#editarUsuario{
-        position: relative;
-        right: 05px;
+    #imgUsu{
+        width: 50px;
+        height: 50px;
     }
-    nav li {
-        position: relative;
-        width: 200px;
-        display: inline-block;
-    }
-    nav li a{
-        text-decoration: none;
-        display: block;
-        margin: 0px;
-        height: 1.5em;
-        box-sizing: border-box;
-    }
-    navli input{
-        list-style-type: none;
-        margin: 0px;
-        box-sizing: border-box;
-    }
-    nav li a:hover{
-        color: black;
-        background-color:red;
-    }
-    nav ul li a:hover{
-        color: black;
-        background-color:red;
-    }
-    /* 1 nivel*/
-    nav {
-        padding-left: 50px;
-    }
-    nav li a{
-        text-align: center;
-        list-style-type: none;
-        background-color: white;
-    }
-    nav > ul{
-        margin-left: 10px;
-    }
-    nav > ul > li{
-        display: inline-block;
-        margin: 5px 2px 0px;
-    }
-
-    /* Configuración de los niveles siguientes */
-    nav ul li ul {
-        display: none;
-        visibility: hidden;
-        list-style-type: none;
-
-    }
-    nav ul li:hover > ul{
-        display: block;
-        visibility: visible;
-        position: absolute;
-        z-index: 100;
+    #bitacora{
+        background-color: transparent;
+        border: none;
     }
 }

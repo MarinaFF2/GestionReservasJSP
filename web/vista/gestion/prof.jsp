@@ -20,99 +20,73 @@
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_prof.css" media="screen" />
     </head>
     <body>
-        <form  name="tablaGestionarProf" action="../../controlador/controladorGeneral.jsp" method="POST">
-        <%
-            int n = (Integer)session.getAttribute("rol");
-            if(n==3){
-        %>
-            <header>
-                <nav id="menuLoginAdminGene">
-                    <ul>
-                        <li><p>Administrador General</p>
-                            <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                            </ul>
-                        </li>
-                        <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
-                        <li><p>Profesor</p>
-                            <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
+            <%
+                int n =(Integer) session.getAttribute("nrol");
+                if(n == 3) {
+            %>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" id="editarUsuario" class="active"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a>
+                        <ul>
+                            <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        <%  
-            }else if(n==2){
-        %>
-            <header>
-                <nav id="menuLoginAdminAula">
-                    <ul>
-                        <li><p>Administrador Aula</p>
-                            <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                            </ul>
-                        </li>
-                        <li><p>Profesor</p>
-                            <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
-                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        <% 
-            }else{
-        %>  
-            <header>
-                <nav id="prof">
-                    <ul>
-                        <li><p>Profesor</p>
-                            <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
-                                <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="submit" id="cerrarSesion" name="cerrarSesion" value="CerrarSesion">
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        <% 
-            }
-        %>
+                        </ul>
+                    </li>
+                    <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                    <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                    <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                    <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
+                    <li><a href="../usuario/cambiarRol.jsp">Cambiar Rol</a></li>
+                    <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
+                    <li>
+                        <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
+                    </li>
+                </ul>
+            </nav>
+            <%
+            } else if (n == 2) {
+            %>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                            <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../usuario/cambiarRol.jsp">Cambiar Rol</a></li>
+                    <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                    <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                    <li>
+                        <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
+                    </li>
+                </ul>
+            </nav>
+            <%
+            } else {
+            %>  
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
+                        <ul>
+                            <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+                            <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../usuario/cambiarRol.jsp">Cambiar Rol</a></li>
+                    <li><a href="prof.jsp">Reservar Aula</a></li>
+                    <li>
+                        <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
+                    </li>
+                </ul>
+            </nav>
+            <%
+                }
+            %>
         </form>
         
         <form id="menuProf" action="../../controlador/controladorGestion.jsp" method="POST">

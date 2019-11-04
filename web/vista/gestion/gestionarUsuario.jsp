@@ -21,43 +21,27 @@
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarUsu.css" media="screen" />
     </head>
     <body>
-        
-        <form  name="tablaGestionarUsuario" action="../../controlador/controladorGeneral.jsp" method="POST">
-            <header>
-                <a href="#" id="menu_on">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-                <nav id="menuLoginAdminGene">
-                    <ul>
-                        <li><a href="#">Administrador General</a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
-                                <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
-                                <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
-                                <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
-                            </ul>
-                        </li>
-                        <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
-                        <li><a href="#">Profesor</a>
-                            <ul>
-                                <li><a href="prof.jsp">Reservar Aula</a><span class="flecha"></span></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" id="editarUsuario"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a><span class="flecha"></span>
-                            <ul>
-                                <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
+        <form  name="tablaGestionarFranja" action="../../controlador/controladorGeneral.jsp" method="POST">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" id="editarUsuario" class="active"><img id="imgUsu" src="../../img/iconos/usu.png" alt="no encontrada"/></a>
+                        <ul>
+                            <li><a href="../usuario/editarFoto.jsp">Editar Foto</a></li>
                                 <li><a href="../usuario/editarUsuario.jsp">Editar Usuario</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+                        </ul>
+                    </li>
+                    <li><a href="gestionarAula.jsp">Gestionar Aula</a></li>
+                    <li><a href="gestionarFranja.jsp">Gestionar Franja</a></li>
+                    <li><a href="gestionarUsuario.jsp">Gestion Usuario</a></li>
+                    <li><a href="gestionarRol.jsp">Gestion Rol</a></li>
+                    <li><a href="../usuario/cambiarRol.jsp">Cambiar Rol</a></li>
+                    <li><input type="submit" id="bitacora" name="bitacora"  value="VerBitacora"></li>
+                    <li>
+                        <button type="submit" id="cerrarSesion" name="cerrarSesion"  value="CerrarSesion"></button>
+                    </li>
+                </ul>
+            </nav>
         </form>
         <div>
         <table>
@@ -106,7 +90,7 @@
             </tbody>
         </table>
         </div>
-            <footer class="w3-display-bottomleft w3-padding-large">
+            <footer>
                 <div>Icons made by <a href="https://www.flaticon.es/autores/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
                 <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
             </footer>

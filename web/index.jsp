@@ -4,7 +4,9 @@
     Author     : daw207
 --%>
 
-<%@page import="BBDD.BitacorasFichero"%>
+<%@page import="clase.Usuario"%>
+<%@page import="clase.Codificar"%>
+<%@page import="BBDD.ConexionEstatica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,6 +25,7 @@
             if (s.getMaxInactiveInterval() == 0) {
                 s.removeAttribute("usu");
                 s.invalidate();
+                response.sendRedirect("index.jsp");
             }
         %>
         <header>
@@ -43,6 +46,7 @@
                 <div id="acep">
                     <input type="submit" id="aceptar" name="aceptarIndex" value="Aceptar">
                 </div>
+                
             </form>
         </main>
     </body>
