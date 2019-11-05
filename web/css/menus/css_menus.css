@@ -3,11 +3,6 @@
     margin: 0px;
     padding: 0px;
 }
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-}
 button#cerrarSesion{
     background-color: transparent;
     background-image: url("../../img/iconos/out.png");

@@ -3,6 +3,10 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
 header{
     margin-top: 40px;
     text-align: center;
@@ -16,7 +20,7 @@ main{
         "h3"
         "h4";
     border: 1px black solid;
-    background-color: green;
+    background-color: white;
 }
 p, h1{
     text-align: center;
@@ -132,8 +136,8 @@ p, h1{
 @media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
     main{
         max-width: 500px;
-        margin-top: 30px;
-        margin-left: 20%;
+        margin-top: 10%;
+        margin-left: 33%;
         padding: 10px;
     }
     p{
@@ -158,11 +162,10 @@ p, h1{
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media only screen and (min-width:1680px){
-    
     main{
         font-size:20px;
         max-width: 840px;
-        margin-top: 40px; 
+        margin-top: 20%; 
         margin-left: 20%;
         padding: 10px;
     }

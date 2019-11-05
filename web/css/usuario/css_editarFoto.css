@@ -1,0 +1,39 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
+#fotoPerfil{
+    width: 200px;
+    height: 200px;
+}
+#imgPerfil{
+    width: 500px;
+    height: 500px;
+    margin-top: 15%;
+    margin-left: 20%;
+}
+/*Movil site horizontal 320x480*/
+@media (max-width:480px) and (orientation:landscape){
+    
+}
+/*Movil site vertical 480x320*/
+@media (min-width:480px) and (max-width:768px) and (orientation:portrait){
+    
+}
+/*Tablet Apps vertical 768x1024*/
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+    
+}
+/*Tablet Apps horizontal 1024x768*/
+@media (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    
+}
+/*Pantalla de escritorio WebSite 1680x1050*/
+@media (min-width:1680px){
+    
+}

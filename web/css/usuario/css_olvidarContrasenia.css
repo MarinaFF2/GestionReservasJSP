@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
 /*Movil site horizontal 320x480*/
 @media (max-width:320px) and (orientation:landscape){
     

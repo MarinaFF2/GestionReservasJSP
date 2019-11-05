@@ -1,0 +1,17 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
+h1{
+    text-align: center;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}

@@ -4,6 +4,15 @@
     padding: 0px;
 }
 
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
 div{
     font-size: 25px;
     width: 700px;
@@ -11,7 +20,7 @@ div{
     margin:150px;
     padding:5px;
     margin-left: 300px;
-    background-color: green;
+    background-color: white;
 }
 /*Movil site horizontal 320x480*/
 @media (max-width:320px) and (orientation:landscape){

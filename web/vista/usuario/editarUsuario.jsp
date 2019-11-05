@@ -115,7 +115,6 @@
             ConexionEstatica.cerrarBD();
         %>
         <form id="editarUsu2" name="editarUsu2" action="../../controlador/controladorGeneral.jsp"method="POST">
-
             Nueva contraseña:*<br>
             <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
             Confirmar nueva contraseña:*<br>

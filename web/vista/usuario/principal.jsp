@@ -12,6 +12,7 @@
         <title>JSP Page</title>
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/usuario/css_principal.css" media="screen" />
         <script src="../../jquery-3.4.1.min.js"></script>
         <script src="../../js/menu.js"></script>
     </head>

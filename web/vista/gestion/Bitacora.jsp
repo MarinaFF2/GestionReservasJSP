@@ -110,7 +110,7 @@
                 %>
             </form>
         <table>
-            <caption>Contenido del archivo Bitacora</caption>
+            <caption><h1>Contenido del archivo Bitacora</h1></caption>
             <thead>
                 <tr>
                     <th>Acción</th>

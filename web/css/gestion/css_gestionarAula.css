@@ -3,48 +3,122 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
 button#editar{
     background-image: url("../../img/iconos/editar.png");
     border:none;
     background-repeat: no-repeat;
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
 }
 button#eliminar{
     background-image: url("../../img/iconos/bor.png");
     border:none;
     background-repeat: no-repeat;
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
 }
-div{
-    font-size: 25px;
-    width: 700px;
+.n{
     border: 1px solid black;
-    margin:150px;
     padding:5px;
-    margin-left: 300px;
-    background-color: green;
+    background-color: white;
 }
 /*Movil site horizontal 320x480*/
 @media (max-width:320px) and (orientation:landscape){
-    
+ button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 45px;
+        margin-left:30%;
+        padding:5px;
+    }
 }
 /*Movil site vertical 480x320*/
 @media (min-width:320px) and (max-width:480px) and (orientation:portrait){
-    
+ button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 45px;
+        margin-left:30%;
+        padding:5px;
+    }
 }
 /*Tablet Apps vertical 768x1024*/
 @media (min-width:480px) and (max-width:768px) and (orientation:portrait){
-    
+ button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 450px;
+        margin-left:30%;
+        padding:5px;
+    }
 }
 /*Tablet Apps horizontal 1024x768*/
 @media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
-    
+ button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 450px;
+        margin-left:30%;
+        padding:5px;
+    }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1024px){
-    
+    button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 450px;
+        margin-left:30%;
+        padding:5px;
+    }
 }

@@ -3,10 +3,28 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
 #imgPerfil{
     height: 100px;
     width: 55px;
     background-color: gray;
+}
+#editarUsu2{
+    margin-top: 10%;
+    width: 200px;
+    color: white;
+    position: relative;
+    left:20%;
+}
+#editarUsu3{
+    width: 200px;
+    color: white;
+    position: relative;
+    left:70%;
+    top: -130px;
 }
 /*Movil site horizontal 320x480*/
 @media (max-width:480px) and (orientation:landscape){

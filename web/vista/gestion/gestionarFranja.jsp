@@ -108,7 +108,7 @@
                     }
                 %>
             </form>
-        <div>
+            <div class="n">
         <table id="gestionarFranja" >
             <caption>LISTA FRANJAS</caption>
             <thead>

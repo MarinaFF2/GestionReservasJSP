@@ -3,6 +3,10 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-image: url(../../img/fondos/mar.jpg);
+    background-size: 100%;
+}
 form#menuProf{
     font-size: 25px;
     width: 200px;
@@ -10,7 +14,7 @@ form#menuProf{
     margin:150px;
     margin-left: 300px;
     padding:5px;
-    background-color: green;
+    background-color: white;
 }
 /*Movil site horizontal 320x480*/
 @media (min-width:480px) and (orientation:landscape){
