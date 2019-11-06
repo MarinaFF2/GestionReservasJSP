@@ -4,6 +4,7 @@
     padding: 0px;
 }
 h1{
+    margin-top: 5%;    
     text-align: center;
 }
 body{
@@ -18,17 +19,17 @@ form{
 /*Movil site horizontal 320x480*/
 @media (max-width:320px) and (orientation:landscape){
     form{
-        margin-left: 10%;
-        margin-right: 10%;
-        width: calc(250px/2);
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
     }
     input{
-        width: 80px;
         font-size: 10px;
     }
 }
 @media (max-width:320px) and (orientation:portrait){
     form{
+        margin-top: 5%;
         margin-left: 10%;
         margin-right: 10%;
         width: calc(250px/2);
@@ -36,39 +37,46 @@ form{
 }
 /*Movil site vertical 480x320*/
 @media (min-width:321px) and (max-width:480px) and (orientation:portrait){
-form{
-        margin-left: 15%;
-        margin-right: 15%;
+    form{
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
 @media (min-width:321px) and (max-width:480px) and (orientation:landscape){
-form{
-        margin-left: 15%;
-        margin-right: 15%;
+    form{
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
 /*Tablet Apps vertical 768x1024*/
 @media (min-width:481px) and (max-width:768px) and (orientation:portrait){
-form{
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-}
-@media (min-width:481px) and (max-width:768px) and (orientation:landscape){
-form{
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-}
-/*Tablet Apps horizontal 1024x768*/
-@media (min-width:769px) and (max-width:1024px) and (orientation:landscape){
-form{
+    form{
+        margin-top: 5%;
         margin-left: 25%;
         margin-right: 25%;
     }
 }
+@media (min-width:481px) and (max-width:768px) and (orientation:landscape){
+    form{        
+        margin-top: 5%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+/*Tablet Apps horizontal 1024x768*/
+@media (min-width:769px) and (max-width:1024px) and (orientation:landscape){
+    form{
+        
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
 @media (min-width:769px) and (max-width:1024px) and (orientation:portrait){
-form{
+    form{
+        margin-top: 5%;
         margin-left: 25%;
         margin-right: 25%;
     }
@@ -76,7 +84,8 @@ form{
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1025px){
     form{
-        margin-left: 30%;
-        margin-right: 30%;
+        margin-top: 5%;
+        margin-left: 35%;
+        margin-right: 35%;
     }
 }

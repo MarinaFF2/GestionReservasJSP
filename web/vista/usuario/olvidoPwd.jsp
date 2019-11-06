@@ -17,7 +17,7 @@
         <form name="olvidoPwd" action="../../controlador/conectorGeneral.jsp" method="post">
             <p>Introduce tu correo: </p><input type="text" name="email" placeholder="Introduzca su correo"><br>
             <input class="botones" type="submit" name="botOlvidoPwd" value="Recuperar contraseña"><br>
-            <input type="submit" id="volverIndex" name="volverIndex" value="Volver al login"><br>
+            <input type="submit" id="volverIndex" name="volverIndex" value="Volver"><br>
         </form>
     </body>
 </html>
