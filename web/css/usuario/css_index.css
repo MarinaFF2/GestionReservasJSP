@@ -41,27 +41,58 @@ p, h1{
     grid-areas:h4;
 }
 /*Movil site horizontal 320x480*/
-@media only screen and (max-width:480px) and (orientation:landscape){
+@media only screen and (max-width:320px) and (orientation:landscape){
     main{
-        max-width: 400px;
+        max-width: 300px;
         margin-top: 10px;
         margin-left: 7%;
+        margin-right: 7%;
         padding: 5px;
     }
     p{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: 5%;
+        margin-top: 5%;
     }
     a{
-        margin-top: 10px;
-        margin-right: 10px;
+        font-size: 10px;
+        margin-top: 5%;
+        margin-right: 5%;
         margin-left: 5%;
     }
     #usuario, #pwd{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
         margin-left: 10%;
-        width: 300px;
+        width: 200px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 65%;
+    }
+}
+@media only screen and (max-width:320px) and (orientation:portrait){
+    main{
+        max-width: 300px;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 0.5%;
+    }
+    p{
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+    a{
+        font-size: 10px;
+        margin-top: 5%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 5%;
+        margin-top: 0.5%;
+        margin-left: 10%;
+        width: 200px;
         text-align: center;
     }
     #aceptar{
@@ -69,7 +100,42 @@ p, h1{
     }
 }
 /*Movil site vertical 480x320*/
-@media only screen and (max-width:768px) and (orientation:portrait){
+@media only screen and (min-width:321px) and (max-width:480px) and (orientation:portrait){
+    main{
+        max-width: 290px;
+        margin-top: 10px;
+        margin-left: 15%; 
+        margin-right: 5%;
+        padding: 5px;
+    }
+    p, a {
+        font-size:12px;
+    }
+    p{
+        position: relative;
+        left: -10px;
+    }
+    #olvidar{
+        margin-left: 5%;
+    }
+    a{
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-left: 10%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 60px;
+        width: 150px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-top: 5px;
+        margin-left: 160px;
+    }
+}
+@media only screen and (min-width:321px) and (max-width:480px) and (orientation:landscape){
     main{
         max-width: 290px;
         margin-top: 10px;
@@ -105,10 +171,39 @@ p, h1{
     }
 }
 /*Tablet Apps vertical 768x1024*/
-@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+@media only screen and (min-width:481px) and (max-width:768px) and (orientation:portrait){
     main{
-        margin-top: 40px;
-        margin-left: 22%;
+        margin-top: 10%; 
+        margin-left: 10%;
+        margin-right: 10%;
+        max-width:395px; 
+        padding: 5px;
+    }
+    p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    a{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5%;
+    }
+    #usuario, #pwd{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10%;
+        width: 300px;
+        text-align: center;
+    }
+    #aceptar{
+        margin-left: 300px;
+    }
+}
+@media only screen and (min-width:481px) and (max-width:768px) and (orientation:landscape){
+    main{
+        margin-top: 10%;
+        margin-left: 25%;
+        margin-right: 20%;
         max-width:395px; 
         padding: 5px;
     }
@@ -133,60 +228,62 @@ p, h1{
     }
 }
 /*Tablet Apps horizontal 1024x768*/
-@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+@media only screen and (min-width:769px) and (max-width:1024px) and (orientation:landscape){
     main{
         max-width: 500px;
         margin-top: 10%;
-        margin-left: 33%;
+        margin-left: 25%;
+        margin-right: 25%;
         padding: 10px;
     }
     p{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
     }
     a{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 15%;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
+        margin-left: 10%;
     }
     #usuario, #pwd{
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 15%;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        margin-left: 10%;
         width: 350px;
         text-align: center;
     }
     #aceptar{
-        margin-left: 440px;
+        margin-left: 400px;
     }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media only screen and (min-width:1680px){
+@media only screen and (min-width:1025px){
     main{
         font-size:20px;
-        max-width: 840px;
-        margin-top: 20%; 
-        margin-left: 20%;
+        max-width: 800px;
+        margin-top: 10%; 
+        margin-left: 15%;
+        margin-right: 15%;
         padding: 10px;
     }
     p{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: 1%;
+        margin-top: 1%;
     } 
     a{
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-left: 15%;
+        margin-top: 1%;
+        margin-right: 10%;
+        margin-left: 10%;
     }
     #usuario, #pwd{
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 30%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        margin-left: 25%;
         width: 350px;
         height: 30px;
         text-align: center;
     }
     #aceptar{
-        margin-left: 75%;
+        margin-left: 80%;
     }
 }
