@@ -11,11 +11,11 @@
 <%@page import="java.io.FileReader"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_bitacora.css" media="screen" />

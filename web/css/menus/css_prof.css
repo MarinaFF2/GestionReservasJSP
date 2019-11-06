@@ -7,35 +7,76 @@ body{
     background-image: url(../../img/fondos/mar.jpg);
     background-size: 100%;
 }
-form#menuProf{
-    font-size: 25px;
-    width: 200px;
+#menuProf{
     border: 1px solid black;
-    margin:150px;
-    margin-left: 300px;
-    padding:5px;
+    padding:3%;
     background-color: white;
 }
 /*Movil site horizontal 320x480*/
-@media (min-width:480px) and (orientation:landscape){
-    
+@media (max-width:480px) and (orientation:landscape){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
+}
+@media (max-width:480px) and (orientation:portrait){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
 }
 /*Movil site vertical 480x320*/
-@media (min-width:320px) and (orientation:portrait){
-    
+@media (min-width:480px) and (max-width:768px) and (orientation:portrait){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
 }
-
-/*Tablet Apps horizontal 768x1024*/
-@media (min-width:1024px) and (orientation:landscape){
-    
+@media (min-width:480px) and (max-width:768px) and (orientation:landscape){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
 }
-/*Tablet Apps vertical 1024x768*/
-@media (min-width:768px) and (orientation:portrait){
-    
+/*Tablet Apps vertical 768x1024*/
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
 }
-
-
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
+}
+/*Tablet Apps horizontal 1024x768*/
+@media (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
+}
+@media (min-width:1024px) and (max-width:1680px) and (orientation:portrait){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 3% auto 0px;
+    }
+}
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media (min-width:1050px){
-    
+@media (min-width:1680px){
+    #menuProf{
+        font-size: 25px;
+        width: 150px;
+        margin: 30% auto 0px;
+    }
 }

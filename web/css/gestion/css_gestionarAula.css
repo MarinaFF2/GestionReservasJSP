@@ -9,7 +9,7 @@ body{
 }
 footer{
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0px;
 }
 button#editar{
@@ -24,50 +24,137 @@ button#eliminar{
 }
 .n{
     border: 1px solid black;
-    padding:5px;
     background-color: white;
 }
 /*Movil site horizontal 320x480*/
 @media (max-width:320px) and (orientation:landscape){
- button#eliminar{
-        background-size: 50px;
-        width: 50px;
-        height: 50px;
+    button#eliminar{
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
     }
     button#editar{
-        background-size: 50px;
-        width: 50px;
-        height: 50px;
+        background-size:30px;
+        width: 30px;
+        height: 30px;
     }
     .n{
+        margin: 1% auto;
+        padding-left: 5%;
         font-size: 25px;
-        width: 45px;
-        margin-left:30%;
-        padding:5px;
+        width: 250px;
+    }
+    caption{
+        font-size: 13px;
+    }
+    th{
+        font-size: 11px;
+    }
+    input{
+        width: 50px;
+        text-align: center;
+    }
+    .h{
+      width: 100px;  
+    }
+}
+@media (max-width:320px) and (orientation:portrait){
+    button#eliminar{
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    button#editar{
+        background-size:30px;
+        width: 30px;
+        height: 30px;
+    }
+    .n{
+        margin: 1% auto;
+        padding-left: 3%;
+        font-size: 25px;
+        width: 250px;
+    }
+    caption{
+        font-size: 13px;
+    }
+    th{
+        font-size: 11px;
+    }
+    input{
+        width: 50px;
+        text-align: center;
+    }
+    .h{
+      width: 100px;  
     }
 }
 /*Movil site vertical 480x320*/
 @media (min-width:320px) and (max-width:480px) and (orientation:portrait){
- button#eliminar{
-        background-size: 50px;
-        width: 50px;
-        height: 50px;
+    button#eliminar{
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
     }
     button#editar{
-        background-size: 50px;
-        width: 50px;
-        height: 50px;
+        background-size:30px;
+        width: 30px;
+        height: 30px;
     }
     .n{
+        margin: 1% auto;
+        padding-left: 5%;
         font-size: 25px;
-        width: 45px;
-        margin-left:30%;
-        padding:5px;
+        width: 250px;
+    }
+    caption{
+        font-size: 13px;
+    }
+    th{
+        font-size: 11px;
+    }
+    input{
+        width: 50px;
+        text-align: center;
+    }
+    .h{
+      width: 100px;  
+    }
+}
+@media (min-width:320px) and (max-width:480px) and (orientation:landscape){
+    button#eliminar{
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    button#editar{
+        background-size:30px;
+        width: 30px;
+        height: 30px;
+    }
+    .n{
+        margin: 1% auto;
+        padding-left: 5%;
+        font-size: 25px;
+        width: 250px;
+    }
+    caption{
+        font-size: 13px;
+    }
+    th{
+        font-size: 11px;
+    }
+    input{
+        width: 50px;
+        text-align: center;
+    }
+    .h{
+      width: 100px;  
     }
 }
 /*Tablet Apps vertical 768x1024*/
 @media (min-width:480px) and (max-width:768px) and (orientation:portrait){
- button#eliminar{
+    button#eliminar{
         background-size: 50px;
         width: 50px;
         height: 50px;
@@ -80,13 +167,31 @@ button#eliminar{
     .n{
         font-size: 25px;
         width: 450px;
-        margin-left:30%;
-        padding:5px;
+        margin: 0px auto;
+        padding:1%;
+    }
+}
+@media (min-width:480px) and (max-width:768px) and (orientation:landscape){
+    button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 450px;
+        margin: 0px auto;
+        padding:1%;
     }
 }
 /*Tablet Apps horizontal 1024x768*/
 @media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
- button#eliminar{
+    button#eliminar{
         background-size: 50px;
         width: 50px;
         height: 50px;
@@ -99,8 +204,26 @@ button#eliminar{
     .n{
         font-size: 25px;
         width: 450px;
-        margin-left:30%;
-        padding:5px;
+        margin: 0px auto;
+        padding:1%;
+    }
+}
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+   button#eliminar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    button#editar{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    .n{
+        font-size: 25px;
+        width: 450px;
+        margin: 0px auto;
+        padding:1%;
     }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
@@ -118,7 +241,7 @@ button#eliminar{
     .n{
         font-size: 25px;
         width: 450px;
-        margin-left:30%;
-        padding:5px;
+        margin: 0px auto;
+        padding:1%;
     }
 }

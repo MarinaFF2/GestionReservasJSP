@@ -7,42 +7,115 @@ body{
     background-image: url(../../img/fondos/mar.jpg);
     background-size: 100%;
 }
-#imgPerfil{
-    height: 100px;
-    width: 55px;
-    background-color: gray;
+h1{
+    text-align: center;
+    color:white;
 }
 #editarUsu2{
-    margin-top: 10%;
-    width: 200px;
-    color: white;
-    position: relative;
-    left:20%;
+    
+    float:left;
 }
 #editarUsu3{
-    width: 200px;
-    color: white;
-    position: relative;
-    left:70%;
-    top: -130px;
+    
+    float:right;
+}
+#editarUsu2,#editarUsu3{
+    background-color: white;
+    border:1px solid black;
+    color: black;
 }
 /*Movil site horizontal 320x480*/
 @media (max-width:480px) and (orientation:landscape){
-    
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% 15%;
+    }
+}
+@media (max-width:480px) and (orientation:portrait){
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% 15%;
+    }
 }
 /*Movil site vertical 480x320*/
 @media (min-width:480px) and (max-width:768px) and (orientation:portrait){
-    
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
+}
+@media (min-width:480px) and (max-width:768px) and (orientation:landscape){
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    man{
+        margin: 3% 50%;
+    }
 }
 /*Tablet Apps vertical 768x1024*/
 @media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
-    
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
+}
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
 }
 /*Tablet Apps horizontal 1024x768*/
 @media (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
-    
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
+}
+@media (min-width:1024px) and (max-width:1680px) and (orientation:portrait){
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
 @media (min-width:1680px){
-    
+    #editarUsu2,#editarUsu3{
+        width: 200px;
+        padding: 3%;
+        margin-top: 3%;
+    }
+    main{
+        margin: 3% auto;
+    }
 }

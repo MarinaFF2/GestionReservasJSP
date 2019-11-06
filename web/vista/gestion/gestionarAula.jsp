@@ -9,14 +9,13 @@
 <%@page import="clase.Aula"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarAula.css" media="screen" />
-
     </head>
     <body>
         <form action="../../controlador/controladorGeneral.jsp" method="POST">
@@ -123,32 +122,32 @@
                         ConexionEstatica.cerrarBD();
                         for (int i = 0; i < v.size(); i++) {
                     %>
-                <form action="../../controlador/controladorGestion.jsp" method="POST">
-                    <tr>
-                        <td>
-                            <input type="text" name="codAula" value="<%=v.get(i).getCodAula()%>">
-                        </td>   
-                        <td>
-                            <input type="text" name="descripcionAula" value="<%=v.get(i).getDescripcion()%>">
-                        </td>    
-                        <td>
-                            <button type="submit" id="eliminar" name="botAula" value="X">
-                        </td>
-                        <td>
-                            <button type="submit" id="editar" name="botAula" value="Editar">
+                    <form action="../../controlador/controladorGestion.jsp" method="POST">
+                        <tr>
+                            <td>
+                                <input type="text"  name="codAula" value="<%=v.get(i).getCodAula()%>">
+                            </td>   
+                            <td>
+                                <input type="text" class="h" name="descripcionAula" value="<%=v.get(i).getDescripcion()%>">
+                            </td>    
+                            <td>
+                                <button type="submit" id="eliminar" name="botAula" value="X">
+                            </td>
+                            <td>
+                                <button type="submit" id="editar" name="botAula" value="Editar">
                                 <input type="hidden" id="clave" name="aula" value="<%=v.get(i).getCodAula()%>">
-                                </td>
-                                </tr>
-                                </form>
-                                <%
-                                    }
-                                %>
-                                </tbody>
-                                </table>
-                                </div>
-                                <footer>
-                                    <div>Icons made by <a href="https://www.flaticon.es/autores/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-                                    <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
-                                </footer>
-                                </body>
-                                </html>
+                            </td>
+                        </tr>
+                    </form>
+                <%
+                    }
+                %>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.es/autores/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
+            <div>Icons made by <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/"             title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+    </body>
+</html>

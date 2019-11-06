@@ -9,11 +9,11 @@
 <%@page import="clase.FranjaHoraria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_gestionarFranja.css" media="screen" />
@@ -131,10 +131,10 @@
                            <input type="text" name="nFranja" value="<%=v.get(i).getFranja()%>">
                         </td>   
                         <td>
-                           <input type="text" name="iniHora" value="<%=v.get(i).getInicioHora()%>">
+                           <input type="text" class="h" name="iniHora" value="<%=v.get(i).getInicioHora()%>">
                         </td>
                         <td>
-                            <input type="text" name="finHora" value="<%=v.get(i).getFinHora()%>">
+                            <input type="text" class="h" name="finHora" value="<%=v.get(i).getFinHora()%>">
                         </td>
                         <td>
                             <button type="submit" id="editar" name="botFranja" value="Editar">

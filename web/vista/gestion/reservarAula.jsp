@@ -9,14 +9,16 @@
 <%@page import="clase.FranjaHoraria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/gestion/css_reservarAula.css" media="screen" />
+        <script src="../../jquery-3.4.1.min.js"></script>
+        <script src="../../js/reserva.js"></script>
     </head>
     <body>
          <form action="../../controlador/controladorGeneral.jsp" method="POST">
@@ -107,7 +109,7 @@
                     }
                 %>
             </form>
-        <div>
+        <div class="n">
             <p>Fecha: </p><input type="text" id="fecha" name="fecha" value="<%=(String)session.getAttribute("fecD")%>" readonly="true">
             <p>Aula: </p><input type="text" id="aula" name="fecha" value="<%=(Integer)session.getAttribute("Aula")%>" readonly="true">
             <table id="reservaAula" >
@@ -128,19 +130,19 @@
             for (int i = 0; i < v.size(); i++) {
         %>
                     <form  id="tablaReservarAulas1" action="../../controlador/controladorGestion.jsp" method="POST">
-                    <tr>
-                        <td>
-                            <input type="text" id="iniHora" name="iniHora" value="<%=v.get(i).getInicioHora()%>" readonly="true">
-                        </td>   
-                        <td>
-                            <input type="text" id="finHora" name="finHora" value="<%=v.get(i).getFinHora()%>" readonly="true">
-                        </td> 
-                        <td>
-                            <input type="submit" id="reservadoAula" name="reservadoAula" value="<%=v.get(i).getReservado()%>">
-                            <input type="hidden" id="clave" name="clave" value="<%=v.get(i).getClave()%>">
-                            <input type="hidden" id="usuReservar" name="usuReservar" value="<%=v.get(i).getCodProfesor()%>">
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="h" id="iniHora" name="iniHora" value="<%=v.get(i).getInicioHora()%>" readonly="true">
+                            </td>   
+                            <td>
+                                <input type="text" class="h" id="finHora" name="finHora" value="<%=v.get(i).getFinHora()%>" readonly="true">
+                            </td> 
+                            <td>
+                                <input type="submit" id="reservadoAula" name="reservadoAula" value="<%=v.get(i).getReservado()%>">
+                                <input type="hidden" id="clave" name="clave" value="<%=v.get(i).getClave()%>">
+                                <input type="hidden" id="usuReservar" name="usuReservar" value="<%=v.get(i).getCodProfesor()%>">
+                            </td>
+                        </tr>
                     </form>
         <%
             }

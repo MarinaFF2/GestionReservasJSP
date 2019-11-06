@@ -8,11 +8,11 @@
 <%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/usuario/css_editarFoto.css" media="screen" />
@@ -115,11 +115,11 @@
             ConexionEstatica.cerrarBD();
         %>
         <form id="editarUsu1" name="editarUsu1" action="../../controlador/editarFoto.jsp" enctype="multipart/form-data" method="POST">
-            <div id="imgPerfil">
+            <main id="imgPerfil">
                 <img id="fotoPerfil" src="<%=u.getFotoimgString()%>" alt='Foto de perfil no encontrada'/></br>
                 <input type="file" name="fichero"/></br>
                 <input type="submit" id="gestionarFoto" name="gestionarFoto" value="Editar Foto"><br>
-            </div>
+            </main>
         </form>
     </body>
 </html>

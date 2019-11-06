@@ -8,10 +8,12 @@
 <%@page import="clase.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+<!--        <meta http-equiv="refresh" content="60;url=../../index.jsp">-->
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/menus/css_menus.css" media="screen" />
@@ -114,23 +116,26 @@
             Usuario u = ConexionEstatica.existeUsu(uu);
             ConexionEstatica.cerrarBD();
         %>
-        <form id="editarUsu2" name="editarUsu2" action="../../controlador/controladorGeneral.jsp"method="POST">
-            Nueva contraseña:*<br>
-            <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
-            Confirmar nueva contraseña:*<br>
-            <input type="password" id="reclave" name="reclave" placeholder="Confirmar contaseña" ><br>
-            <input type="submit" id="cambiarContra" name="cambiarContra" value="Cambiar"><br> 
-        </form>
-        <form id="editarUsu3" name="editarUsu3" action="../../controlador/controladorGeneral.jsp"method="POST">
-            Correo:*<br>
-            <input type="email" id="correo" name="correo" placeholder="Correo" value="<%=u.getCorreo()%>"><br>
-            Nombre:*<br>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%=u.getNombre()%>" pattern="[A-Za-z]{1,50}"><br>
-            Apellidos:*<br>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%=u.getApellido()%>" pattern="[A-Za-z]{1,50}"><br>
-            Edad:*<br>
-            <input type="number" id="edad" name="edad" placeholder="Edad" value="<%=u.getEdad()%>"><br>
-            <input type="submit" id="editarUsu" name="editarUsu" value="Guardar"><br> 
-        </form>
+        <main>
+            <h1>Modificar:</h1>
+            <form id="editarUsu2" name="editarUsu2" action="../../controlador/controladorGeneral.jsp"method="POST">
+                Nueva contraseña:*<br>
+                <input type="password" id="clave" name="clave" placeholder="Contaseña"><br>
+                Confirmar nueva contraseña:*<br>
+                <input type="password" id="reclave" name="reclave" placeholder="Confirmar contaseña" ><br>
+                <input type="submit" id="cambiarContra" name="cambiarContra" value="Cambiar"><br> 
+            </form>
+            <form id="editarUsu3" name="editarUsu3" action="../../controlador/controladorGeneral.jsp"method="POST">
+                Correo:*<br>
+                <input type="email" id="correo" name="correo" placeholder="Correo" value="<%=u.getCorreo()%>"><br>
+                Nombre:*<br>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%=u.getNombre()%>" pattern="[A-Za-z]{1,50}"><br>
+                Apellidos:*<br>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%=u.getApellido()%>" pattern="[A-Za-z]{1,50}"><br>
+                Edad:*<br>
+                <input type="number" id="edad" name="edad" placeholder="Edad" value="<%=u.getEdad()%>"><br>
+                <input type="submit" id="editarUsu" name="editarUsu" value="Guardar"><br> 
+            </form>
+        </main>
     </body>
 </html>

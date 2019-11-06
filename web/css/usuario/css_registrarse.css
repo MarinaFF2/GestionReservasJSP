@@ -14,6 +14,9 @@ h1{
     height: 10px;
     text-align: center;
 }
+main{
+    padding: 3%;
+}
 #botones{
     float:left;
 }
@@ -36,8 +39,7 @@ h1{
     main{
         font-size: 12px;
         width: 200px;
-        margin-left: 15%;
-        margin-top: 5%;
+        margin: 2% auto;
     }
     #botones{
         margin-left: 10%;
@@ -61,8 +63,7 @@ h1{
     main{
         font-size: 12px;
         width: 200px;
-        margin-left: 10%;
-        margin-top: 5%;
+         margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
@@ -93,8 +94,7 @@ h1{
     main{
         font-size: 12px;
         width: 200px;
-        margin-left: 15%;
-        margin-top: 5%;
+         margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
@@ -125,8 +125,7 @@ h1{
     main{
         font-size: 12px;
         width: 200px;
-        margin-left: 10%;
-        margin-top: 25px;
+         margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
@@ -145,8 +144,7 @@ h1{
     main{
         font-size: 16px;
         width: 350px;
-        margin-left: 25%;
-        margin-top: 10%;
+         margin: 2% auto;
     }
     #botones{
         margin-left: 20%;
@@ -160,8 +158,7 @@ h1{
     main{
         font-size: 16px;
         width: 350px;
-        margin-left: 30%;
-        margin-top: 10%;
+         margin: 2% auto;
     }
     #botones{
         margin-left: 30%;
@@ -179,8 +176,7 @@ h1{
     main{
         font-size: 25px;
         width: 400px;
-        margin-left: 40%;
-        margin-top: 25px;
+        margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
@@ -197,8 +193,7 @@ h1{
     main{
         font-size: 25px;
         width: 400px;
-        margin-left: 40%;
-        margin-top: 25px;
+        margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
@@ -216,8 +211,7 @@ h1{
     main{
         font-size: 25px;
         width: 200px;
-        margin-left: 40%;
-        margin-top: 25px;
+        margin: 2% auto;
     }
     #botones{
         margin-left: 40%;
