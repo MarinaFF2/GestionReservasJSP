@@ -261,9 +261,7 @@ p, h1{
     main{
         font-size:20px;
         max-width: 800px;
-        margin-top: 10%; 
-        margin-left: 15%;
-        margin-right: 15%;
+       margin: 10% auto 0px; /*10%-> t auto->l,r 0px->b*/
         padding: 10px;
     }
     p{
