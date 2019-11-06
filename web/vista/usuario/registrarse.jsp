@@ -16,7 +16,7 @@
         <script src="../../js/usuario/registrarse.js"></script>
     </head>
     <body  onload="aniadir()">
-        <header><h1>Registrarse</h1></header>
+        <h1>Registrarse</h1>
         <main>
             <form id="registrarse" name="asd" action="../../controlador/subeFoto.jsp" enctype="multipart/form-data" method="POST">
                 <p>Correo:*</p>

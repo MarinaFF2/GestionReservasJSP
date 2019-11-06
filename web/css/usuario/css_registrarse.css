@@ -8,16 +8,72 @@ body{
     background-image: url(../../img/fondos/mar.jpg);
     background-size: 100%;
 }
+h1{
+    margin-top: 5%;
+    padding-bottom: 5%;
+    height: 10px;
+    text-align: center;
+}
 #botones{
     float:left;
 }
 /*Movil site horizontal 320x480*/
-@media only screen and (max-width:480px) and (orientation:landscape){
+@media only screen and (max-width:320px) and (orientation:portrait){
+    .test{
+        width: 100px;
+    }
+    #file{
+        width: 250px;
+        font-size: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 0px;
+    }
+    .grande{
+        width: 200px;
+        height: 100px;
+    }
+    main{
+        font-size: 12px;
+        width: 200px;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+    #botones{
+        margin-left: 10%;
+    }
+}
+@media only screen and (max-width:320px) and (orientation:landscape){
+    .test{
+        width: 100px;
+    }
+    #file{
+        width: 250px;
+        font-size: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 0px;
+    }
+    .grande{
+        width: 200px;
+        height: 100px;
+    }
+    main{
+        font-size: 12px;
+        width: 200px;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+    #botones{
+        margin-left: 40%;
+    }
+}
+/*Movil site vertical 480x320*/
+@media only screen and (min-width:321px) and (max-width:480px) and (orientation:landscape){
     header{
         text-align: center;
-        margin-top: 10px;
+        margin-top: 5%;
         padding: 20px;
-        padding-top: 5px;
         height: 10px;
     }
     .test{
@@ -26,22 +82,25 @@ body{
     #file{
         width: 250px;
         font-size: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 1%;
+        padding-right: 1%;
         margin-left: 0px;
+    }
+    .grande{
+        width: 200px;
+        height: 100px;
     }
     main{
         font-size: 12px;
         width: 200px;
-        margin-left: 10%;
-        margin-top: 25px;
+        margin-left: 15%;
+        margin-top: 5%;
     }
     #botones{
         margin-left: 40%;
     }
 }
-/*Movil site vertical 480x320*/
-@media only screen and (max-width:768px) and (orientation:portrait){
+@media only screen and (min-width:321px) and (max-width:480px) and (orientation:portrait){
     header{
         text-align: center;
         margin-top: 10px;
@@ -51,6 +110,10 @@ body{
     }
     .test{
         width: 100px;
+    }
+    .grande{
+        width: 200px;
+        height: 100px;
     }
     #file{
         width: 250px;
@@ -70,7 +133,42 @@ body{
     }
 }
 /*Tablet Apps vertical 768x1024*/
-@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+@media only screen and (min-width:481px) and (max-width:768px) and (orientation:landscape){
+    header{
+        margin-top: 5%;
+        height: 10px;
+    }
+    .grande{
+        width: 200px;
+        height: 100px;
+    }
+    main{
+        font-size: 16px;
+        width: 350px;
+        margin-left: 25%;
+        margin-top: 10%;
+    }
+    #botones{
+        margin-left: 20%;
+    }
+}
+@media only screen and (min-width:481px) and (max-width:768px) and (orientation:portrait){
+    .grande{
+        width: 200px;
+        height: 100px;
+    }
+    main{
+        font-size: 16px;
+        width: 350px;
+        margin-left: 30%;
+        margin-top: 10%;
+    }
+    #botones{
+        margin-left: 30%;
+    }
+}
+/*Tablet Apps horizontal 1024x768*/
+@media only screen and (min-width:769px) and (max-width:1024px) and (orientation:portrait){
     header{
         text-align: center;
         margin-top: 10px;
@@ -79,17 +177,16 @@ body{
         height: 10px;
     }
     main{
-        font-size: 16px;
-        width: 350px;
-        margin-left: 25%;
+        font-size: 25px;
+        width: 400px;
+        margin-left: 40%;
         margin-top: 25px;
     }
     #botones{
         margin-left: 40%;
     }
 }
-/*Tablet Apps horizontal 1024x768*/
-@media only screen and (min-width:1024px) and (max-width:1680px) and (orientation:landscape){
+@media only screen and (min-width:769px) and (max-width:1024px) and (orientation:landscape){
     header{
         text-align: center;
         margin-top: 10px;
@@ -108,7 +205,7 @@ body{
     }
 }
 /*Pantalla de escritorio WebSite 1680x1050*/
-@media only screen and (min-width:1680px){
+@media only screen and (min-width:1025px){
     header{
         text-align: center;
         margin-top: 10px;
